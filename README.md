@@ -4,7 +4,7 @@ Local macOS IDE + agent harness for Claude Code: workspace, editor, terminals,
 live session visualization, full flight recording & replay, and headless
 agents.
 
-**[Download the latest release](https://github.com/scott-rippey/cc-blackbox-releases/releases/latest)**
+**[Download the latest release](https://github.com/scott-rippey/cc-blackbox-app/releases/latest)**
 
 ## Install
 
