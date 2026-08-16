@@ -17,6 +17,21 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v1.0.2 — 2026-08-16
+
+### New
+- First-run walkthrough: a spotlight tour over the live interface, shown
+  once when a fresh install opens its first workspace; replay from
+  Help → Show Walkthrough.
+
+### Fixed
+- Per-client credential injection now always wins inside recorded sessions
+  (shell-profile exports can no longer override it, and projects without a
+  stored credential clear stale exports so the Vercel CLI falls back to
+  your real login).
+- The Connect flow's waiting hint explains that the account chosen on
+  Vercel's page is the one that gets connected.
+
 ## v1.0.1 — 2026-08-16
 
 ### New
