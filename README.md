@@ -5,7 +5,7 @@ recorded like a black box: what Claude did, what it touched, what it cost.
 Watch it live, replay it later, and run scheduled headless agents on your
 repos.
 
-**[Download the latest release](https://github.com/scott-rippey/cc-blackbox-app/releases/latest)** — the `.dmg` file is the installer; the other files on the release are the app's auto-update machinery.
+**[Download the latest release](https://github.com/scott-rippey/cc-blackbox-app/releases/latest)** — the `.dmg` file is the installer; the other files on the release are the app's auto-update machinery. See what changed in each version: [CHANGELOG](CHANGELOG.md) or the [release notes](https://github.com/scott-rippey/cc-blackbox-app/releases).
 
 ## Why
 
