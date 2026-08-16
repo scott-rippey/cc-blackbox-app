@@ -17,6 +17,17 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v1.0.1 — 2026-08-16
+
+### New
+- Add clients directly in Settings: the Client Credentials card gains
+  "+ Add client…", so a Vercel account can be connected before any project
+  carries that client's tag.
+
+### Improved
+- The Client Credentials explainer leads with the browser-based Connect
+  flow; typed client names commit (never silently discard) on focus loss.
+
 ## v1.0.0 — 2026-08-16
 
 The first public release: a local macOS IDE and flight recorder for Claude
