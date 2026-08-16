@@ -17,6 +17,12 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v1.0.3 — 2026-08-16
+
+### New
+- Update announcements: the first launch after an update shows a
+  notification with the new version; clicking opens that release's notes.
+
 ## v1.0.2 — 2026-08-16
 
 ### New
