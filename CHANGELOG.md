@@ -17,4 +17,13 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
-_No releases yet. The first public release is in preparation._
+## v1.0.0 — 2026-08-16
+
+The first public release: a local macOS IDE and flight recorder for Claude
+Code. Workspace, editor, and terminals with every session recorded locally
+(events, tokens, cost); a live cockpit (Ops Board + Activity EKG); Flight
+Playback with the full conversation; the Agent Harness for scheduled
+headless agents with budgets, permission envelopes, and worktree isolation;
+Reports with per-model cost, cache savings, agent economics, drill-down,
+and CSV/PDF export; browser-based per-client Vercel connect; signed,
+notarized, auto-updating. Everything stays on your Mac.
