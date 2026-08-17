@@ -17,6 +17,19 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v1.0.6 — 2026-08-16
+
+### New
+- macOS folder permission handling: picking a folder now triggers the macOS
+  permission prompt right away, and every session launch checks folder
+  access first. A blocked folder shows a clear dialog naming the path, with
+  an Open System Settings button to the exact privacy pane, instead of a
+  session that dies instantly with nothing to go on.
+
+### Fixed
+- Editor tab names no longer get cut off; tabs fit the full file name and
+  the tab strip scrolls.
+
 ## v1.0.5 — 2026-08-16
 
 ### New
