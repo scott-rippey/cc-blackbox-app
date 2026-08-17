@@ -17,6 +17,14 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v1.0.4 — 2026-08-16
+
+### Fixed
+- Stuck Connect attempts can be canceled; canceling (or removing the row)
+  also invalidates the abandoned browser tab so a late authorization is
+  refused.
+- Locally added client rows without a stored credential can be removed.
+
 ## v1.0.3 — 2026-08-16
 
 ### New
