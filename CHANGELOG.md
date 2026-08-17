@@ -17,6 +17,23 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v1.0.5 — 2026-08-16
+
+### New
+- Credential health monitoring: stored Vercel credentials are verified in
+  the background (at launch and before sessions use them). A credential
+  Vercel definitively rejects turns red in Settings with an "invalid since"
+  date and one notification; sessions stop using the dead token and fall
+  back to your own Vercel CLI login. Reconnecting or pasting a fresh token
+  restores everything.
+- Expanded first-run walkthrough covering the full app: hooks, projects,
+  Vercel credentials, the Cockpit and Ops Board, session playback, the
+  Agent Harness, and Reports. Replay it anytime from Help, Show Walkthrough.
+
+### Fixed
+- A flaky network can no longer mark a good credential as broken; only a
+  definitive rejection from Vercel does.
+
 ## v1.0.4 — 2026-08-16
 
 ### Fixed
