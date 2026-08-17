@@ -17,6 +17,24 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v1.0.7 — 2026-08-17
+
+### New
+- Robust claude launch: the app finds the claude binary itself and starts
+  session tabs directly, no shell in between, so tmux auto-attach dotfiles,
+  alias installs, PATH gaps, and unusual login shells can't silently break a
+  session. A missing Claude Code install gets a clear dialog with a link.
+- Flight recorder: a session that dies within seconds of launch keeps its
+  final terminal output and exit code, shown in the session's detail view.
+- Proxy-proof recording: the hook script bypasses proxy settings for its
+  local delivery. If Settings shows an amber "outdated" hook script state
+  after updating, click Reinstall hooks once.
+
+### Fixed
+- Agent Harness scheduling: a failed launch no longer stalls the remaining
+  queue, and canceling a run during its launch moment is honored and
+  recorded as a cancel.
+
 ## v1.0.6 — 2026-08-16
 
 ### New
