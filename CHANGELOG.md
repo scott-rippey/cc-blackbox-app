@@ -17,6 +17,32 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v1.0.10 — 2026-08-18
+
+### Fixed
+- Typing /resume inside a tab no longer stops the recording: it rolls into
+  a fresh session exactly like /clear does (was: everything after went
+  unrecorded and unbilled).
+- /clear can no longer misfile the previous conversation onto the new
+  session's transcript; each session is bound to its own transcript and a
+  late-arriving end-of-session event can never overwrite its replacement.
+- Agent runs queued during database maintenance no longer stay queued
+  forever (and no longer block that agent's schedule); a run caught
+  mid-launch is requeued rather than failed.
+- Agent runs launch the same direct way interactive tabs do, so tmux-on-
+  login, nushell, and pwsh setups no longer produce runs that hang thirty
+  minutes and time out with no explanation.
+- Update safety: quitting mid-download is no longer miscounted as a crash;
+  a network hiccup during a manual check can no longer un-pause updates
+  paused for a real crash.
+- Compact is refused while a Claude session is still launching, not only
+  while one is recording.
+- A reconnected Vercel token can no longer be marked invalid by a check that
+  started before you connected it.
+- Agent Harness display: "View run report" always lands on the run; the
+  delete-agent confirmation reports the real run count; the agent card shows
+  "Launching" instead of a dead "Watch live" button while a run starts.
+
 ## v1.0.9 — 2026-08-18
 
 ### Fixed
