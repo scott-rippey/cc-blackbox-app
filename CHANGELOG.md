@@ -17,6 +17,24 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v1.0.8 — 2026-08-18
+
+### Fixed
+- Using /clear no longer stops recording: it cleanly closes the current
+  recorded session and starts a fresh one in the same tab.
+- Long sessions no longer freeze the live session detail view.
+- Unsaved editor changes and terminal scrollback survive switching views.
+- Settings hook and credential actions show their errors instead of doing
+  nothing visibly.
+- Resumed sessions (Resume, Act on run) no longer double-count the original
+  conversation's cost in Reports.
+- Update crash protection: if the built-in updater crashes the app twice in
+  a row, the app stops trying, tells you, and points at the manual
+  download. A failed Restart to Update also says so.
+- Quick sessions no longer show an "exited at launch" banner; agent runs
+  that fail at launch notify and honor auto-retry; a session's final events
+  can no longer be lost to a race when the tab closes.
+
 ## v1.0.7 — 2026-08-17
 
 ### New
