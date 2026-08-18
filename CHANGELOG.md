@@ -17,6 +17,27 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v1.0.9 — 2026-08-18
+
+### Fixed
+- Session detail settles when a session ends (no more permanent "live"
+  header until you leave and return).
+- Editor tab names are never clipped; the tab strip hides its scrollbar and
+  keeps the active tab in view.
+- Session launches are never silently dead: moved or deleted folders,
+  database maintenance, and other failures all show a clear message.
+- Notifications fire in dock-only mode (window closed).
+- Reports bucket days, weeks, and months in your local timezone; the
+  permission-denials count is no longer undercounted.
+- The walkthrough scrolls its target into view; the track-folder question
+  can no longer open invisibly behind the tour.
+- Agent Harness: Re-run honors the original run's worktree setting, empty
+  schedule times are rejected at save, failed worktree checkouts clean up,
+  and scheduled runs wait while database maintenance holds the lock.
+- Model price edits can't leak between rows, quick-open search can't show
+  stale results, PDF export failures say why, and running from the disk
+  image warns you to move the app to Applications.
+
 ## v1.0.8 — 2026-08-18
 
 ### Fixed
