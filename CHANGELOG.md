@@ -17,6 +17,31 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v2.0.0 — 2026-08-18
+
+### Reliability (hardening audit of macOS behavior: quit, crash, power loss, updates, sandbox)
+- The update crash-loop breaker now actually works: repeated install-time
+  crashes pause automatic updates and point at a manual download (the
+  detection previously cleared a moment too early and could never trigger).
+  Quitting mid-download no longer miscounts toward it; the "update ready"
+  notice fires once per version.
+- The database is durable across power loss and kernel panics, not just app
+  crashes (synced at every commit).
+- The last half-second of layout/window changes survives an immediate quit.
+- Reinstalling the recording hook can no longer garble a hook a live session
+  is executing (atomic swap).
+- A recreated login keychain (password reset, migrated Mac) no longer wedges
+  token storage: Settings detects it and offers a one-click reset that keeps
+  the old file as a backup.
+- Both windows run inside the macOS renderer sandbox; an unneeded
+  hardened-runtime entitlement that weakened library validation was removed.
+- Files with # or ? in their names preview correctly.
+- Agent Harness: a hung worktree checkout is killed cleanly with every
+  process it started; a partial checkout that cannot be deleted safely right
+  then is cleaned up automatically later instead of blocking future runs.
+- Clicking the Vercel connect link during app launch no longer risks a
+  startup error.
+
 ## v1.0.10 — 2026-08-18
 
 ### Fixed
