@@ -17,6 +17,17 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v2.0.4 — 2026-08-19
+
+### New
+- Opening a workspace starts one shell per folder, in explorer order; the
+  terminal list begins one-to-one with the folder list, on cold start and on
+  workspace switches, without duplicating folders that already have one.
+
+### Changed
+- Removed the reopen-last-shells behavior; the one-per-folder rule replaces
+  it.
+
 ## v2.0.3 — 2026-08-19
 
 ### New
