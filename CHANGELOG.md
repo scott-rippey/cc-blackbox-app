@@ -17,6 +17,16 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v2.0.3 — 2026-08-19
+
+### New
+- The terminal list is grouped by folder: a section per workspace folder in
+  explorer order, with an Other section for terminals outside them.
+
+### Fixed
+- Terminal tab drags stay within their folder section; no more drop targets
+  that do nothing.
+
 ## v2.0.2 — 2026-08-19
 
 ### Fixed
