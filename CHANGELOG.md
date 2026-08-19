@@ -17,6 +17,18 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v2.0.1 — 2026-08-19
+
+### New
+- The app keeps itself in the right place: launched from Downloads or a disk
+  image, it offers a one-click move to Applications and relaunches from
+  there, so updates always reach the copy you actually use.
+- A failed update says so on the next launch, with a manual download link.
+- Cmd-Q asks once before stopping a live recording or agent run; closing
+  the window still keeps everything running in the dock.
+- Terminal tabs follow the open workspace; other workspaces' terminals keep
+  running in the background and return when you switch back.
+
 ## v2.0.0 — 2026-08-18
 
 ### Reliability (hardening audit of macOS behavior: quit, crash, power loss, updates, sandbox)
