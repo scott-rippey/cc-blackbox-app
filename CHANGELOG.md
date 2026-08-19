@@ -17,6 +17,17 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v2.0.2 — 2026-08-19
+
+### Fixed
+- Launching a session for a project outside the current workspace shows its
+  terminal immediately (Other projects, Resume, Act on run).
+- Switching back to a workspace always lands on a terminal instead of a
+  blank panel.
+- Each workspace remembers only its own shells for reopen.
+- The Dock icon reopens the window during a PDF export.
+- Fixed a crash that could appear on quit with terminals open.
+
 ## v2.0.1 — 2026-08-19
 
 ### New
