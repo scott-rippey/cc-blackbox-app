@@ -17,6 +17,25 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v2.0.5 — 2026-08-21
+
+### New
+- Typing `claude` in a shell tab now records it like a Session tab: the tab
+  shows the recording lamp, the visualizer follows along live, and the
+  session lands in history with full token and cost tracking. Each claude
+  run in the same shell is its own recorded session.
+- Recording applies in tracked project folders; in an untracked folder the
+  app offers "Track this folder?" once, and runs after tracking are
+  recorded. Shells stay yours otherwise: your commands and other tools are
+  never recorded, and client credentials are never injected into plain
+  shells. No hook reinstall needed.
+
+### Fixed
+- A rare event-ordering case could bind a recorded session to the wrong
+  conversation after /clear, which then silently stopped recording. The
+  session lifecycle now handles that ordering; existing history is
+  unaffected.
+
 ## v2.0.4 — 2026-08-19
 
 ### New
