@@ -5,7 +5,7 @@ recorded like a black box: what Claude did, what it touched, what it cost.
 Watch it live, replay it later, and run scheduled headless agents on your
 repos.
 
-**[Download the latest release](https://github.com/scott-rippey/cc-blackbox-app/releases/latest)** — the `.dmg` file is the installer; the other files on the release are the app's auto-update machinery. See what changed in each version: [CHANGELOG](CHANGELOG.md) or the [release notes](https://github.com/scott-rippey/cc-blackbox-app/releases).
+**[Download the latest release](https://github.com/scott-rippey/cc-blackbox-app/releases/latest)**. The `.dmg` file is the installer; the other files on the release are the app's auto-update machinery. See what changed in each version: [CHANGELOG](CHANGELOG.md) or the [release notes](https://github.com/scott-rippey/cc-blackbox-app/releases).
 
 ## Why
 
@@ -68,6 +68,11 @@ and, if you connect them, your own Vercel tokens.
 
 Install once. The app keeps itself current from this repository's releases
 automatically; a fresh download is only needed for a new machine.
+
+New to the app? The **[User Guide](user-guide.md)** walks through everything
+task by task, and the **[feature list](features.md)** is the at-a-glance
+overview. A short in-app walkthrough also runs on first launch
+(replay it any time from Help → Show Walkthrough).
 
 ## Requirements
 
