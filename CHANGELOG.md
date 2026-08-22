@@ -17,6 +17,17 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v2.0.6 — 2026-08-22
+
+### Fixed
+- A shell tab's recording lamp now tracks the claude process itself: the
+  glow turns off when claude actually exits, even without a clean goodbye
+  (force-killed, or exited immediately after /clear). Glowing means exactly
+  one thing: a claude session is being recorded in that tab right now.
+  /clear never interrupts the glow; the session keeps recording through it.
+- Quitting the app could warn about a live session that had already ended
+  in a shell tab. The quit confirmation now reflects reality.
+
 ## v2.0.5 — 2026-08-21
 
 ### New
