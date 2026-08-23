@@ -17,6 +17,12 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v3.0.1 — 2026-08-23
+
+### Fixed
+
+- The post-update notification's "Click to see what changed" did nothing; the click was silently lost the moment the notice appeared. Replaced with something better: after every update, the first launch now opens a **What's New** window showing that version's actual release notes, pulled straight from the release page. Close it and it stays gone until the next update. If you're offline at that moment it shows a link instead and fetches the notes next time the window opens.
+
 ## v3.0.0 — 2026-08-23
 
 ### New

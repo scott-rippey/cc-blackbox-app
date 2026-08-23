@@ -401,7 +401,9 @@ when the first workspace opens; replay it whenever you like from
   has downloaded. It installs on your next real quit (⌘Q), or immediately
   via **CC-Blackbox → Restart to Update**. **CC-Blackbox → Check for
   Updates** forces a check any time; **About CC-Blackbox** shows your
-  version.
+  version. After an update, the first launch greets you with a What's New
+  window listing exactly what changed in the version you just received;
+  close it and it stays gone until the next update.
 - **If something crashes, the app picks itself up.** A crashed window is
   recreated automatically; your terminals, recordings, and runs live
   outside the window and keep going. If the window hangs, you get a

@@ -301,7 +301,10 @@ panel below (defaults: global).
   Restart to Update: never mid-flight, never by surprise. The app menu also
   has Check for Updates for an on-demand check, and About shows the version.
   If a downloaded update ever fails to install, the next launch says so and
-  points at the manual download; nothing fails silently. And an app launched
+  points at the manual download; nothing fails silently. After an update
+  installs, the first launch shows a What's New pop-up with that version's
+  actual release notes (pulled from the release page; offline shows a link
+  instead), once per version. And an app launched
   from outside the Applications folder (Downloads, a build folder) offers to
   move itself there with one click, so updates always reach the copy you
   actually run.
