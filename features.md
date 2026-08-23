@@ -58,11 +58,13 @@ timeline. This is the feature list; step-by-step usage lives in
   receives client credentials. Drag tabs to reorder; the order survives
   window close-and-reopen.
 - **▶ Claude** opens the Launch Claude modal: pick a workspace folder or
-  any tracked project and launch a dedicated Claude tab (a clean direct
-  launch that also carries the project's client credentials; a plain
-  shell's typed claude records but never receives credentials). Launching
-  a project outside the open workspace adds its folder to the workspace
-  first, so a running terminal always has its files in Explorer.
+  any tracked project and launch a dedicated Claude tab. It is a clean
+  direct launch, and it is the multi-client Vercel switch: the session
+  carries the project's client Vercel account, so each client's work runs
+  as that client (a plain shell's typed claude records too, but only ever
+  has your own Vercel login). Launching a project outside the open
+  workspace adds its folder to the workspace first, so a running terminal
+  always has its files in Explorer.
 - **Folder-permission preflight (macOS)**: picking a folder deliberately
   triggers the macOS Files-and-Folders permission prompt at pick time, and
   every session launch re-checks access first. A denied folder shows a

@@ -17,6 +17,14 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v3.0.4 — 2026-08-23
+
+### Improved
+
+- **The Vercel switch is now named everywhere it matters.** The real difference between a Claude tab and a plain shell was hiding behind the phrase "client credentials": a Claude tab injects the project's client **Vercel account**, so work on client A's project reads deploys and logs as client A, and work on client B's as client B. A plain shell only ever has your own Vercel login; client accounts never reach shells. The walkthrough, every tab and button tooltip, and the user guide now say exactly that.
+- **Sessions with no prompt say so.** A session where Claude was opened and closed before anything was typed used to show as "(untitled)". It now reads "(no prompt typed)", with a tooltip explaining that titles come from the first prompt.
+- **Crash-session durations are honest now.** A session that died with the app used to show its duration as "until the next time you opened the app" (a seconds-long session could read as 22 hours). Durations now end at the last recorded activity, and existing sessions with clearly inflated durations are corrected automatically on first launch.
+
 ## v3.0.3 — 2026-08-23
 
 ### Improved

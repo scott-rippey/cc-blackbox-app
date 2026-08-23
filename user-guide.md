@@ -84,9 +84,15 @@ The Terminals pane (right) has two spawn buttons:
   run there records. The shell itself (your commands, other tools) is
   never recorded, and no client credentials are injected into shells.
 - **▶ Claude**: a dedicated Claude tab, via the **Launch Claude** modal.
-  Both tab types record; what the dedicated tab adds is a guaranteed clean
-  launch (no shell in between, so nothing in a shell profile can interfere)
-  and the project's client credentials, which plain shells never receive.
+  Both tab types record; the dedicated tab adds two things. First, a
+  guaranteed clean launch: no shell in between, so nothing in a shell
+  profile can interfere. Second, and this is the multi-client feature:
+  the session gets the project's client **Vercel account** injected
+  automatically, so Claude working on client A's project reads deploys
+  and logs as client A, on client B's project as client B. A plain shell
+  only ever has your own Vercel login; client accounts never reach
+  shells. If you manage one account for yourself, both tab types behave
+  the same; the moment you manage clients, ▶ Claude is the switch.
   The modal:
   - **Workspace folders** lists your roots and any tracked projects in them
     (with the current git branch). **Launch** starts the session; on an
