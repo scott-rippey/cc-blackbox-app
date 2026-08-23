@@ -57,8 +57,12 @@ timeline. This is the feature list; step-by-step usage lives in
   next run. Only the recording token is injected; a plain shell never
   receives client credentials. Drag tabs to reorder; the order survives
   window close-and-reopen.
-- **▶ Session** opens the New Claude Code Session modal: pick a workspace
-  folder or tracked project and launch.
+- **▶ Claude** opens the Launch Claude modal: pick a workspace folder or
+  any tracked project and launch a dedicated Claude tab (a clean direct
+  launch that also carries the project's client credentials; a plain
+  shell's typed claude records but never receives credentials). Launching
+  a project outside the open workspace adds its folder to the workspace
+  first, so a running terminal always has its files in Explorer.
 - **Folder-permission preflight (macOS)**: picking a folder deliberately
   triggers the macOS Files-and-Folders permission prompt at pick time, and
   every session launch re-checks access first. A denied folder shows a
@@ -318,7 +322,10 @@ panel below (defaults: global).
   dialog says up front). If the app itself hits a fatal error, it saves
   what it can, relaunches itself once or twice, and otherwise stays down
   rather than looping; crash evidence is captured locally and surfaced on
-  the Health card at the next launch.
+  the Health card at the next launch. Claude sessions that were running
+  when the app closed, whether by crash or a normal quit, are offered for
+  resume on the next launch, one click each or all at once, with their
+  conversations intact (Claude keeps them on disk continuously).
 - Native notifications fire when Claude finishes or needs input while the
   window is unfocused; in-app, the tab gets an amber dot instead.
 - Links in any rendered content (markdown, DOCX, agent reports) open in the

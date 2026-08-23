@@ -17,6 +17,22 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v3.0.2 — 2026-08-23
+
+### New
+
+- **Crash recovery for Claude sessions**: if Claude sessions were running when the app closed (a crash, a force quit, a Mac restart, or a normal quit with sessions still running), the next launch offers to resume them. One click per session, or Resume all. Claude keeps every conversation on disk, so each session reopens in a terminal and picks up exactly where it left off.
+
+### Improved
+
+- **The Session button is now ▶ Claude.** Both tab types have recorded your sessions since 2.0.5, so the old name stopped meaning anything. What the dedicated Claude tab actually gives you: a guaranteed clean launch (no shell in between, so nothing in a shell profile can interfere) and the project's client credentials, which plain shells never receive. New tooltips throughout tell this story where you need it.
+- **A running terminal always has its folder in Explorer.** Launching any project from the Launch Claude modal (or resuming a session, or acting on an agent run) now adds that project's folder to the workspace if it was not already there, with its Explorer section and shell appearing like any other folder. No more terminals whose files you cannot see.
+- **The walkthrough got a redesign**: the tour card sits in one fixed spot instead of jumping around, the heavy screen dimming is gone in favor of a light glow ring on each highlighted area, and the app stays fully clickable during the tour.
+
+### Notes
+
+- The "+ Add directory" button in the launch dialog is now "+ Track a folder", which is what it always did: register a folder as a project without adding it to the current workspace.
+
 ## v3.0.1 — 2026-08-23
 
 ### Fixed

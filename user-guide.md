@@ -78,13 +78,16 @@ The Terminals pane (right) has two spawn buttons:
 - **+ Shell**: a plain login shell. With multiple roots you pick which
   folder. Opening a workspace starts one shell per folder, so the list
   begins one-to-one with your folders. Typing `claude` in a shell records
-  it like a ▶ Session (the tab grows the recording lamp while it runs):
+  it like a ▶ Claude tab (the tab grows the recording lamp while it runs):
   recording starts when the folder is a tracked project; in an untracked
   folder the app asks **Track this folder?** once, and the *next* claude
   run there records. The shell itself (your commands, other tools) is
   never recorded, and no client credentials are injected into shells.
-- **▶ Session**: a recorded Claude Code session, via the
-  **New Claude Code Session** modal:
+- **▶ Claude**: a dedicated Claude tab, via the **Launch Claude** modal.
+  Both tab types record; what the dedicated tab adds is a guaranteed clean
+  launch (no shell in between, so nothing in a shell profile can interfere)
+  and the project's client credentials, which plain shells never receive.
+  The modal:
   - **Workspace folders** lists your roots and any tracked projects in them
     (with the current git branch). **Launch** starts the session; on an
     untracked folder it first asks **Track this folder?** once: type an
@@ -93,7 +96,12 @@ The Terminals pane (right) has two spawn buttons:
     here means this very first session already carries that client's
     credentials.
   - Each project row keeps an inline **Client** field for quick edits.
-  - **+ Add directory** registers a folder anywhere on disk (same ask).
+  - **Other projects** lists every tracked project outside this workspace.
+    Launching one adds its folder to the workspace at that moment, so the
+    files appear in Explorer next to the new terminal; remove the folder
+    from Explorer later like any other if you no longer want it.
+  - **+ Track a folder** registers a folder anywhere on disk as a project
+    (same ask). It then appears under Other projects, ready to launch.
 
 A live Claude tab shows a pulsing lamp and a glow border. When Claude finishes
 or asks for input on a background tab, that tab gets an amber dot; if the
@@ -413,7 +421,10 @@ when the first workspace opens; replay it whenever you like from
   itself, at most twice an hour so a real problem can't turn into a
   relaunch loop. Evidence of any crash is kept locally and shown on the
   Settings Health card the next time you launch, with a Reveal button to
-  the report file.
+  the report file. And if Claude sessions were running when the app
+  closed (a crash, a force quit, a Mac restart, or a normal quit with
+  sessions still running), the next launch offers to resume them: Claude keeps every conversation on disk, so each session
+  reopens in a terminal and picks up exactly where it left off.
 - Links in rendered markdown, DOCX, and agent reports open in your system
   browser, never inside the app.
 - Folders become workspace roots or projects only through the native folder
