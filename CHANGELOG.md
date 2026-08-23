@@ -17,6 +17,12 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v3.0.3 — 2026-08-23
+
+### Improved
+
+- **The walkthrough now covers everything.** Fourteen stops in working order: the Cockpit piece by piece (Explorer, editor, visualizer, terminals, and the Claude button), then Sessions, the Agent Harness, Reports, and every Settings card, including the previously untoured Model prices, Database, and Health. Every step's text was rewritten for clarity, and the app stays fully clickable while the tour runs. It still plays automatically on a fresh install, and you can replay it any time from Help, Show Walkthrough.
+
 ## v3.0.2 — 2026-08-23
 
 ### New

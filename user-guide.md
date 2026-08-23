@@ -333,9 +333,10 @@ in the corner approximates the plan's usage block and ignores the scope.
 To send feedback about the app: **Help → Send Feedback…** opens a GitHub
 issue with your app version already filled in.
 
-New here? The app gives first-time installs a short spotlight walkthrough
-when the first workspace opens; replay it whenever you like from
-**Help → Show Walkthrough**.
+New here? The app gives first-time installs a guided walkthrough when the
+first workspace opens: fourteen stops covering every pane and every
+Settings card, with the app staying fully usable while it runs. Replay it
+whenever you like from **Help → Show Walkthrough**.
 
 ## Settings reference
 
