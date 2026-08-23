@@ -374,6 +374,20 @@ when the first workspace opens; replay it whenever you like from
     The sweep repeats daily while the app is open; heavy work (check,
     compact, sweep) runs in a separate helper process, so recording never
     stalls.
+- **Health**: the app's own vital signs.
+  - **Memory**: total across all of the app's processes with a per-process
+    breakdown, plus the main process heap. Numbers differ from Activity
+    Monitor; macOS compresses idle memory, so trends matter more than the
+    absolute figure.
+  - **Event loop**: how responsive the main process has been (p99 and max
+    latency). Sustained high numbers mean something is stalling recording.
+  - **Samples**: the same numbers are recorded to the database every 5
+    minutes and kept for 30 days, so a slow leak shows up as a trend.
+  - **Crash reports**: on every launch the app checks whether the system
+    wrote any crash reports for it since the last check (crash dumps plus
+    macOS diagnostic reports; advisory non-fatal reports are filtered out).
+    Anything found is shown with a **Reveal** button so the evidence is one
+    click away instead of buried in a Library folder.
 
 ## Good to know
 
@@ -388,6 +402,16 @@ when the first workspace opens; replay it whenever you like from
   via **CC-Blackbox → Restart to Update**. **CC-Blackbox → Check for
   Updates** forces a check any time; **About CC-Blackbox** shows your
   version.
+- **If something crashes, the app picks itself up.** A crashed window is
+  recreated automatically; your terminals, recordings, and runs live
+  outside the window and keep going. If the window hangs, you get a
+  dialog with **Keep Waiting** (the default) and **Reload Window**;
+  reload recovers the window but discards unsaved editor changes, so it
+  warns you first. If the whole app hits a fatal error it relaunches
+  itself, at most twice an hour so a real problem can't turn into a
+  relaunch loop. Evidence of any crash is kept locally and shown on the
+  Settings Health card the next time you launch, with a Reveal button to
+  the report file.
 - Links in rendered markdown, DOCX, and agent reports open in your system
   browser, never inside the app.
 - Folders become workspace roots or projects only through the native folder

@@ -281,6 +281,13 @@ panel below (defaults: global).
   confirm that states the exact cutoff date and that cost-report history
   goes with it. Sweeps run daily; heavy operations (check, compact, sweep)
   run in a separate helper process so recording never stalls.
+- **Health**: the app watching itself. Live memory across every process,
+  main-process heap, and event-loop latency, sampled into the flight
+  recorder every 5 minutes (kept 30 days) so a slow leak shows up as a
+  trend, not a surprise. On every launch the app also checks for crash
+  reports the OS wrote since the last check (crash dumps and macOS
+  diagnostic reports; advisory non-fatal reports are filtered out) and
+  surfaces any it finds with a Reveal button.
 
 ## Desktop Behavior
 
@@ -298,6 +305,17 @@ panel below (defaults: global).
   from outside the Applications folder (Downloads, a build folder) offers to
   move itself there with one click, so updates always reach the copy you
   actually run.
+- **Crash recovery**: failures are contained instead of silent. If the
+  window's renderer crashes or is force-killed, the app recreates the
+  window on the spot (terminals and recordings live outside it and
+  survive); if the window keeps crashing it stops retrying and says so
+  while sessions and runs continue in the background. If the window stops
+  responding for a while, a dialog offers Keep Waiting or Reload Window
+  (reload recovers the window; unsaved editor changes are lost, which the
+  dialog says up front). If the app itself hits a fatal error, it saves
+  what it can, relaunches itself once or twice, and otherwise stays down
+  rather than looping; crash evidence is captured locally and surfaced on
+  the Health card at the next launch.
 - Native notifications fire when Claude finishes or needs input while the
   window is unfocused; in-app, the tab gets an amber dot instead.
 - Links in any rendered content (markdown, DOCX, agent reports) open in the

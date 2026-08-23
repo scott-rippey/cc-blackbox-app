@@ -17,6 +17,24 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v3.0.0 — 2026-08-23
+
+### New
+
+- **Health card** (Settings): the app's own vital signs. Live memory across every process, main-process responsiveness, and a record of both into the flight recorder every 5 minutes (kept 30 days) so a slow leak shows up as a trend instead of a surprise. On every launch the app also checks whether macOS wrote any crash reports for it since the last check and surfaces them with a Reveal button; found reports stay listed until you look at them. Everything stays on your machine.
+- **Crash recovery**: failures are contained instead of silent. A crashed or force-killed window is recreated on the spot; terminals, recordings, and agent runs live outside the window and keep going. A window that stops responding offers Keep Waiting or Reload Window. A fatal app error writes its evidence locally and relaunches the app, at most twice an hour, so a real problem can never turn into a relaunch loop.
+
+### Improved
+
+- **Major platform upgrade**: Electron 43 and an updated terminal engine, which fixes two macOS resource leaks that specifically affected long-running use with many terminals.
+- **Heavy sessions**: very large session transcripts now import without ever freezing the app, and a terminal flooding output (think `yes`) is flow-controlled the way a real terminal behaves, so the app stays responsive and recording never stalls.
+- **Long dock-mode stretches**: memory is now bounded across days of running with the window closed, and the database keeps its write-ahead log trimmed in quiet moments.
+
+### Notes
+
+- The first launch after this update migrates the database. A timestamped backup copy is written automatically beforehand, as always.
+- The update installs over the air like any other version; nothing manual is needed.
+
 ## v2.0.6 — 2026-08-22
 
 ### Fixed
