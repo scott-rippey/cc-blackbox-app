@@ -17,6 +17,12 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v3.0.5 — 2026-08-24
+
+### Fixed
+
+- **Update staging happens once per version, not every four hours.** When a new version downloads, the app stages it in the background so the next restart can install it instantly. Previously, every periodic update check re-ran that staging on the same already-downloaded version. On most machines that was merely wasted work; on a machine where the staging step itself fails, each re-run was another chance for macOS to terminate the app mid-session (seen in the field: an overnight termination at exactly the four-hour check mark). Now a staged version simply waits for your next restart, and checks resume after it installs. If a newer release is published while one is staged, it is picked up on the following launch.
+
 ## v3.0.4 — 2026-08-23
 
 ### Improved
