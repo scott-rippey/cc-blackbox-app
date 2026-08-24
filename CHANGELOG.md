@@ -17,6 +17,12 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v3.1.1 — 2026-08-24
+
+### Fixed
+
+- **Machine Sync discovery no longer flickers.** In 3.1.0, a Mac could silently stop announcing itself on the network after renaming it or toggling sharing, so it would vanish from the other Mac's Add machine list until the next toggle brought it back. The announcement teardown now completes cleanly before a new one starts, and if an announcement ever fails it retries by itself within seconds instead of staying dark. Update both Macs to 3.1.1 before pairing.
+
 ## v3.1.0 — 2026-08-24
 
 ### Added
