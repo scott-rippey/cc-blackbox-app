@@ -291,7 +291,19 @@ panel below (defaults: global).
   confirm that states the exact cutoff date and that cost-report history
   goes with it. Sweeps run daily; heavy operations (check, compact, sweep)
   run in a separate helper process so recording never stalls.
-- **Health**: the app watching itself. Live memory across every process,
+- **Machine Sync**: pull session history from your other Macs over the
+  local network. No accounts, no cloud, no extra tooling. One-way per
+  direction and pull-only: adding a machine on Mac B copies Mac A's
+  finished sessions (history, costs, transcripts for playback) to B and
+  never writes to A; set up the reverse on A for both ways. Pairing is a
+  one-time 6-digit code shown on the source Mac's screen; after that syncs
+  run automatically at launch and hourly while both apps are open, plus
+  **Sync now**. Traffic is TLS-encrypted with pinned per-machine
+  identities; revoke or remove a machine any time. Synced sessions appear
+  everywhere (Sessions, Reports, search, Flight Playback), marked with
+  their source machine; only Resume stays on the machine that owns the
+  live conversation.
+- **System Health**: the app watching itself. Live memory across every process,
   main-process heap, and event-loop latency, sampled into the flight
   recorder every 5 minutes (kept 30 days) so a slow leak shows up as a
   trend, not a surprise. On every launch the app also checks for crash

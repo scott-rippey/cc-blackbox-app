@@ -17,6 +17,20 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v3.1.0 — 2026-08-24
+
+### Added
+
+- **Machine Sync: your session history on every Mac you use.** Settings has a new Machine Sync card. Turn on **Share this Mac** on one machine, then on another use **Add machine**, pick it from the list, and type the six-digit code that appears on the first Mac's screen. From then on the second Mac pulls everything it is missing automatically: at launch and hourly while both apps are open, or on **Sync now**. Only finished sessions move, and they arrive complete: history, costs, search, and Flight Playback all work on the synced copies. Sharing is one way and read only; nothing is ever written to or changed on the Mac you pull from, and you can revoke a machine at any time. Set up the other direction on the other Mac if you want both. Everything travels encrypted over your own network; no accounts, no cloud, no extra software. The first sync asks macOS's one-time Local Network permission; allow it, or the Macs cannot see each other.
+
+### Changed
+
+- **The Health card is now System Health**, so its purpose reads clearly among the other Settings cards.
+
+### Fixed
+
+- **The manual Check for Updates result no longer wraps mid-sentence.** The "You are up to date" dialog now fits the macOS alert width.
+
 ## v3.0.5 — 2026-08-24
 
 ### Fixed

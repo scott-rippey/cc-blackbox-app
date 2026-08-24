@@ -389,7 +389,27 @@ whenever you like from **Help → Show Walkthrough**.
     The sweep repeats daily while the app is open; heavy work (check,
     compact, sweep) runs in a separate helper process, so recording never
     stalls.
-- **Health**: the app's own vital signs.
+- **Machine Sync**: session history across your Macs, over your own
+  network.
+  - **Share this Mac** makes it visible to your other Macs and lets the
+    ones you approve pull its finished sessions. Approval is explicit: the
+    first time another Mac connects, a 6-digit code appears on THIS Mac's
+    screen and must be typed on the other one. Revoke a machine any time;
+    nothing is ever pushed to or changed on a shared Mac.
+  - **+ Add machine…** is the other direction: pick one of your Macs that
+    is sharing, type the code from its screen, and from then on this Mac
+    pulls whatever it is missing, automatically at launch and hourly while
+    both apps are open, or on **Sync now**. Only finished sessions move;
+    costs, search, and Flight Playback all work on the synced copies.
+    Resume stays on the source machine (the live conversation lives in
+    Claude Code's own storage there).
+  - The first discovery or sync triggers macOS's one-time Local Network
+    permission prompt; allow it or the Macs cannot see each other. If
+    discovery keeps finding nothing, check System Settings → Privacy &
+    Security → Local Network.
+  - Everything is encrypted in transit. Two Macs syncing both ways just
+    means doing the one-time add on each of them.
+- **System Health**: the app's own vital signs.
   - **Memory**: total across all of the app's processes with a per-process
     breakdown, plus the main process heap. Numbers differ from Activity
     Monitor; macOS compresses idle memory, so trends matter more than the
