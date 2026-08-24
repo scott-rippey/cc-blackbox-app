@@ -17,6 +17,16 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v3.1.2 — 2026-08-24
+
+### Fixed
+
+- **Machine Sync discovery now uses your Mac's built-in Bonjour engine.** Discovery previously ran on its own networking code, which some Wi-Fi setups pass in one direction but not the other; machines could see each other inconsistently or not at all. The app now advertises and searches through the same system service AirDrop and printers use, which handles unreliable Wi-Fi correctly. If Add machine could not find your other Mac before, update both Macs and try again.
+
+### Added
+
+- **Machine Sync joined the walkthrough.** The tour now has fifteen stops; Machine Sync is Step 14, right after the Database card, and the System Health card is Step 15. Replay it any time from Help, Show Walkthrough.
+
 ## v3.1.1 — 2026-08-24
 
 ### Fixed

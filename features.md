@@ -247,7 +247,7 @@ panel below (defaults: global).
   reads as that client's report.
 - **Send Feedback** (Help menu): opens a prefilled GitHub issue on the
   public releases repo with the app version and macOS build filled in.
-- **First-run walkthrough**: a fourteen-stop guided tour over the live UI,
+- **First-run walkthrough**: a fifteen-stop guided tour over the live UI,
   in working order: the Cockpit piece by piece (Explorer, editor,
   visualizer, terminals, the Claude button), then Sessions, the Agent
   Harness, Reports, and every Settings card (hooks, projects and clients,
