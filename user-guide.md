@@ -403,6 +403,13 @@ whenever you like from **Help → Show Walkthrough**.
     costs, search, and Flight Playback all work on the synced copies.
     Resume stays on the source machine (the live conversation lives in
     Claude Code's own storage there).
+  - Project folders that arrived only through sync are listed under
+    Settings → Projects as **synced only · track here…**. Opening that folder
+    in a workspace on this Mac (or clicking the badge and picking it) makes
+    it a normal tracked project here, so its client's Vercel credentials
+    inject into sessions on this Mac too. Until then, the client's
+    credential row can look connected while sessions in that folder get no
+    token.
   - The first discovery or sync triggers macOS's one-time Local Network
     permission prompt; allow it or the Macs cannot see each other. If
     discovery keeps finding nothing, check System Settings → Privacy &

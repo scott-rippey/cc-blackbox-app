@@ -302,7 +302,10 @@ panel below (defaults: global).
   identities; revoke or remove a machine any time. Synced sessions appear
   everywhere (Sessions, Reports, search, Flight Playback), marked with
   their source machine; only Resume stays on the machine that owns the
-  live conversation.
+  live conversation. A synced session's project folder shows up in
+  Settings → Projects as "synced only" until you open that same folder in a
+  workspace here (or pick it under Projects); from then on it is a normal
+  tracked project on this Mac too, client credentials included.
 - **System Health**: the app watching itself. Live memory across every process,
   main-process heap, and event-loop latency, sampled into the flight
   recorder every 5 minutes (kept 30 days) so a slow leak shows up as a

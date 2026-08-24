@@ -17,6 +17,16 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v3.1.3 — 2026-08-24
+
+### Fixed
+
+- **Machine Sync no longer leaves a client's Vercel credentials switched off on your other Mac.** When a Mac pulled history for a folder it had never opened itself, that folder counted as already tracked but never got the local go-ahead, so Claude sessions in it ran without the client's Vercel token while Settings showed the credential connected. Opening the folder in a workspace now registers it properly on that Mac (the client tag carries over, no reconnect needed), the Track this folder ask recognizes synced folders and pre-fills their client, and Settings, Projects marks any that are still waiting as "synced only, track here".
+
+### Changed
+
+- **Agents cannot target a synced-only folder.** The project picker leaves those folders out, and a run that still points at one stops with a clear message instead of running without credentials.
+
 ## v3.1.2 — 2026-08-24
 
 ### Fixed
