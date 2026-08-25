@@ -25,7 +25,7 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 
 ### Changed
 
-- **Agents cannot target a synced-only folder.** The project picker leaves those folders out, and a run that still points at one stops with a clear message instead of running without credentials.
+- **Agents only run in folders this Mac has opened.** Folders that exist only as synced history from another Mac are left out of the agent's project picker until you open them here. An agent saved earlier that still points at one stops with a message saying so, instead of running without the client's credentials.
 
 ## v3.1.2 — 2026-08-24
 
