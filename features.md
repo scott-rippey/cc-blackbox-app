@@ -25,8 +25,13 @@ timeline. This is the feature list; step-by-step usage lives in
 
 - File tree per root with live refresh, gitignored files dimmed, and full
   context menu: open, reveal in Finder, copy path, new file/folder, rename,
-  move to Trash, remove root from workspace. Drag a root folder's header up
-  or down to reorder roots; the order persists with the workspace.
+  delete, remove root from workspace. Delete asks first (Move to Trash /
+  Cancel, Esc or Cancel only) and moves the item to the Trash, so it can be
+  put back from Finder; the dialog's "Don't ask again" turns the prompt off
+  (Settings -> Appearance turns it back on). Folder rows carry a VS Code
+  style disclosure caret: one glyph that rotates as the folder opens. Drag a
+  root folder's header up or down to reorder roots; the order persists with
+  the workspace.
 - **Live activity dots**: while a Claude session runs, files it reads (blue)
   and edits (pink) light up directly in the tree.
 - Editor tabs with per-kind rendering: CodeMirror with syntax highlighting for

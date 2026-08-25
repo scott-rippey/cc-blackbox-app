@@ -52,7 +52,11 @@ collapses with its `▼` button and comes back via the **▲ Visualizer** pill.
 
 Click a file in the Explorer to open it. Right-click for the full menu:
 open, reveal in Finder, copy (relative) path, new file/folder, rename,
-delete (moves to Trash), and, on a root, remove it from the workspace.
+delete, and, on a root, remove it from the workspace. Delete asks first,
+then moves the file or folder to the Trash, so you can put it back from
+Finder if you change your mind. If you would rather it stopped asking, tick
+"Don't ask again" in that dialog; **Settings -> Appearance -> Ask before
+deleting a file** turns the prompt back on.
 With several roots, drag a root folder's header up or down to reorder them;
 the order sticks with the workspace.
 

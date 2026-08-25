@@ -17,6 +17,16 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v3.1.5 — 2026-08-25
+
+### Added
+
+- **Deleting a file now asks first.** Right-click, Delete in the Explorer opens a confirm with **Move to Trash** and **Cancel**, so a stray click on the menu no longer removes a file on the spot. Deletes have always gone to the Trash and still do, so anything removed can be put back from Finder. Deleting a folder says it takes everything inside with it. If you would rather it stopped asking, tick **Don't ask again** in that dialog, and **Settings, Appearance, Ask before deleting a file** turns it back on. Ticking the box and then cancelling changes nothing.
+
+### Changed
+
+- **Folder arrows turn.** A folder in the Explorer now shows a single arrow that rotates as it opens, the way VS Code does, in place of the two separate characters it used before. Those sat at slightly different weights and heights, so the arrow appeared to shift as you expanded a folder.
+
 ## v3.1.4 — 2026-08-25
 
 ### Added
