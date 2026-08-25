@@ -36,8 +36,17 @@ collapses with its `▼` button and comes back via the **▲ Visualizer** pill.
   once whether to track it (with an optional client tag). The same ask
   appears for new workspace roots; Skip is remembered, and **Settings →
   Projects** can track anything later.
-- **Settings → App font size** zooms the entire UI. The slider previews on
-  the Appearance card; **Apply** resizes the whole app in one jump.
+- **Settings → App font size** zooms the entire UI below the title bar. The
+  slider previews on the Appearance card; **Apply** resizes the app in one
+  jump. The title bar (window buttons, recording dot, view tabs) keeps its
+  normal size at every setting, like a native toolbar.
+- **Settings → Projects → Remove…** takes a folder out of the app for good:
+  its recorded sessions and cost history, any transcript copies synced from
+  another Mac, and its agents and runs. The dialog shows exactly what goes
+  and asks you to type the project name. The folder stays in your workspace;
+  it just stops being tracked, and the app will not ask to track it again.
+  Removing is per Mac: sessions synced from another Mac return on the next
+  sync unless you remove the project there too.
 
 ## Working with files
 
@@ -151,7 +160,13 @@ assigned to that client. (Prefer a manually created token? The small
 **paste token** option next to the button still takes one.) From then on,
 every Claude session launched on that client's projects starts with
 `VERCEL_TOKEN` already in its environment; the `vercel` CLI and API are
-authenticated as that client from the first command.
+authenticated as that client from the first command. A companion variable,
+`CCB_VERCEL_CLIENT`, names the client next to it (and `CCB_VERCEL_TEAM_ID`
+names the Vercel team for team installs), so if Claude inspects the
+environment it can see the token was placed there by CC-Blackbox for that
+client rather than left behind by a shell profile. Nothing else is set:
+the token alone is what the Vercel CLI and API need to land on the right
+team.
 
 The scoping is deliberate: the token reaches only that client's Claude
 sessions. Plain shells never see it, other clients' sessions never see it,
@@ -188,6 +203,15 @@ live subagent, working-set files, last report) update live.
 **Sessions** lists every recorded session with project, client, branch, date,
 duration, tokens, and cost. The search box is full-text over everything the
 session did (every command, file, prompt) plus titles. Click a row to open it.
+
+To delete a session, click the ✕ at the end of its row (or **Delete…** in
+its detail page) and confirm; its events, token usage and cost history are
+removed. Agent run records stay, with their session link cleared. Rows
+marked "(no prompt typed)" are sessions where Claude was opened and closed
+before you typed anything; when any exist, a **Delete N blank sessions**
+button next to the count clears them all at once. A session that is still
+recording cannot be deleted. Deleting is per Mac: a session synced from
+another Mac comes back on the next sync unless you delete it there too.
 
 In a session's detail page:
 
@@ -361,7 +385,8 @@ whenever you like from **Help → Show Walkthrough**.
   database. Why this exists and how tokens reach sessions:
   [Vercel access per client](#vercel-access-per-client).
 - **Appearance**: app-wide font size (10–18 px; the slider previews on the
-  card, Apply resizes the whole app), the autosave toggle, and
+  card, Apply resizes the whole app; the title bar stays its normal size),
+  the autosave toggle, and
   **Glass background**: the window turns genuinely transparent so your
   desktop shows through the app (subtle, still fully readable). The window
   blinks once as it recreates when you toggle; unsaved editor tabs are

@@ -94,8 +94,12 @@ timeline. This is the feature list; step-by-step usage lives in
   credential lands in the app assigned to that client: no dashboard, no
   token creation, no pasting. (Pasting a dashboard token remains available
   as the fallback path.) Launch a Claude session on that client's project
-  and the token is injected as `VERCEL_TOKEN` (plus `VERCEL_ORG_ID` for
-  team installs), so Claude can operate Vercel for that client (read logs,
+  and the token is injected as `VERCEL_TOKEN` (plus `CCB_VERCEL_CLIENT`,
+  the client tag, and `CCB_VERCEL_TEAM_ID` for team installs, so a session
+  that inspects its environment can tell the token came from CC-Blackbox
+  for that client and team, not from a stray shell export; nothing else is
+  set, because a lone `VERCEL_ORG_ID` makes the Vercel CLI refuse
+  project commands), so Claude can operate Vercel for that client (read logs,
   inspect deployments), authenticated correctly from the first command.
   Scoping is strict: the token reaches only that client's Claude sessions;
   never plain shells (they carry the recording token, nothing else), never
@@ -146,6 +150,14 @@ timeline. This is the feature list; step-by-step usage lives in
   and per-file touch counts, all live-updating while the session runs.
 - **↻ Resume** continues any finished session's conversation in a new
   recorded tab. Harness runs deep-link to their run report.
+- **Delete**: the ✕ on any finished row (or **Delete…** in the detail
+  header) removes that session's events, token usage and cost history after
+  a confirm; agent run records stay, with their session link cleared. A
+  **Delete N blank sessions** button appears whenever ended sessions exist
+  where Claude was opened and closed with no prompt typed, and clears them
+  in one go. A recording session cannot be deleted. Deleting is per Mac: a
+  session synced from another Mac returns on the next sync unless deleted
+  there too.
 - **Flight Playback**: replay any session as an animated timeline at 1×–100×
   with a scrubber, in a FULL-SCREEN overlay above the app (the view behind is
   dimmed and untouched; ✕ Exit playback or Esc drops you back where you
@@ -266,7 +278,15 @@ panel below (defaults: global).
 - **Projects**: every tracked folder in one list: client tag inline-editable
   with suggestions, current branch, path, and an add-folder button. The
   manual home for anything the auto-ask skipped; client changes re-attribute
-  the project's recorded history retroactively.
+  the project's recorded history retroactively. **Remove…** takes a project
+  out of the app for good: its recorded sessions (events, token usage, cost
+  history), any transcript copies synced from another Mac, and its agents
+  and runs (surviving worktrees removed from disk). The confirm shows the
+  exact counts and asks you to type the project name; it is refused while a
+  session in that folder is recording or one of its agents is running. The
+  folder and your workspace are untouched, and Remove is machine-local:
+  sessions synced from another Mac come back on the next sync unless the
+  project is removed there too.
 - **Client credentials**: per-client Vercel access, with browser-based
   **Connect Vercel…** (or paste a token), Keychain storage, read-only
   verify, remove.

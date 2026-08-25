@@ -17,6 +17,22 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v3.1.4 — 2026-08-25
+
+### Added
+
+- **Remove a project.** Settings, Projects now has Remove… on every row. It deletes the project's recorded sessions (events, token usage, cost history), any transcript copies synced from another Mac, and its agents and runs, with surviving worktrees removed from disk. The confirm shows the exact counts and asks you to type the project name. It is refused while a session in that folder is recording or one of its agents is running. The folder and your workspace are untouched. Removing is per Mac: sessions synced from another Mac return on the next sync unless you remove the project there too.
+- **Delete sessions.** Each row in Sessions has a ✕, and the session page has Delete…, to remove that session's history after a confirm. Agent run records stay, with their session link cleared. When sessions exist where Claude was opened and closed without a prompt, a **Delete N blank sessions** button clears them all at once. A recording session cannot be deleted.
+
+### Changed
+
+- **The title bar keeps its size.** The font size setting no longer scales the title bar, so the recording dot and view tabs stay clear of the window buttons at every size; the font size applies to the rest of the app.
+- **Vercel: no more `VERCEL_ORG_ID` in Claude sessions.** With a lone `VERCEL_ORG_ID` the Vercel CLI refuses project commands (`env pull`, `link`, `deploy`), and the integration token already lands on the right team by itself, so the app stops setting it. The client and team now travel as `CCB_VERCEL_CLIENT` and `CCB_VERCEL_TEAM_ID` next to the token, so a session that inspects its environment can see the token came from CC-Blackbox for that client rather than from a stray shell export.
+
+### Fixed
+
+- A client tag edited from the Explorer's project row is trimmed like the Settings editor, so a trailing space can no longer detach a project from its client's credentials.
+
 ## v3.1.3 — 2026-08-24
 
 ### Fixed
