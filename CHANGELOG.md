@@ -17,6 +17,19 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v3.3.0 — 2026-08-26
+
+### Added
+
+- **Agentic Browser: your Claude sessions can drive the built-in browser.** Any Claude session in the app, a Claude tab or a `claude` typed into a plain shell, can control the embedded browser: navigate, read the page, click, type, scroll, run JavaScript, take screenshots, and read the console and network capture. Claude can build a page and then actually check it in the same browser you are watching.
+- **You stay in charge.** The first browser action from each terminal asks Allow or Deny once. Allow lasts for that terminal; Deny sticks until you close it. A "Claude driving" badge shows in the browser toolbar while Claude works. Only the Claude process you approved can use its permission; any other process in that terminal is refused, and you get a notification about the attempt.
+- **Automatic setup.** The app registers one entry in Claude Code's configuration and keeps it current. Outside CC-Blackbox that entry stays dormant and never connects. Settings has a Browser Control (MCP) card with an Uninstall that sticks across restarts.
+- **Fully recorded.** Every action Claude takes lands in the session timeline and shows on the Ops Board as browsing activity, like any other tool use.
+
+### Fixed
+
+- URL bar: pasting text whose first word ends in a colon (like an error message) now searches instead of doing nothing.
+
 ## v3.2.0 — 2026-08-25
 
 ### Added

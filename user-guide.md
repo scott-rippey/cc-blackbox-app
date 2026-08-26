@@ -81,7 +81,8 @@ have unsaved edits, a banner offers **Reload from disk** or
 Click **Browser** at the top of the editor panel (or press **⌘⇧B**) and the
 editor area becomes a real Chromium browser. Type an address and press
 Enter; shorthand works (`localhost:3000` becomes http, `example.com` becomes
-https). This is not a preview iframe: sites that refuse to be embedded
+https), and anything that is not an address becomes a Google search, so
+typing `github` gets you there in two steps. This is not a preview iframe: sites that refuse to be embedded
 elsewhere, like GitHub or your deployed apps, load normally here.
 
 What the toolbar gives you:
@@ -112,6 +113,29 @@ local dev server with a self-signed certificate, the app asks once and
 trusts it until you quit. Sites that need basic auth (staging servers) get
 a sign-in dialog. If a page crashes, you get a Reload button; the rest of
 the app is unaffected.
+
+### Letting Claude drive the browser
+
+Your Claude sessions can control this browser themselves: navigate, read the
+page, screenshot, click, type, run JavaScript, and read the console and
+network capture. That lets Claude verify frontend work in the same browser
+you are watching, rather than asking you to check.
+
+This is set up for you: CC-Blackbox adds a single entry to Claude Code's
+configuration shortly after launch, and re-adds it if Claude Code ever
+overwrites it. Outside CC-Blackbox that entry stays dormant and never
+connects, so it is safe to leave alone. If you would rather not have it at
+all, Settings has a Browser Control (MCP) card with an Uninstall button, and
+that choice sticks across restarts until you click Install again.
+
+After that, the first time a Claude session in a terminal tries to use the
+browser, you get a one-time Allow / Deny prompt for that tab. Allow lasts as
+long as the tab is open; Deny sticks until you close and reopen it. This
+applies to both ▶ Claude tabs and a `claude` you run in a plain shell.
+While Claude is driving, a **Claude driving** badge appears in the browser
+toolbar. Because the browser holds your logged-in sessions, only allow it for
+work you trust. Everything Claude does is recorded in the session timeline
+like any other tool.
 
 ## Terminals: shells and recorded sessions
 

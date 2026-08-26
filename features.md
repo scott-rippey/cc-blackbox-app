@@ -53,7 +53,8 @@ timeline. This is the feature list; step-by-step usage lives in
   while you work on client B. The last URL, panel layout, and Editor/Browser
   choice persist per workspace.
 - Chrome: back/forward/reload, a URL bar that accepts shorthand
-  (localhost:3000 gets http, bare domains get https), open in the system
+  (localhost:3000 gets http, bare domains get https) and searches Google
+  for anything that is not an address, open in the system
   browser, and a **Maximize** mode where the same live page fills the whole
   window (Esc restores). Nothing reloads when you maximize, restore, or
   toggle away; the page keeps running.
@@ -71,6 +72,28 @@ timeline. This is the feature list; step-by-step usage lives in
   certificates are accepted only for localhost, only after you confirm, and
   only until the app quits. A crashed page shows a Reload card and never
   takes the app down with it.
+
+## Agentic Browser: your Claude sessions can drive it
+
+- Any Claude session running in the app, a ▶ Claude tab or a `claude` you
+  typed into a plain shell, can control the embedded browser: navigate, read
+  the page, take a screenshot, click, type, scroll, run JavaScript, wait for
+  something to appear, and read the console and network capture. So Claude
+  can build a page and then actually check it in the same browser you are
+  watching, instead of asking you to look.
+- **You approve it per terminal tab.** The first time a session tries to use
+  the browser, CC-Blackbox asks once: Allow or Deny. Allow lasts for that
+  terminal tab; Deny sticks until you close and reopen the tab. While a
+  session is driving, a **Claude driving** pill shows in the browser toolbar
+  and pulses on each action. It acts inside that browser's logged-in
+  sessions, which is why the consent is per tab and worth thinking about.
+- It works through a small local server the app runs; nothing leaves your
+  machine. Setup is automatic: the app adds one entry to Claude Code's config
+  shortly after launch and re-adds it if Claude Code overwrites it. Outside
+  CC-Blackbox that entry stays dormant and never connects. Settings, Browser
+  Control (MCP), can remove it for good if you would rather not have it.
+  Every action Claude takes is recorded in the session timeline like any
+  other tool use, and shows up on the Ops Board.
 
 ## Terminals & Recorded Sessions
 
