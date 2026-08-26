@@ -17,6 +17,19 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v3.2.0 — 2026-08-25
+
+### Added
+
+- **A real browser inside the Cockpit.** Click **Browser** next to Editor at the top of the editor panel (or press **⌘⇧B**) and the editor area becomes a full Chromium browser. It is not a preview frame, so sites that refuse to be embedded elsewhere, like GitHub and deployed apps, load normally, and plain-http dev servers work too. The address bar takes shorthand: `localhost:3000` gets http, `example.com` gets https. The ⤢ button maximizes the page to the whole window and Esc brings it back, without reloading anything. Each workspace keeps its own cookies and logins, and the page you were on returns when you reopen the workspace.
+- **Chrome DevTools, docked.** The DevTools button opens the full Chrome DevTools right next to the page. Drag the divider to resize; the split is remembered per workspace.
+- **Console and network capture.** The Console button opens a panel under the page with console output, uncaught errors, and every network request with status, duration, and size. Capture runs the whole time, even while DevTools is open, so the history from before you opened the panel is already there. The badge on the button counts errors.
+- **Downloads, sign-ins, local certificates.** Downloads always ask where to save and never write anywhere until you choose. Sites behind basic auth get a sign-in dialog. A local dev server with a self-signed certificate is trusted only after you confirm, and only until the app quits.
+
+### Notes
+
+- The browser is locked down by design: every web permission (camera, microphone, location, notifications, USB, and the rest) is denied automatically, with two ordinary-browsing exceptions, fullscreen and copying to the clipboard. Popups open in the same page rather than new windows. If a page crashes, you get a Reload button and the rest of the app is unaffected.
+
 ## v3.1.5 — 2026-08-25
 
 ### Added

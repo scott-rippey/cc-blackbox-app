@@ -76,6 +76,43 @@ have unsaved edits, a banner offers **Reload from disk** or
 **Recreate with my content**. Files over 2 MB open read-only with a
 **Load anyway** option.
 
+## The Browser
+
+Click **Browser** at the top of the editor panel (or press **⌘⇧B**) and the
+editor area becomes a real Chromium browser. Type an address and press
+Enter; shorthand works (`localhost:3000` becomes http, `example.com` becomes
+https). This is not a preview iframe: sites that refuse to be embedded
+elsewhere, like GitHub or your deployed apps, load normally here.
+
+What the toolbar gives you:
+
+- **← → ⟳** back, forward, reload (the reload button becomes ✕ while a page
+  is loading).
+- **↗** opens the current page in your system browser.
+- **DevTools** docks the full Chrome DevTools next to the page. Drag the
+  divider to resize; the split is remembered.
+- **Console** opens a capture panel under the page: console output, uncaught
+  errors, and every network request with status, duration, and size. The
+  badge counts errors. Capture runs all the time, even with DevTools open,
+  so the history from before you opened the panel is already there.
+- **⤢** maximizes the page to the whole window; press **Esc** or click **⤡**
+  to come back. The page never reloads when you switch around.
+
+Each workspace gets its own browser profile (cookies and logins), and the
+page you were on comes back when you reopen the workspace. Opening a file
+from the Explorer or the ⌘P palette switches you back to the editor
+automatically; the page keeps running behind it.
+
+The browser is deliberately locked down: permission prompts (camera,
+microphone, location, notifications, and so on) are denied automatically.
+The only exceptions are fullscreen and copying to the clipboard, which
+normal sites need. Popups open in the same page, and downloads always ask
+where to save. For a
+local dev server with a self-signed certificate, the app asks once and
+trusts it until you quit. Sites that need basic auth (staging servers) get
+a sign-in dialog. If a page crashes, you get a Reload button; the rest of
+the app is unaffected.
+
 ## Terminals: shells and recorded sessions
 
 The tab list is grouped by workspace folder: each folder gets a small

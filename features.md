@@ -41,6 +41,37 @@ timeline. This is the feature list; step-by-step usage lives in
   a file is deleted or changed on disk while you have unsaved edits. Large
   files open read-only with a "load anyway" escape hatch.
 
+## Embedded Browser
+
+- A real Chromium browser inside the Cockpit: an **Editor | Browser** toggle
+  at the top of the editor panel (**⌘⇧B**). It is not an iframe preview, so
+  sites that refuse to be framed (GitHub, most production apps) load
+  normally, service workers and cookies behave like a real browser, and dev
+  servers over plain http work.
+- **One live page per workspace**, with its own persistent cookie profile
+  per workspace, so client A's logged-in staging session is never ambient
+  while you work on client B. The last URL, panel layout, and Editor/Browser
+  choice persist per workspace.
+- Chrome: back/forward/reload, a URL bar that accepts shorthand
+  (localhost:3000 gets http, bare domains get https), open in the system
+  browser, and a **Maximize** mode where the same live page fills the whole
+  window (Esc restores). Nothing reloads when you maximize, restore, or
+  toggle away; the page keeps running.
+- **Docked DevTools**: the full Chrome DevTools, side by side with the page
+  inside the pane. The split drags and persists.
+- **Console & Network capture**: console output, uncaught errors, and a
+  request log (method, status, type, duration, size) collected continuously
+  into a panel below the page, with level filters and click-to-expand
+  stacks. Capture keeps working while DevTools is open.
+- Locked down by default: the page gets no special access to the app, and
+  every web permission (camera, mic, location, notifications, USB, and the
+  rest) is auto-denied, with two ordinary-browsing exceptions: fullscreen
+  and sanitized clipboard writes. Only http/https navigation is allowed,
+  popups navigate in place, and downloads go through a save dialog. Self-signed
+  certificates are accepted only for localhost, only after you confirm, and
+  only until the app quits. A crashed page shows a Reload card and never
+  takes the app down with it.
+
 ## Terminals & Recorded Sessions
 
 - **The terminal list is grouped by workspace folder**: a header per
