@@ -90,6 +90,9 @@ What the toolbar gives you:
 - **← → ⟳** back, forward, reload (the reload button becomes ✕ while a page
   is loading).
 - **↗** opens the current page in your system browser.
+- **○** clears the page back to a blank tab, so you are never stuck
+  displaying whatever you last opened. The cleared page also stays cleared
+  when you reopen the workspace.
 - **DevTools** docks the full Chrome DevTools next to the page. Drag the
   divider to resize; the split is remembered.
 - **Console** opens a capture panel under the page: console output, uncaught

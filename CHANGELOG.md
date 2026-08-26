@@ -17,6 +17,17 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v3.3.1 — 2026-08-26
+
+### Added
+
+- **Clear button in the browser toolbar.** The new ○ button blanks the page back to an empty tab, so you are never stuck displaying whatever you last opened. A cleared page stays cleared when you reopen the workspace.
+
+### Fixed
+
+- Resuming the last offered session now closes the "Resume Claude sessions?" dialog; it no longer waits for an extra "Not now" click.
+- The What's New popup no longer shows install instructions to people who already updated; those stay on the release page for first-time downloads.
+
 ## v3.3.0 — 2026-08-26
 
 ### Added

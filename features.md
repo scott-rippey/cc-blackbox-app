@@ -55,7 +55,8 @@ timeline. This is the feature list; step-by-step usage lives in
 - Chrome: back/forward/reload, a URL bar that accepts shorthand
   (localhost:3000 gets http, bare domains get https) and searches Google
   for anything that is not an address, open in the system
-  browser, and a **Maximize** mode where the same live page fills the whole
+  browser, a **Clear** button that blanks the page out (you are never stuck
+  displaying the last thing you opened), and a **Maximize** mode where the same live page fills the whole
   window (Esc restores). Nothing reloads when you maximize, restore, or
   toggle away; the page keeps running.
 - **Docked DevTools**: the full Chrome DevTools, side by side with the page
