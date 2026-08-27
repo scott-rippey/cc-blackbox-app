@@ -17,6 +17,12 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v3.3.2 — 2026-08-26
+
+### Fixed
+- Launching Claude in a folder whose name ends with a space no longer fails with "cwd is outside project"; the project path is stored exactly, and an already-registered project with the stripped path is repaired in place.
+- Folders reached through a symlink register under the path you picked, so the workspace, the launch check, and the project list agree on the same folder; launches also compare resolved paths on both sides.
+
 ## v3.3.1 — 2026-08-26
 
 ### Added
