@@ -96,6 +96,52 @@ timeline. This is the feature list; step-by-step usage lives in
   Every action Claude takes is recorded in the session timeline like any
   other tool use, and shows up on the Ops Board.
 
+## iOS Simulator
+
+- Apple's iOS Simulator inside the Cockpit: an **Editor | Browser | Simulator**
+  toggle at the top of the editor panel (**⌘⇧I**). The device screen streams
+  live into the pane with no Simulator window anywhere; Apple's simulator
+  runtime does the running, the app mirrors and drives it.
+- **A setup strip that is always there.** Above the device the pane shows
+  what the feature runs on: Xcode, an iOS runtime, Homebrew, and the free
+  open-source baguette driver. When everything is present it is one green
+  line; when something is missing it opens into a checklist with a link or
+  a one-line install command per row. Install buttons open a terminal with
+  the command typed in for you to run; nothing installs behind your back.
+- **One device per workspace.** The device menu lists every iOS simulator
+  on the Mac by runtime with its boot state; picking a shut-down one boots
+  it. The attached device and the stream settings persist per workspace.
+- **Tap it yourself**: click to tap, drag to swipe, scroll with the wheel,
+  type when the screen has focus (Unicode pastes through the pasteboard).
+  Toolbar buttons and Simulator.app's shortcuts for Home (⌘⇧H), Lock (⌘L),
+  and volume (⌘↑/⌘↓); a Desktop screenshot (⌘S); frame rate and stream
+  size controls with a live fps readout; and a **Maximize** mode (Esc
+  restores).
+- Honest about the device: the pane polls the real boot state, so a device
+  shut down elsewhere (quitting Simulator.app shuts its devices down) shows
+  as off with a Boot button instead of a frozen picture. Devices the app
+  booted are shut down when it quits; devices you booted are left alone.
+- Simulator.app can be open on the same device at the same time; both
+  views stay live.
+
+## Agentic Simulator: your Claude sessions can drive it
+
+- Any Claude session in the app can control the attached device: list and
+  boot simulators, install and launch a build, open URLs and deep links,
+  read the screen as an accessibility outline, tap by label or coordinate,
+  swipe, type, press keys and hardware buttons, wait for text to appear,
+  switch light/dark, and take screenshots. So Claude can build an iOS app in
+  the terminal, run it in the simulator, and check its own work while you
+  watch.
+- **Separate consent from the browser.** The first time a session tries to
+  use the simulator, CC-Blackbox asks once: Allow or Deny, per terminal tab,
+  independent of the browser permission. While a session is driving, a
+  **Claude driving** pill shows in the simulator toolbar; when Claude
+  attaches a device, the Cockpit switches to the Simulator so you see it.
+- Same plumbing as the browser: the app's local MCP entry, nothing leaving
+  the Mac, every action recorded in the session timeline and shown on the
+  Ops Board as SIMULATING.
+
 ## Terminals & Recorded Sessions
 
 - **The terminal list is grouped by workspace folder**: a header per

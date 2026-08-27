@@ -17,6 +17,21 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.0.0 — 2026-08-27
+
+### New
+- The iOS Simulator inside the app: a third face of the editor panel next to Editor and Browser (Cmd+Shift+I). Pick an iPhone or iPad and its screen streams live into the pane with no Simulator window; tap, swipe, scroll, and type on it; Home, Lock, volume, Desktop screenshot, stream controls, and maximize on the toolbar. Each workspace remembers its device; devices the app boots are shut down when it quits.
+- An always-visible setup check above the device showing what the feature runs on (Xcode, an iOS runtime, Homebrew, the free open-source baguette driver), turning into a checklist with install commands when something is missing.
+- Claude can drive the simulator: boot, install and launch a build, open URLs, read the screen, tap, swipe, type, press buttons, wait for text, and take screenshots, with a separate per-tab permission from the browser.
+- Settings: an iOS Simulator card. Walkthrough: two Simulator stops.
+
+### Improved
+- The recording glow on terminal tabs is smaller, and the active tab gets a light fill and an accent outline so it stands out when several tabs are live.
+- The walkthrough card moves out of the way on the three permission steps, Extra abilities, and System Health.
+
+### Fixed
+- Quitting with a browser page attached could end in a crash report instead of a clean quit.
+
 ## v3.5.0 — 2026-08-27
 
 ### New

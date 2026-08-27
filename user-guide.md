@@ -25,6 +25,8 @@ folder you added) and **✕ Remove**.
 ## The Cockpit
 
 The **Cockpit** view is three panes: Explorer, Editor + Visualizer, Terminals.
+The middle pane has three faces: the Editor, the Browser (**⌘⇧B**), and the
+iOS Simulator (**⌘⇧I**).
 Drag the dividers to resize; sizes persist per workspace. The visualizer
 collapses with its `▼` button and comes back via the **▲ Visualizer** pill.
 
@@ -139,6 +141,73 @@ While Claude is driving, a **Claude driving** badge appears in the browser
 toolbar. Because the browser holds your logged-in sessions, only allow it for
 work you trust. Everything Claude does is recorded in the session timeline
 like any other tool.
+
+## The Simulator
+
+Click **Simulator** at the top of the editor panel (or press **⌘⇧I**) and
+the editor area shows an iPhone or iPad running in Apple's iOS Simulator,
+streamed live into the app. There is no Simulator window to manage: the
+device runs headless and this pane is its screen.
+
+The strip at the top is the setup check, and it never goes away. When
+everything is in place it reads as one green line naming what the feature
+runs on (your Xcode version, the iOS runtimes, the driver version). When
+something is missing it opens into a checklist:
+
+- **Xcode** with the iOS platform (free from the App Store).
+- **iOS runtime**: at least one simulator runtime. The row gives you the
+  `xcodebuild -downloadPlatform iOS` command if none is installed.
+- **Homebrew**: how the driver installs. Advisory; the pane works without
+  it once the driver is present.
+- **Simulator driver**: baguette, a free open-source tool that streams the
+  simulator screen and delivers taps. The row's **Install baguette** button
+  opens a terminal with `brew install baguette` typed in; you press Return.
+  Copy does the same without the terminal. Apple Silicon only.
+
+Click the line to see the rows any time; ↻ re-checks.
+
+What the toolbar gives you:
+
+- **The device menu** lists every iOS simulator on this Mac, grouped by
+  runtime, with a dot on the booted ones. Picking a shut-down device boots
+  it (a few seconds). Each workspace remembers its device.
+- **● live / ○ off** shows the real state; **Boot** and **Shut down** do what
+  they say.
+- **⌂ ⏻ + −** are Home, Lock, and volume; the shortcuts are Simulator.app's
+  own (**⌘⇧H**, **⌘L**, **⌘↑ / ⌘↓**) while the screen has focus.
+- **◔** saves a full-resolution PNG to your Desktop (**⌘S**).
+- **fps** and **size** tune the stream. Half size at 30 fps is the default
+  and is easy on the Mac; full size costs more CPU. A small fps readout
+  sits in the corner of the screen.
+- **⤢** maximizes the device to the whole window; **Esc** or **⤡** restores.
+
+On the screen itself: click to tap, press and hold for a long press, drag
+to swipe, scroll with the wheel, and type once you have clicked into it;
+pasting works too, including emoji and non-Latin text.
+
+Two things to know. Quitting Simulator.app shuts its devices down (Apple's
+default), so if you open the same device there and quit, the pane shows it
+as off with a Boot button; nothing is lost. And when CC-Blackbox quits it
+shuts down only the devices it booted; anything you booted yourself is left
+running.
+
+### Letting Claude drive the simulator
+
+Your Claude sessions can control the attached device: boot a simulator,
+install and launch your build, open a URL or deep link, read the screen as
+a list of labeled elements, tap by label or by coordinate, swipe, type,
+press keys and hardware buttons, wait for text to appear, switch light and
+dark, and take screenshots. Building the app is still Claude's job in the
+terminal (`xcodebuild`); the simulator tools take over from there.
+
+The first time a session in a terminal tries, you get a one-time Allow /
+Deny prompt for that tab, separate from the browser one. Allow lasts as long
+as the tab is open; Deny sticks until you close and reopen it. While Claude
+is driving, a **Claude driving** badge appears in the simulator toolbar,
+and when Claude attaches a device the Cockpit switches to the Simulator so
+you can watch. It only ever touches the simulated device, never your Mac.
+Everything Claude does is recorded in the session timeline like any other
+tool.
 
 ## Terminals: shells and recorded sessions
 
@@ -478,6 +547,9 @@ Replay it whenever you like from **Help → Show Walkthrough** or
   overwrites it; the card shows status, Reinstall, and Uninstall (which
   sticks until you click Install again). Outside CC-Blackbox the entry
   stays dormant and never connects.
+- **iOS Simulator**: the same setup check the Simulator pane shows (Xcode,
+  iOS runtime, Homebrew, driver) with a Re-check button, and how device
+  shutdown and Claude's per-tab permission work.
 - **Appearance**: app-wide font size (10–18 px; the slider previews on the
   card, Apply resizes the whole app; the title bar stays its normal size),
   the autosave toggle, a **Show walkthrough** button that replays the guided
