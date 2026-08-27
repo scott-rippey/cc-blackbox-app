@@ -448,9 +448,12 @@ To send feedback about the app: **Help → Send Feedback…** opens a GitHub
 issue with your app version already filled in.
 
 New here? The app gives first-time installs a guided walkthrough when the
-first workspace opens: fifteen stops covering every pane and every
-Settings card, with the app staying fully usable while it runs. Replay it
-whenever you like from **Help → Show Walkthrough**.
+first workspace opens. It drives the real app as it goes: it switches the
+Browser on, opens the agent editor with an example agent filled in and walks
+every section (structure, crew, permissions, abilities, decisions, schedule),
+and visits every Settings card, with the app staying fully usable throughout.
+Replay it whenever you like from **Help → Show Walkthrough** or
+**Settings → Appearance → Show walkthrough**.
 
 ## Settings reference
 
@@ -468,9 +471,17 @@ whenever you like from **Help → Show Walkthrough**.
   (read-only), remove. Stored encrypted in the macOS Keychain, never in the
   database. Why this exists and how tokens reach sessions:
   [Vercel access per client](#vercel-access-per-client).
+- **Browser Control (MCP)**: the one entry the app keeps in Claude Code's
+  own config (`~/.claude.json`) so your Claude sessions can reach the app's
+  tool server: browser driving and decision logging both go through it. It
+  is installed automatically at every launch and re-added if Claude Code
+  overwrites it; the card shows status, Reinstall, and Uninstall (which
+  sticks until you click Install again). Outside CC-Blackbox the entry
+  stays dormant and never connects.
 - **Appearance**: app-wide font size (10–18 px; the slider previews on the
   card, Apply resizes the whole app; the title bar stays its normal size),
-  the autosave toggle, and
+  the autosave toggle, a **Show walkthrough** button that replays the guided
+  tour, and
   **Glass background**: the window turns genuinely transparent so your
   desktop shows through the app (subtle, still fully readable). The window
   blinks once as it recreates when you toggle; unsaved editor tabs are

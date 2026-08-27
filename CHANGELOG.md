@@ -17,6 +17,15 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v3.5.0 — 2026-08-27
+
+### New
+- A walkthrough that drives the app: it switches the Browser on, opens the agent editor with an example agent filled in and walks every section in its real state, and visits every Settings card. Forty stops, one spotlight at a time, and the card moves out of the way when it would cover what it describes. Leaving the tour puts everything back.
+- Settings, Appearance: a Show walkthrough button.
+
+### Fixed
+- The user guide's Settings reference documents the Browser Control (MCP) card.
+
 ## v3.4.0 — 2026-08-27
 
 ### New

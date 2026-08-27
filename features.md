@@ -328,16 +328,24 @@ panel below (defaults: global).
   reads as that client's report.
 - **Send Feedback** (Help menu): opens a prefilled GitHub issue on the
   public releases repo with the app version and macOS build filled in.
-- **First-run walkthrough**: a fifteen-stop guided tour over the live UI,
-  in working order: the Cockpit piece by piece (Explorer, editor,
-  visualizer, terminals, the Claude button), then Sessions, the Agent
-  Harness, Reports, and every Settings card (hooks, projects and clients,
-  credentials, model prices, database, health). The tour card sits in one
-  fixed spot, each stop gets a light glow ring, and the app stays fully
-  clickable throughout. Fires once, when a fresh install opens its first
-  workspace; existing installs never see it uninvited;
-  **Help → Show Walkthrough** replays it any time. The highlights track
-  the real interface, so the tour can't go stale.
+- **Guided walkthrough that drives the app**: a tour over the live UI that
+  operates it as it goes. The Cockpit piece by piece (Explorer, editor,
+  the Editor|Browser toggle, then the Browser switched on with its toolbar
+  explained and how Claude can drive it, the visualizer, terminals, the
+  Claude button), Sessions, then the Agent Harness in depth: the tour opens
+  the New Agent editor pre-filled with an example and walks every section
+  in its real state (Auto vs Orchestrator + crew, the prompt and its slots,
+  model and caps, a crew member expanded, Plan only vs Edit files, extra
+  abilities, the plain-English summary, worktree and retry, Log decisions,
+  schedule, Create), then Run history, Reports, and every Settings card
+  (hooks, Browser Control, projects and clients, credentials, model prices,
+  database, sync, health). The card sits in one fixed spot with a step
+  counter, each stop gets a glow ring, and the app stays fully clickable.
+  Fires once, when a fresh install opens its first workspace; existing
+  installs never see it uninvited; **Help → Show Walkthrough** or
+  **Settings → Appearance → Show walkthrough** replays it any time. Leaving
+  the tour at any point puts everything back (the example agent closes
+  unsaved, the pane returns to the Editor).
 
 ## Settings
 
