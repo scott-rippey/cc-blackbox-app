@@ -17,6 +17,14 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v3.4.0 — 2026-08-27
+
+### New
+- Decision logging for agents: one checkbox makes every process in a run (the orchestrator and each crew member) record its significant decisions and why, as it works. The log is private, so it never changes how the run behaves. Read it from the agent's Decisions button (a scrolling list of runs) or from a run's own Decisions button.
+
+### Changed
+- The app's built-in tools for Claude are grouped under one name, `ccbb`; the old entry is removed automatically on first launch.
+
 ## v3.3.2 — 2026-08-26
 
 ### Fixed

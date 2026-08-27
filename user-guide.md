@@ -365,6 +365,18 @@ Click **+ New Agent**:
    a throwaway copy of the repo; your working files are never touched and you
    merge its changes yourself. **Auto-retry once on failure** relaunches a
    failed run once with the same prompt (the retry never retries again).
+   **Log decisions**: every process in the run (the orchestrator and each
+   crew member) records its significant decisions and why as it works,
+   through a private logging tool the app provides. Nothing about the log
+   enters any output or any other agent, so it never changes what the run
+   does. The agent card's **◇ Decisions** button opens a scrolling list of
+   the runs that logged decisions (newest first); click a run to read its
+   decisions in the same window, and use Back to return to the list. Use it
+   to improve the prompt. Each logged decision costs one tool turn. The tool
+   arrives through the same config entry as browser control (see Letting
+   Claude drive the browser), so that entry must be installed. In a Plan
+   only run, Claude Code refuses the tool call itself, but the decision is
+   still recorded the moment it is made, so the log works in every mode.
 8. **Schedule**: Manual only, Daily, or Weekly at a set time. Schedules fire
    only while the app is open; missed times are skipped. At most 3 runs
    execute concurrently, and each run is killed after 30 minutes.
@@ -389,6 +401,10 @@ markdown source.
   or fails while the app is unfocused (or closed to the dock), a native
   notification tells you which agent and how it ended.
 - **Reveal worktree** / **Remove worktree** manage a finished run's worktree.
+- **◇ Decisions** (agents with Log decisions on): opens the agent's
+  decisions window straight into this run. Each entry names who logged it
+  (orchestrator or a crew member), what was decided, why, and what was
+  rejected. It grows live while the run is going.
 - **⚡ Act on run**: the follow-through move. It resumes the run's
   conversation in a new recorded interactive tab, with everything the agent
   learned intact. Choose where it acts (in the worktree, or fresh in the main

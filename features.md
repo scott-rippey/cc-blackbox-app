@@ -264,6 +264,15 @@ timeline. This is the feature list; step-by-step usage lives in
   on a Claude plan), and max turns (default 50) caps agentic loops.
 - **Worktree isolation**: an agent can run in a throwaway git worktree so your
   working files are never touched; you review and merge its changes yourself.
+- **Decision logging**: one checkbox makes every process in a run (the
+  orchestrator and each crew member) record its significant decisions and
+  why, as it goes, through a private logging tool. Nothing about the log
+  enters any agent's output or another agent's context, so it never changes
+  how the run behaves; it is there for you afterwards. The agent card's
+  Decisions button opens a scrolling list of its runs (newest first); each
+  run opens into its decisions in the same window, and a run row's Decisions
+  button opens straight into that run. Use it to tune a prompt against what
+  the agent actually chose. Each logged decision costs one tool turn.
 - **Schedules**: manual, daily, or weekly. They fire only while the app is
   open; missed occurrences are skipped. Guards: max 3 concurrent runs,
   30-minute wall-clock kill.
