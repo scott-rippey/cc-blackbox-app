@@ -17,6 +17,22 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.1.0 — 2026-08-28
+
+### New
+- Drag any Cockpit pane by its title to split, tab, or dock it anywhere: Explorer, Editor, Visualizer, Terminal, the Terminals list, Browser, and Simulator. Drop on another pane's edge to split, on its middle to stack as tabs, or on the Cockpit's outer edge for a new column or row. The default arrangement is unchanged.
+- The Browser (Cmd+Shift+B) and the iOS Simulator (Cmd+Shift+I) are panes of their own. They start hidden and appear as tabs beside the Editor.
+- File tabs drag too: drop one on a pane's edge for a second editor side by side. The extra editor closes itself when its last file does.
+- The terminal viewport and the Terminals list are separate panes, so the list can sit anywhere.
+- Nothing is rebuilt by a move: terminals keep their scrollback, editors keep unsaved edits, the browser keeps its page, the simulator keeps streaming.
+- The arrangement, divider sizes, and open files are remembered per workspace, including across restarts; earlier workspaces carry their sizes and collapsed visualizer over.
+- View menu: show or hide each pane, and Reset Cockpit Layout (also in Settings, Appearance).
+
+### Changed
+- The Editor, Browser, Simulator switch at the top of the editor is gone; each is a pane with its own title tab.
+- The Visualizer's collapse button and restore pill are replaced by the x on its title and the View menu.
+- The walkthrough's editor stop explains moving panes; the tour reveals the Browser and Simulator as it goes and restores your layout when it ends.
+
 ## v4.0.0 — 2026-08-27
 
 ### New

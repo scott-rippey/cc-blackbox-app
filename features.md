@@ -12,9 +12,20 @@ timeline. This is the feature list; step-by-step usage lives in
 - **Workspaces** are named sets of root folders. The picker opens on launch;
   the last workspace reopens automatically. Hover a picker row to rename or
   remove a workspace; removing keeps its session history.
-- **Cockpit layout**: three resizable panes: Explorer (left), Editor over
-  Visualizer (middle), Terminals (right). Pane sizes, open tabs, and collapsed
-  state persist per workspace, including through app restarts.
+- **Cockpit layout**: seven movable panes (Explorer, Editor, Visualizer,
+  Terminal, Terminals list, Browser, Simulator) in a resizable dock. The
+  default is Explorer (left), Editor over Visualizer (middle), Terminal and
+  its list (right); Browser and Simulator start hidden. Drag any pane by its
+  title tab: drop on the edge of another pane to split, on its middle to stack
+  them as tabs, or on the outer edge of the Cockpit for a new column or row.
+  The ✕ on a title hides a pane; the **View** menu shows it again, and **View
+  → Reset Cockpit Layout** (also in Settings → Appearance) restores the
+  default. Editor file tabs drag too: drop one on another pane's edge for a
+  side-by-side editor, and the extra editor closes itself when its last file
+  does. Panes are never rebuilt by a move: terminal scrollback, unsaved
+  editor buffers, and a loaded browser page all survive. The arrangement,
+  divider sizes, and open tabs persist per workspace, including through app
+  restarts.
 - **Quick open (⌘P)** fuzzy-finds any file in the workspace; **workspace search
   (⌘⇧F)** runs full-text search on the bundled ripgrep (honors `.gitignore`).
 - **App-wide zoom**: one font-size slider in Settings scales the entire UI.
@@ -43,8 +54,9 @@ timeline. This is the feature list; step-by-step usage lives in
 
 ## Embedded Browser
 
-- A real Chromium browser inside the Cockpit: an **Editor | Browser** toggle
-  at the top of the editor panel (**⌘⇧B**). It is not an iframe preview, so
+- A real Chromium browser inside the Cockpit as a pane of its own (**⌘⇧B**
+  shows or hides it; it appears as a tab beside the Editor and can be dragged
+  anywhere). It is not an iframe preview, so
   sites that refuse to be framed (GitHub, most production apps) load
   normally, service workers and cookies behave like a real browser, and dev
   servers over plain http work.
@@ -98,8 +110,9 @@ timeline. This is the feature list; step-by-step usage lives in
 
 ## iOS Simulator
 
-- Apple's iOS Simulator inside the Cockpit: an **Editor | Browser | Simulator**
-  toggle at the top of the editor panel (**⌘⇧I**). The device screen streams
+- Apple's iOS Simulator inside the Cockpit as a pane of its own (**⌘⇧I**
+  shows or hides it; it appears as a tab beside the Editor and can be dragged
+  anywhere). The device screen streams
   live into the pane with no Simulator window anywhere; Apple's simulator
   runtime does the running, the app mirrors and drives it.
 - **A setup strip that is always there.** Above the device the pane shows
@@ -144,6 +157,10 @@ timeline. This is the feature list; step-by-step usage lives in
 
 ## Terminals & Recorded Sessions
 
+- **The terminal viewport and the Terminals list are separate panes**: the
+  list (▶ Claude, + Shell, and the folder-grouped tabs) can sit anywhere in
+  the Cockpit, on its own or stacked with another pane, while the viewport
+  shows the active terminal wherever you put it.
 - **The terminal list is grouped by workspace folder**: a header per
   folder in Explorer order, that folder's shells and sessions underneath,
   and an Other section for anything outside the workspace folders.
@@ -416,7 +433,9 @@ panel below (defaults: global).
 - **Model prices**: the editable $/MTok table (input, output, cache read,
   cache write 5m/1h) behind all cost math; add or remove models freely.
 - **Appearance**: the app-wide font-size slider (previews on the card;
-  Apply resizes the whole app), the autosave toggle, and
+  Apply resizes the whole app), the autosave toggle, a **Reset Cockpit
+  layout** button (every pane back to its default place; also under View),
+  and
   **Glass background**: the window becomes genuinely transparent so the
   desktop shows through the app, sharp, at a subtle strength that never
   fights readability. Toggling it recreates the window in place: dirty

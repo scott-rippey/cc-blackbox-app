@@ -24,11 +24,20 @@ folder you added) and **✕ Remove**.
 
 ## The Cockpit
 
-The **Cockpit** view is three panes: Explorer, Editor + Visualizer, Terminals.
-The middle pane has three faces: the Editor, the Browser (**⌘⇧B**), and the
-iOS Simulator (**⌘⇧I**).
-Drag the dividers to resize; sizes persist per workspace. The visualizer
-collapses with its `▼` button and comes back via the **▲ Visualizer** pill.
+The **Cockpit** view starts as Explorer (left), Editor over Visualizer
+(middle), and the Terminal with its Terminals list (right). Every pane has a
+title tab, and you can move it: drag the title and drop it on the edge of
+another pane to split that pane, on the middle of another pane to stack the
+two as tabs, or on the outer edge of the Cockpit for a new column or row.
+The little ✕ on a title hides a pane; the **View** menu brings it back, and
+**View → Reset Cockpit Layout** puts everything back where it started. The
+Browser (**⌘⇧B**) and the iOS Simulator (**⌘⇧I**) are panes too; they start
+hidden and appear as tabs beside the Editor. File tabs move the same way:
+drag one onto a pane's edge to get a second editor side by side (it closes
+itself when its last file does). Nothing is lost by a move: terminals keep
+their scrollback, editors keep unsaved edits, the browser keeps its page.
+Drag the dividers to resize. The arrangement, sizes, and open files are
+remembered per workspace.
 
 - **⌘P**: quick-open any file by name.
 - **⌘⇧F**: full-text search across the workspace (ripgrep, honors
@@ -80,8 +89,9 @@ have unsaved edits, a banner offers **Reload from disk** or
 
 ## The Browser
 
-Click **Browser** at the top of the editor panel (or press **⌘⇧B**) and the
-editor area becomes a real Chromium browser. Type an address and press
+Press **⌘⇧B** (or View → Browser) and the Browser pane appears as a tab
+beside the Editor: a real Chromium browser you can drag anywhere in the
+Cockpit like any other pane. Type an address and press
 Enter; shorthand works (`localhost:3000` becomes http, `example.com` becomes
 https), and anything that is not an address becomes a Google search, so
 typing `github` gets you there in two steps. This is not a preview iframe: sites that refuse to be embedded
@@ -144,8 +154,8 @@ like any other tool.
 
 ## The Simulator
 
-Click **Simulator** at the top of the editor panel (or press **⌘⇧I**) and
-the editor area shows an iPhone or iPad running in Apple's iOS Simulator,
+Press **⌘⇧I** (or View → Simulator) and the Simulator pane appears as a tab
+beside the Editor, showing an iPhone or iPad running in Apple's iOS Simulator,
 streamed live into the app. There is no Simulator window to manage: the
 device runs headless and this pane is its screen.
 
@@ -219,7 +229,8 @@ workspaces and the list switches with you; the other workspace's shells and
 sessions keep running in the background and their tabs return when you
 switch back.
 
-The Terminals pane (right) has two spawn buttons:
+The Terminals list (a pane of its own, on the right by default; the terminal
+viewport is a separate pane so the two can sit apart) has two spawn buttons:
 
 - **+ Shell**: a plain login shell. With multiple roots you pick which
   folder. Opening a workspace starts one shell per folder, so the list
@@ -553,7 +564,8 @@ Replay it whenever you like from **Help → Show Walkthrough** or
 - **Appearance**: app-wide font size (10–18 px; the slider previews on the
   card, Apply resizes the whole app; the title bar stays its normal size),
   the autosave toggle, a **Show walkthrough** button that replays the guided
-  tour, and
+  tour, a **Reset Cockpit layout** button (every pane back to its default
+  place; also under View), and
   **Glass background**: the window turns genuinely transparent so your
   desktop shows through the app (subtle, still fully readable). The window
   blinks once as it recreates when you toggle; unsaved editor tabs are
