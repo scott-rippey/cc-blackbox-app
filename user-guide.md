@@ -24,15 +24,16 @@ folder you added) and **✕ Remove**.
 
 ## The Cockpit
 
-The **Cockpit** view starts as Explorer (left), Editor over Visualizer
-(middle), and the Terminal with its Terminals list (right). Every pane has a
-title tab, and you can move it: drag the title and drop it on the edge of
-another pane to split that pane, on the middle of another pane to stack the
-two as tabs, or on the outer edge of the Cockpit for a new column or row.
+The **Cockpit** view starts as Explorer (left), an Editor with Browser and
+Simulator tabs over the Visualizer (middle), and the Terminal with its
+Terminals list (right). Every pane has a title tab, and you can move it:
+drag the title and drop it on the edge of another pane to split that pane,
+onto the tab strip or the middle of another pane to stack the two as tabs, or
+on the outer edge of the Cockpit for a new column or row.
 The little ✕ on a title hides a pane; the **View** menu brings it back, and
 **View → Reset Cockpit Layout** puts everything back where it started. The
-Browser (**⌘⇧B**) and the iOS Simulator (**⌘⇧I**) are panes too; they start
-hidden and appear as tabs beside the Editor. File tabs move the same way:
+Browser (**⌘⇧B**) and the iOS Simulator (**⌘⇧I**) are panes too, open as
+tabs beside the Editor until you close them. File tabs move the same way:
 drag one onto a pane's edge to get a second editor side by side (it closes
 itself when its last file does). Nothing is lost by a move: terminals keep
 their scrollback, editors keep unsaved edits, the browser keeps its page.
@@ -89,9 +90,9 @@ have unsaved edits, a banner offers **Reload from disk** or
 
 ## The Browser
 
-Press **⌘⇧B** (or View → Browser) and the Browser pane appears as a tab
-beside the Editor: a real Chromium browser you can drag anywhere in the
-Cockpit like any other pane. Type an address and press
+The Browser tab sits beside the Editor (**⌘⇧B** or View → Browser brings it
+forward, and brings it back if you closed it): a real Chromium browser you
+can drag anywhere in the Cockpit like any other pane. Type an address and press
 Enter; shorthand works (`localhost:3000` becomes http, `example.com` becomes
 https), and anything that is not an address becomes a Google search, so
 typing `github` gets you there in two steps. This is not a preview iframe: sites that refuse to be embedded
@@ -154,8 +155,9 @@ like any other tool.
 
 ## The Simulator
 
-Press **⌘⇧I** (or View → Simulator) and the Simulator pane appears as a tab
-beside the Editor, showing an iPhone or iPad running in Apple's iOS Simulator,
+The Simulator tab sits beside the Editor (**⌘⇧I** or View → Simulator brings
+it forward, and back if you closed it), showing an iPhone or iPad running in
+Apple's iOS Simulator,
 streamed live into the app. There is no Simulator window to manage: the
 device runs headless and this pane is its screen.
 

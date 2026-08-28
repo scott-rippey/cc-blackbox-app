@@ -14,10 +14,11 @@ timeline. This is the feature list; step-by-step usage lives in
   remove a workspace; removing keeps its session history.
 - **Cockpit layout**: seven movable panes (Explorer, Editor, Visualizer,
   Terminal, Terminals list, Browser, Simulator) in a resizable dock. The
-  default is Explorer (left), Editor over Visualizer (middle), Terminal and
-  its list (right); Browser and Simulator start hidden. Drag any pane by its
-  title tab: drop on the edge of another pane to split, on its middle to stack
-  them as tabs, or on the outer edge of the Cockpit for a new column or row.
+  default is Explorer (left), Editor with Browser and Simulator as its tabs
+  over the Visualizer (middle), Terminal and its list (right). Drag any pane
+  by its title tab: drop on the edge of another pane to split, onto its tab
+  strip or its middle to stack them as tabs, or on the outer edge of the
+  Cockpit for a new column or row.
   The ✕ on a title hides a pane; the **View** menu shows it again, and **View
   → Reset Cockpit Layout** (also in Settings → Appearance) restores the
   default. Editor file tabs drag too: drop one on another pane's edge for a
@@ -54,9 +55,9 @@ timeline. This is the feature list; step-by-step usage lives in
 
 ## Embedded Browser
 
-- A real Chromium browser inside the Cockpit as a pane of its own (**⌘⇧B**
-  shows or hides it; it appears as a tab beside the Editor and can be dragged
-  anywhere). It is not an iframe preview, so
+- A real Chromium browser inside the Cockpit as a pane of its own: a tab
+  beside the Editor by default (**⌘⇧B** brings it forward or hides it), and
+  it can be dragged anywhere. It is not an iframe preview, so
   sites that refuse to be framed (GitHub, most production apps) load
   normally, service workers and cookies behave like a real browser, and dev
   servers over plain http work.
@@ -110,9 +111,9 @@ timeline. This is the feature list; step-by-step usage lives in
 
 ## iOS Simulator
 
-- Apple's iOS Simulator inside the Cockpit as a pane of its own (**⌘⇧I**
-  shows or hides it; it appears as a tab beside the Editor and can be dragged
-  anywhere). The device screen streams
+- Apple's iOS Simulator inside the Cockpit as a pane of its own: a tab
+  beside the Editor by default (**⌘⇧I** brings it forward or hides it), and
+  it can be dragged anywhere. The device screen streams
   live into the pane with no Simulator window anywhere; Apple's simulator
   runtime does the running, the app mirrors and drives it.
 - **A setup strip that is always there.** Above the device the pane shows

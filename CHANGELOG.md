@@ -17,6 +17,14 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.1.1 — 2026-08-28
+
+### Fixed
+- A pane dragged out of a group could not be dropped back onto that group's tab strip; every drop on the strip read as a new column or row. Dropping on a tab strip now always joins that group as a tab.
+
+### Changed
+- The Browser and the Simulator are open by default, as tabs beside the Editor. They stay closed only when you close them, and each workspace remembers its own choice. Reset Cockpit Layout brings them back.
+
 ## v4.1.0 — 2026-08-28
 
 ### New
