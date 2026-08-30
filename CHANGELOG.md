@@ -17,6 +17,13 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.2.2 — 2026-08-30
+
+Opening a session on your phone now shows the conversation.
+
+### Fixed
+- The phone's chat opens with the session's history instead of starting empty. Resumed sessions especially: the terminal shows the whole resumed conversation, and now the phone does too (the most recent messages, with new activity streaming in live as before).
+
 ## v4.2.1 — 2026-08-30
 
 Two fixes from the first day of phone testing.
