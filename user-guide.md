@@ -568,6 +568,11 @@ Replay it whenever you like from **Help → Show Walkthrough** or
   the autosave toggle, a **Show walkthrough** button that replays the guided
   tour, a **Reset Cockpit layout** button (every pane back to its default
   place; also under View), and
+  **Show notifications** and **Play notification sound**: the app posts
+  desktop notifications when an agent finishes, a session is waiting on
+  you, an update is ready, or a credential or access notice needs a look.
+  Untick Show notifications to stop all of them, or keep them and untick
+  the sound to get them silently.
   **Glass background**: the window turns genuinely transparent so your
   desktop shows through the app (subtle, still fully readable). The window
   blinks once as it recreates when you toggle; unsaved editor tabs are
@@ -645,10 +650,12 @@ Replay it whenever you like from **Help → Show Walkthrough** or
   and recording, and asks once first when something is still live. Runs
   interrupted by a restart are marked failed.
 - **Updates apply on quit, never mid-flight.** The app checks for updates on
-  its own (launch + every few hours) and notifies once when a new version
-  has downloaded. It installs on your next real quit (⌘Q), or immediately
+  its own (launch + every few hours, and only while nothing is live: no
+  recording session, agent run, or sync in progress) and notifies once when
+  a new version has downloaded. It installs on your next real quit (⌘Q), or immediately
   via **CC-Blackbox → Restart to Update**. **CC-Blackbox → Check for
-  Updates** forces a check any time; **About CC-Blackbox** shows your
+  Updates** forces a check any time (it asks first if something is running,
+  since the download unpacks inside the app); **About CC-Blackbox** shows your
   version. After an update, the first launch greets you with a What's New
   window listing exactly what changed in the version you just received;
   close it and it stays gone until the next update.

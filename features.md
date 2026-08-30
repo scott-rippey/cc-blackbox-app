@@ -434,7 +434,9 @@ panel below (defaults: global).
 - **Model prices**: the editable $/MTok table (input, output, cache read,
   cache write 5m/1h) behind all cost math; add or remove models freely.
 - **Appearance**: the app-wide font-size slider (previews on the card;
-  Apply resizes the whole app), the autosave toggle, a **Reset Cockpit
+  Apply resizes the whole app), the autosave toggle, **Show notifications**
+  and **Play notification sound** (turn every desktop notification off, or
+  keep them but silent), a **Reset Cockpit
   layout** button (every pane back to its default place; also under View),
   and
   **Glass background**: the window becomes genuinely transparent so the
@@ -484,7 +486,10 @@ panel below (defaults: global).
   shutdown, and when a recording or an agent run is still active it asks
   once before ending them (closing the window instead keeps them going).
 - **Auto-updates**: installed builds check this app's release feed at launch
-  and every few hours, download in the background, and notify once when a
+  and every few hours, but only while the app is idle (no recording session,
+  no agent run, no sync import): the download unpacks inside the app, so a
+  due check waits for the first quiet moment rather than risking live work.
+  Updates download in the background and notify once when a
   version is ready. The update applies on a real quit (⌘Q) or the app menu's
   Restart to Update: never mid-flight, never by surprise. The app menu also
   has Check for Updates for an on-demand check, and About shows the version.

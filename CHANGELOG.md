@@ -17,6 +17,14 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.1.2 — 2026-08-30
+
+### Fixed
+- Automatic update checks now wait until the app is idle: no recording session, no agent run, no machine sync, no database maintenance. The update unpacks inside the app, and on rare machines that step can crash it; a due check now waits for the first quiet moment instead of running over live work. Check for Updates in the app menu asks first when something is running.
+
+### New
+- Settings, Appearance: two toggles for desktop notifications. Show notifications turns every notice off (finished agents, sessions awaiting input, updates, credential and access notices). Play notification sound keeps the notices but makes them silent.
+
 ## v4.1.1 — 2026-08-28
 
 ### Fixed
