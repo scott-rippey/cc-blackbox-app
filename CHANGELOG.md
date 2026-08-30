@@ -17,6 +17,13 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.2.3 — 2026-08-30
+
+Resumed sessions now show their history on the phone.
+
+### Fixed
+- Opening a resumed session in the iPhone companion shows the conversation right away. Before, a session opened with `claude --resume` could appear empty on the phone until you typed something on the Mac.
+
 ## v4.2.2 — 2026-08-30
 
 Opening a session on your phone now shows the conversation.
