@@ -17,6 +17,13 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.1.5 — 2026-08-30
+
+A fix for a false "live work" warning.
+
+### Fixed
+- Machine Sync no longer counts looking for an offline Mac as live work. With a paired Mac switched off, the app re-checked for it every 30 seconds and treated each check as an active sync, so Check for Updates could warn that a session or sync was running on an idle app, and automatic update checks and database maintenance could be held back. Only an actual transfer counts now, and an unreachable Mac is retried every 5 minutes instead.
+
 ## v4.1.4 — 2026-08-30
 
 A quick polish of the Settings page.
