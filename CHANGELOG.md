@@ -17,6 +17,13 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.1.3 — 2026-08-30
+
+A small fix for a crash that hit laptops.
+
+### Fixed
+- The app no longer quits when an automatic update check runs without a network connection. The common case was opening the lid somewhere new: the check fired before Wi-Fi reconnected, and the app treated the failed request as a fatal error. Launching with no network could do the same. Both are now handled quietly; the check simply retries later.
+
 ## v4.1.2 — 2026-08-30
 
 ### Fixed
