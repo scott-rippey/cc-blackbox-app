@@ -537,6 +537,35 @@ and visits every Settings card, with the app staying fully usable throughout.
 Replay it whenever you like from **Help → Show Walkthrough** or
 **Settings → Appearance → Show walkthrough**.
 
+## Your phone
+
+CC-Blackbox has an iPhone companion. Once paired, it shows every live
+session on this Mac, and you can send the next prompt, answer a permission
+ask, interrupt, or stop a session from wherever you are.
+
+1. **Settings → Mobile**: switch it on and click **Pair a phone**. A QR
+   code appears; it works for five minutes and pairs one phone. Scan it
+   with the companion app, or copy the link into the phone.
+2. The phone shows this Mac's name; the Mac lists the phone with a live dot
+   while it is connected and a last-seen time otherwise. Two phones can be
+   paired; unpair from either side.
+3. On the phone, open a session to watch it. When Claude asks for
+   permission, the ask appears on the phone with **Allow** and **Deny**; the
+   terminal shows a small **phone** pill on that tab while the phone is
+   deciding. If nobody answers within 50 seconds, the normal terminal
+   prompt appears and you answer at the keyboard.
+4. When a turn ends, type the next prompt on the phone. It is typed into
+   the tab and submitted as one line. Interrupt sends Esc; Stop closes the
+   tab.
+
+Good to know: prompts and interrupts are accepted only while a Claude
+process is in front in that tab (a tab whose claude just exited refuses
+them), permission answers travel through Claude Code's own decision
+channel and can only apply to the exact prompt asked, and everything is
+end-to-end encrypted through a relay that cannot read it. Push
+notifications arrive when a session waits for you or ends, with the app
+in the background.
+
 ## Settings reference
 
 - **Claude Code Hooks**: install status, the resolved settings.json and
@@ -627,6 +656,10 @@ Replay it whenever you like from **Help → Show Walkthrough** or
     Security → Local Network.
   - Everything is encrypted in transit. Two Macs syncing both ways just
     means doing the one-time add on each of them.
+- **Mobile**: the iPhone companion. Switch it on, pair a phone with the
+  QR code or link, see paired phones with a live dot and last-seen time,
+  unpair. A reset button appears only if the Mac's mobile identity can no
+  longer be decrypted (a changed keychain); resetting means pairing again.
 - **System Health**: the app's own vital signs.
   - **Memory**: total across all of the app's processes with a per-process
     breakdown, plus the main process heap. Numbers differ from Activity

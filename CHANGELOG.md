@@ -17,6 +17,20 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.2.0 — 2026-08-30
+
+Your iPhone can now watch and steer live sessions.
+
+### New
+- Mobile remote. Pair the CC-Blackbox iPhone companion from Settings, Mobile (a QR code or a link). The phone lists every live session on this Mac, shows what Claude is doing, and lets you send the next prompt, answer a permission ask, interrupt the turn, or stop the session. Shell tabs where you typed `claude` are included.
+- Permission answers from the phone travel through Claude Code's own decision channel, never as typed keystrokes, so an answer can only apply to the exact prompt that asked. If no phone is connected, or nobody answers within 50 seconds, the terminal prompt appears exactly as before.
+- Prompts and interrupts from the phone are accepted only while a Claude process is in front in that tab, so phone text can never land in a shell.
+- Push notifications reach the phone when a session waits for input, waits for a permission, or ends. Everything is end-to-end encrypted through a relay that only routes ciphertext and keeps no pairing state.
+- A small "phone" pill appears on a terminal tab while a paired phone is deciding a permission ask.
+
+### Changed
+- The Claude Code hook script gained one branch for permission asks; every other event keeps its instant, silent behavior. Settings, Hooks will show "Reinstall" once: the app repairs the PermissionRequest registration (its timeout becomes 60 seconds) and keeps your other hooks untouched.
+
 ## v4.1.5 — 2026-08-30
 
 A fix for a false "live work" warning.

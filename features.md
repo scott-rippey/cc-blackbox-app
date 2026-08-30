@@ -411,6 +411,29 @@ panel below (defaults: global).
   the tour at any point puts everything back (the example agent closes
   unsaved, the pane returns to the Editor).
 
+## Mobile remote (iPhone companion)
+
+- A paired iPhone running the CC-Blackbox companion app watches every live
+  interactive session on this Mac and can steer it: send the next prompt,
+  answer a permission ask, interrupt the turn, or stop the session. Shell
+  tabs where you typed `claude` count too.
+- Everything travels through a relay (relay.ccblackbox.app) that only
+  routes ciphertext: pairing is a QR code shown on the Mac, every message is
+  end-to-end encrypted between the Mac and the phone, and the relay holds
+  no pairing state. Up to two phones per Mac.
+- Permission asks from the phone are answered through Claude Code's own
+  decision channel (the PermissionRequest hook), never by typing keystrokes,
+  so an answer can only ever apply to the exact prompt it was asked for.
+  With no phone connected, the terminal prompt appears exactly as before.
+- Prompts and interrupts from the phone are honored only while a Claude
+  process owns the tab's foreground; a tab whose claude just exited refuses
+  them, so phone text can never land in a shell.
+- A push notification reaches the phone when a session waits for input,
+  waits for a permission, or ends; pushes are encrypted with a key set at
+  pairing and the relay cannot read them.
+- Settings → Mobile: turn it on, pair a phone (QR or link), see each
+  phone's last-seen time and live dot, unpair.
+
 ## Settings
 
 - **Hooks**: install/reinstall/uninstall with status detail and a
