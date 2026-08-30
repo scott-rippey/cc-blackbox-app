@@ -17,6 +17,16 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.2.1 — 2026-08-30
+
+Two fixes from the first day of phone testing.
+
+### Fixed
+- A freshly started session now shows as awaiting input on the phone right away, so you can send the first prompt from the phone without touching the Mac. Before, a new tab stayed "Working" until something happened on the Mac side.
+- The phone never types into a session that has not reached Claude's real prompt yet (for example the folder-trust question a brand-new folder shows first).
+
+If you use the iPhone companion, also update it: the chat no longer goes blank after locking and unlocking the phone.
+
 ## v4.2.0 — 2026-08-30
 
 Your iPhone can now watch and steer live sessions.
