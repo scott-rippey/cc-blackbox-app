@@ -565,9 +565,9 @@ Replay it whenever you like from **Help → Show Walkthrough** or
   shutdown and Claude's per-tab permission work.
 - **Appearance**: app-wide font size (10–18 px; the slider previews on the
   card, Apply resizes the whole app; the title bar stays its normal size),
-  the autosave toggle, a **Show walkthrough** button that replays the guided
-  tour, a **Reset Cockpit layout** button (every pane back to its default
-  place; also under View), and
+  the autosave switch, a **Show walkthrough** switch that runs the guided
+  tour while it is on, a **Reset Cockpit layout** button (every pane back to
+  its default place; also under View), and
   **Show notifications** and **Play notification sound**: the app posts
   desktop notifications when an agent finishes, a session is waiting on
   you, an update is ready, or a credential or access notice needs a look.

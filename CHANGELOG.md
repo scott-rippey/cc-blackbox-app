@@ -17,6 +17,14 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.1.4 — 2026-08-30
+
+A quick polish of the Settings page.
+
+### Changed
+- Settings, Appearance: every on/off setting is now a sliding switch (green when on) instead of a checkbox. Show walkthrough is a switch too: turn it on to run the guided tour, turn it off or press Esc to end it. Reset Cockpit layout is now a proper button.
+- The Appearance card moved to the bottom of the right-hand column, under System Health, so the left column is shorter.
+
 ## v4.1.3 — 2026-08-30
 
 A small fix for a crash that hit laptops.
