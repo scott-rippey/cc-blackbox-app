@@ -17,6 +17,16 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.3.0 — 2026-08-31
+
+A status readout on the phone, and the app is now called CC Blackbox.
+
+### New
+- The iPhone companion shows a status strip above the chat: the session's model and how full its context window is, with a bar that goes green, yellow at 60 percent, and red at 85. It works for every session automatically; nothing to install or configure. Update the phone app together with the Mac.
+
+### Changed
+- The app's name is now CC Blackbox (two words) everywhere you read it: menu bar, dock, About window, dialogs, and docs. Nothing moves on disk; updates, settings, and your database are untouched.
+
 ## v4.2.5 — 2026-08-31
 
 Clearer statuses on the phone, and the update warning tells you what it sees.
