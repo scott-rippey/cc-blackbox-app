@@ -17,6 +17,22 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.4.2 — 2026-08-31
+
+### A much cleaner phone experience
+
+This release fixes everything the phone companion surfaced in today's field testing:
+
+- No more floods of machine text. The Mac's internal plumbing (background task notices, injected review prompts, system reminders) never appears in your phone chat anymore; you see the same conversation the terminal shows.
+- Your first message no longer appears twice. Opening a session on the phone used to duplicate the first prompt (usually a slash command) because the transcript and the live event stream both contributed it at the boundary. One of them now yields.
+- Very long messages are capped at a readable length instead of taking over the screen, and subagent side-conversations stay out of the main chat.
+
+The matching phone app update (TestFlight build 4) also gives the model and context readout some breathing room above the composer.
+
+### Installing
+
+Already on 4.4.0 or newer? Do nothing; the app updates itself and applies the new version the next time you quit. Otherwise download `cc-blackbox-4.4.2.dmg` below, quit CC Blackbox if it is running, and drag the app into Applications. The other files on this release are for the built-in auto-updater.
+
 ## v4.4.1 — 2026-08-31
 
 ### The app is finally named right everywhere
