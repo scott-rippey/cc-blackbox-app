@@ -17,6 +17,31 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.4.0 — 2026-08-31
+
+### A brand new auto-updater
+
+CC Blackbox 4.4.0 replaces the old update machinery from the ground up. Updates now download, verify, and install completely outside the running app, which eliminates the update crash a few of you hit where the app died mid-update.
+
+What the new pipeline does for you:
+
+- Downloads are checksum-verified end to end, and the update's code signature is verified against Apple's chain before anything is swapped in.
+- The swap itself happens only when you quit, handled by a tiny helper that waits for the app to fully exit. Your terminals, sessions, and runs are never interrupted.
+- If anything goes wrong at any step, the app tells you plainly and points you at the manual download; it never retries forever or leaves you half-updated.
+- Update checks still wait for an idle moment, so they never compete with live recording or running agents.
+
+### Finds the right Claude install
+
+If your Mac has more than one Claude Code install (for example, an old npm install left behind next to the native one), CC Blackbox now prefers Claude's own installs and verifies that a candidate actually runs before using it. A dead leftover shim can no longer win over your working install.
+
+### Simulator setup fixes
+
+The iOS Simulator setup checklist no longer mistakes Command Line Tools for a full Xcode, and when Xcode needs attention it now points you at the specific remedy (select it, finish first launch, or accept the license) instead of a generic message.
+
+### Installing this update
+
+Because this release replaces the updater itself, install it once by hand: download `cc-blackbox-4.4.0.dmg` below, quit CC Blackbox fully (Cmd-Q), and drag the app into Applications. The other files on this release are for the app's built-in auto-updater. After this one manual install, updates apply automatically again.
+
 ## v4.3.1 — 2026-08-31
 
 Fixes 4.3.0, which could not start and was pulled within the hour. If you caught 4.3.0, install this version's DMG manually (drag CC Blackbox into Applications over the broken copy; your data and settings are untouched). This release carries everything 4.3.0 had: the phone status strip and the CC Blackbox name.
