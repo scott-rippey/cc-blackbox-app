@@ -1,6 +1,6 @@
-# CC-Blackbox: Feature Overview
+# CC Blackbox: Feature Overview
 
-CC-Blackbox is a local macOS Electron app: a personal IDE and agent harness for
+CC Blackbox is a local macOS Electron app: a personal IDE and agent harness for
 Claude Code. On the surface it is a workspace with an editor and terminals.
 Underneath, every Claude Code session (interactive or headless) is recorded to
 SQLite (events, tokens, cost), visualized live, and replayable as an animated
@@ -96,7 +96,7 @@ timeline. This is the feature list; step-by-step usage lives in
   can build a page and then actually check it in the same browser you are
   watching, instead of asking you to look.
 - **You approve it per terminal tab.** The first time a session tries to use
-  the browser, CC-Blackbox asks once: Allow or Deny. Allow lasts for that
+  the browser, CC Blackbox asks once: Allow or Deny. Allow lasts for that
   terminal tab; Deny sticks until you close and reopen the tab. While a
   session is driving, a **Claude driving** pill shows in the browser toolbar
   and pulses on each action. It acts inside that browser's logged-in
@@ -104,7 +104,7 @@ timeline. This is the feature list; step-by-step usage lives in
 - It works through a small local server the app runs; nothing leaves your
   machine. Setup is automatic: the app adds one entry to Claude Code's config
   shortly after launch and re-adds it if Claude Code overwrites it. Outside
-  CC-Blackbox that entry stays dormant and never connects. Settings, Browser
+  CC Blackbox that entry stays dormant and never connects. Settings, Browser
   Control (MCP), can remove it for good if you would rather not have it.
   Every action Claude takes is recorded in the session timeline like any
   other tool use, and shows up on the Ops Board.
@@ -148,7 +148,7 @@ timeline. This is the feature list; step-by-step usage lives in
   the terminal, run it in the simulator, and check its own work while you
   watch.
 - **Separate consent from the browser.** The first time a session tries to
-  use the simulator, CC-Blackbox asks once: Allow or Deny, per terminal tab,
+  use the simulator, CC Blackbox asks once: Allow or Deny, per terminal tab,
   independent of the browser permission. While a session is driving, a
   **Claude driving** pill shows in the simulator toolbar; when Claude
   attaches a device, the Cockpit switches to the Simulator so you see it.
@@ -220,7 +220,7 @@ timeline. This is the feature list; step-by-step usage lives in
   as the fallback path.) Launch a Claude session on that client's project
   and the token is injected as `VERCEL_TOKEN` (plus `CCB_VERCEL_CLIENT`,
   the client tag, and `CCB_VERCEL_TEAM_ID` for team installs, so a session
-  that inspects its environment can tell the token came from CC-Blackbox
+  that inspects its environment can tell the token came from CC Blackbox
   for that client and team, not from a stray shell export; nothing else is
   set, because a lone `VERCEL_ORG_ID` makes the Vercel CLI refuse
   project commands), so Claude can operate Vercel for that client (read logs,
@@ -247,7 +247,7 @@ timeline. This is the feature list; step-by-step usage lives in
   local authenticated listener, into SQLite.
 - Tokens and cost are computed from the session transcript against a
   user-editable model price table (including split 5m/1h cache-write pricing).
-- Hooks are observe-only and env-guarded: outside CC-Blackbox they exit
+- Hooks are observe-only and env-guarded: outside CC Blackbox they exit
   instantly and silently, and existing hooks in settings.json are preserved.
 - Sessions get auto-generated titles (editable), and crashed sessions are
   detected and marked on next launch.
@@ -413,7 +413,7 @@ panel below (defaults: global).
 
 ## Mobile remote (iPhone companion)
 
-- A paired iPhone running the CC-Blackbox companion app watches every live
+- A paired iPhone running the CC Blackbox companion app watches every live
   interactive session on this Mac and can steer it: send the next prompt,
   answer a permission ask, interrupt the turn, or stop the session. Shell
   tabs where you typed `claude` count too.
@@ -433,6 +433,8 @@ panel below (defaults: global).
   pairing and the relay cannot read them.
 - Settings → Mobile: turn it on, pair a phone (QR or link), see each
   phone's last-seen time and live dot, unpair.
+- A status readout above the chat shows the session's model and how full its context window is (green, then yellow at 60 percent, red at 85). It appears automatically; nothing to configure.
+
 
 ## Settings
 

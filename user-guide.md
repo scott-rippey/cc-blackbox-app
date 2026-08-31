@@ -1,4 +1,4 @@
-# CC-Blackbox User Guide
+# CC Blackbox User Guide
 
 How to use the app, task by task. For the at-a-glance feature list see
 [`features.md`](features.md).
@@ -137,9 +137,9 @@ page, screenshot, click, type, run JavaScript, and read the console and
 network capture. That lets Claude verify frontend work in the same browser
 you are watching, rather than asking you to check.
 
-This is set up for you: CC-Blackbox adds a single entry to Claude Code's
+This is set up for you: CC Blackbox adds a single entry to Claude Code's
 configuration shortly after launch, and re-adds it if Claude Code ever
-overwrites it. Outside CC-Blackbox that entry stays dormant and never
+overwrites it. Outside CC Blackbox that entry stays dormant and never
 connects, so it is safe to leave alone. If you would rather not have it at
 all, Settings has a Browser Control (MCP) card with an Uninstall button, and
 that choice sticks across restarts until you click Install again.
@@ -199,7 +199,7 @@ pasting works too, including emoji and non-Latin text.
 
 Two things to know. Quitting Simulator.app shuts its devices down (Apple's
 default), so if you open the same device there and quit, the pane shows it
-as off with a Boot button; nothing is lost. And when CC-Blackbox quits it
+as off with a Boot button; nothing is lost. And when CC Blackbox quits it
 shuts down only the devices it booted; anything you booted yourself is left
 running.
 
@@ -279,7 +279,7 @@ gated per app by macOS. The first time you pick one, macOS shows its
 permission prompt; click Allow so sessions can run there. If access was ever
 denied, launching a session in that folder shows a dialog naming the blocked
 path, with an **Open System Settings** button that lands on Privacy &
-Security → Files and Folders. Flip CC-Blackbox on for the folder and launch
+Security → Files and Folders. Flip CC Blackbox on for the folder and launch
 again.
 
 **If a session dies right after launch**, open it in Sessions: the detail
@@ -313,7 +313,7 @@ every Claude session launched on that client's projects starts with
 authenticated as that client from the first command. A companion variable,
 `CCB_VERCEL_CLIENT`, names the client next to it (and `CCB_VERCEL_TEAM_ID`
 names the Vercel team for team installs), so if Claude inspects the
-environment it can see the token was placed there by CC-Blackbox for that
+environment it can see the token was placed there by CC Blackbox for that
 client rather than left behind by a shell profile. Nothing else is set:
 the token alone is what the Vercel CLI and API need to land on the right
 team.
@@ -539,7 +539,7 @@ Replay it whenever you like from **Help → Show Walkthrough** or
 
 ## Your phone
 
-CC-Blackbox has an iPhone companion. Once paired, it shows every live
+CC Blackbox has an iPhone companion. Once paired, it shows every live
 session on this Mac, and you can send the next prompt, answer a permission
 ask, interrupt, or stop a session from wherever you are.
 
@@ -570,7 +570,7 @@ in the background.
 
 - **Claude Code Hooks**: install status, the resolved settings.json and
   script paths, and **Install / Reinstall / Uninstall** with a reviewed diff.
-  Hooks are observe-only and env-guarded: outside CC-Blackbox they exit
+  Hooks are observe-only and env-guarded: outside CC Blackbox they exit
   instantly and silently. Your other hooks are preserved and a timestamped
   backup is written before any change.
 - **Projects**: every tracked folder in one list: name, current branch,
@@ -587,7 +587,7 @@ in the background.
   tool server: browser driving and decision logging both go through it. It
   is installed automatically at every launch and re-added if Claude Code
   overwrites it; the card shows status, Reinstall, and Uninstall (which
-  sticks until you click Install again). Outside CC-Blackbox the entry
+  sticks until you click Install again). Outside CC Blackbox the entry
   stays dormant and never connects.
 - **iOS Simulator**: the same setup check the Simulator pane shows (Xcode,
   iOS runtime, Homebrew, driver) with a Re-check button, and how device
@@ -686,9 +686,9 @@ in the background.
   its own (launch + every few hours, and only while nothing is live: no
   recording session, agent run, or sync in progress) and notifies once when
   a new version has downloaded. It installs on your next real quit (⌘Q), or immediately
-  via **CC-Blackbox → Restart to Update**. **CC-Blackbox → Check for
+  via **CC Blackbox → Restart to Update**. **CC Blackbox → Check for
   Updates** forces a check any time (it asks first if something is running,
-  since the download unpacks inside the app); **About CC-Blackbox** shows your
+  since the download unpacks inside the app); **About CC Blackbox** shows your
   version. After an update, the first launch greets you with a What's New
   window listing exactly what changed in the version you just received;
   close it and it stays gone until the next update.

@@ -1,4 +1,4 @@
-# CC-Blackbox
+# CC Blackbox
 
 A local macOS IDE and flight recorder for Claude Code. Every session is
 recorded like a black box: what Claude did, what it touched, what it cost.
@@ -11,7 +11,7 @@ repos.
 
 Claude Code is powerful and opaque. It edits files, runs commands, spawns
 subagents, and spends tokens, and when the terminal scrolls past, that history
-is gone. CC-Blackbox keeps it. Every prompt, tool call, file touch, subagent,
+is gone. CC Blackbox keeps it. Every prompt, tool call, file touch, subagent,
 failure, and dollar is captured to a local database on your Mac, permanently
 reviewable.
 
@@ -60,7 +60,7 @@ and, if you connect them, your own Vercel tokens.
 ## Install
 
 1. Download the `.dmg` from the latest release above.
-2. Open it and drag **CC-Blackbox** to Applications.
+2. Open it and drag **CC Blackbox** to Applications.
 3. First launch: macOS shows the standard "downloaded from the internet"
    confirmation. Click Open.
 4. In the app: Settings → Install hooks (required for session recording; the
