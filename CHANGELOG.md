@@ -17,6 +17,20 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.4.3 — 2026-08-31
+
+### Restart to Update actually restarts
+
+Clicking Restart to Update used to quit the app and then, sometimes, nothing came back. The update itself always applied; macOS just quietly ignored the relaunch request for the freshly swapped app. The updater's helper now verifies that the app really launched and retries with increasing waits until it does, logging every attempt. If macOS refuses repeatedly, the log says so plainly and you can open the app yourself; your update is already installed either way.
+
+### The name, everywhere this time
+
+A handful of remaining places still said "CC-Blackbox" with the dash: notification banners, a certificate dialog, a sync error message, the hook uninstall preview, and a few messages Claude relays. They all say CC Blackbox now, matching the menu bar rename from 4.4.1.
+
+### Installing
+
+Already on 4.4.0 or newer? Do nothing; the app updates itself and applies the new version the next time you quit. Otherwise download `cc-blackbox-4.4.3.dmg` below, quit CC Blackbox if it is running, and drag the app into Applications. The other files on this release are for the built-in auto-updater.
+
 ## v4.4.2 — 2026-08-31
 
 ### A much cleaner phone experience
