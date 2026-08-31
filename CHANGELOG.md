@@ -17,6 +17,15 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.2.5 — 2026-08-31
+
+Clearer statuses on the phone, and the update warning tells you what it sees.
+
+### Improved
+- The phone now tells "Ready" apart from "Awaiting your input". A session just sitting at its prompt shows a quiet grey "Ready"; the green "Awaiting your input" (and its push and "needs you" count) appears only when Claude has actually finished a turn for you. Update the iPhone companion together with the Mac; older phone builds hide Ready sessions until they change state.
+- Session cards on the phone no longer use a slash command as the session name. A session whose first prompt was a command (for example `/catchup`) shows just its project and status.
+- The "Something is running right now" warning under Check for Updates now names what it sees (for example which project has a recording session, or a queued agent run), so you can tell a real trigger from a stale tab at a glance.
+
 ## v4.2.4 — 2026-08-31
 
 The phone's chat now mirrors the terminal.
