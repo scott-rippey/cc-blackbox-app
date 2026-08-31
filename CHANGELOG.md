@@ -17,6 +17,13 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.2.4 — 2026-08-31
+
+The phone's chat now mirrors the terminal.
+
+### Fixed
+- Slash commands in the phone's history show as the command you typed (for example `/catchup`) instead of the command's internal instructions. Injected helper text the terminal never displays is now hidden on the phone too.
+
 ## v4.2.3 — 2026-08-30
 
 Resumed sessions now show their history on the phone.
