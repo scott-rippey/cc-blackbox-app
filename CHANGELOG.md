@@ -17,7 +17,13 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.3.1 — 2026-08-31
+
+Fixes 4.3.0, which could not start and was pulled within the hour. If you caught 4.3.0, install this version's DMG manually (drag CC Blackbox into Applications over the broken copy; your data and settings are untouched). This release carries everything 4.3.0 had: the phone status strip and the CC Blackbox name.
+
 ## v4.3.0 — 2026-08-31
+
+Pulled: this build crashed at launch and was removed from the releases page. Use v4.3.1.
 
 A status readout on the phone, and the app is now called CC Blackbox.
 
