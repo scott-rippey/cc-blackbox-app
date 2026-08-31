@@ -17,6 +17,27 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.4.4 — 2026-08-31
+
+### Updates that finish the job
+
+Two updater fixes from today's field testing:
+
+- The silent non-update is gone. A leftover hidden backup from an earlier update could block every later one: the swap quietly failed and the app stayed on its old version while claiming an update was ready. Backup names are now collision-proof, the startup cleanup treats old backups as removable no matter what, and any cleanup failure is written to the install log instead of vanishing.
+- Together with 4.4.3's verified relaunch, Restart to Update now does the whole job: quit, swap, come back.
+
+### /clear follows through to your phone
+
+When you run /clear in a terminal session, the phone app now clears that chat and continues in the fresh session, exactly like the terminal does. No more dead "Session ended (clear)" chat next to a mysterious new session. (Requires the phone app 1.0.1, arriving via TestFlight; older phone builds keep the previous behavior.) This also fixed a false "session ended" push notification that fired on every /clear.
+
+### The very last hyphens
+
+The window title bar and the workspace picker still spelled the old hyphenated name. Every user-facing surface now says CC Blackbox.
+
+### Installing
+
+On 4.4.3? That build's updater helper shipped with a defect that stops it from applying updates, so this one time, update by hand: download `cc-blackbox-4.4.4.dmg` below, quit CC Blackbox, and drag it into Applications. (If you wait instead, the app notices the failed update on its own after a couple of tries and shows you the same instruction.) On 4.4.0 through 4.4.2? Do nothing; the app updates itself and applies the new version the next time you quit. Otherwise download `cc-blackbox-4.4.4.dmg` below, quit CC Blackbox if it is running, and drag the app into Applications. The other files on this release are for the built-in auto-updater.
+
 ## v4.4.3 — 2026-08-31
 
 ### Restart to Update actually restarts
