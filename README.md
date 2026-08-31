@@ -53,6 +53,13 @@ sessions can drive both, each behind its own per-session consent prompt:
 navigate, click, type, read the page, or tap through an iOS app while you
 watch.
 
+**Your phone as a remote.** Pair the CC Blackbox iPhone companion (TestFlight)
+and every live session follows you: watch the conversation, send the next
+prompt, answer permission asks, or interrupt from anywhere. A status strip
+shows the model and context usage per session, and pushes arrive when a turn
+finishes or Claude needs a decision. End-to-end encrypted between your Mac
+and your phone; the relay only moves ciphertext.
+
 **Reports.** Cost and usage grouped by model, project, and client, over time.
 Per-client Vercel tokens live in the macOS Keychain and inject only into that
 client's sessions.
@@ -61,8 +68,9 @@ client's sessions.
 
 Everything lives in a local SQLite database on your Mac
 (`~/Library/Application Support/CC-Blackbox/`). No telemetry, no accounts, no
-cloud component. The app talks to exactly two things: your Claude Code CLI
-and, if you connect them, your own Vercel tokens.
+cloud component. The app talks to your Claude Code CLI, your own Vercel
+tokens if you connect them, and, only when you pair a phone, a relay that
+carries end-to-end encrypted traffic it cannot read.
 
 ## Install
 
