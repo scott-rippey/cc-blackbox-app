@@ -17,6 +17,22 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.4.1 — 2026-08-31
+
+### The app is finally named right everywhere
+
+The bold name in the macOS menu bar now reads CC Blackbox, matching the rest of the app. The About, Hide, and Quit menu items say CC Blackbox too. (For the technically curious: the display name is localized on top of the internal bundle identifiers, which keep their original spelling so updates, permissions, and stored credentials are untouched.)
+
+### Updater housekeeping
+
+When an update applies, the copy of the old version kept next to the app for safety is now named after the version it actually contains. Purely cosmetic, but honest names matter when you are poking around after the fact.
+
+This release is also the first delivered end to end by the new updater that shipped in 4.4.0. If it arrived automatically and applied when you quit: that was it, working as designed.
+
+### Installing
+
+Already on 4.4.0? Do nothing. The app updates itself; the new version applies the next time you quit. New here, or still on 4.3.x or older? Download `cc-blackbox-4.4.1.dmg` below, quit CC Blackbox if it is running, and drag the app into Applications. The other files on this release are for the built-in auto-updater.
+
 ## v4.4.0 — 2026-08-31
 
 ### A brand new auto-updater
