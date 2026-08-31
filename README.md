@@ -46,6 +46,13 @@ session that resumes the agent's own conversation.
 and JSON preview modes, PDF and image viewers), plain shell and recorded
 Claude terminal tabs, fuzzy quick open, and ripgrep-powered workspace search.
 
+**An embedded browser and iOS Simulator.** A real Chromium browser pane lives
+right in the workspace, with console and network capture and docked DevTools.
+Apple's iOS Simulator can be mirrored and driven beside your code. Claude
+sessions can drive both, each behind its own per-session consent prompt:
+navigate, click, type, read the page, or tap through an iOS app while you
+watch.
+
 **Reports.** Cost and usage grouped by model, project, and client, over time.
 Per-client Vercel tokens live in the macOS Keychain and inject only into that
 client's sessions.
