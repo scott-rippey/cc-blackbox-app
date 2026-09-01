@@ -434,6 +434,12 @@ panel below (defaults: global).
 - Settings → Mobile: turn it on, pair a phone (QR or link), see each
   phone's last-seen time and live dot, unpair.
 - A status readout above the chat shows the session's model and how full its context window is (green, then yellow at 60 percent, red at 85). It appears automatically; nothing to configure.
+- The chat mirrors the terminal's turn, not just its tool calls: what
+  Claude says between tool calls reaches the phone and is kept for the
+  next time the session is opened, tool rows expand on tap to show the
+  full input (a file edit shows a small red/green diff), and headless
+  claude runs spawned inside a tab (a pre-push review, a scripted
+  `claude -p`) stay out of the phone's view of that chat.
 
 
 ## Settings

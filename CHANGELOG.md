@@ -17,6 +17,29 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.4.8 — 2026-09-01
+
+### Your phone now sees the whole conversation
+
+- What Claude says between tool calls now reaches the phone, and it is kept for the next time you open the session. Before this, those messages could vanish if the phone was locked or sitting on the sessions list; a decoding bug also silently dropped them even while you watched. Both are fixed.
+- Headless Claude runs spawned inside a tab (a pre-push code review, a scripted `claude -p`) no longer appear inside the chat you are watching. They stay in the Mac's records; your phone chat shows only your own conversation.
+
+### Tap a tool call for detail
+
+- Tool rows on the phone now expand on tap to show the full tool input, in a monospaced card. A file edit shows a small red and green diff. Tap again to collapse. Rows without extra detail show no chevron.
+- Anything that looks like a secret (API keys, tokens, passwords, private keys) is masked on the Mac before it is sent to the phone.
+
+### A stop button on the phone
+
+- While Claude is working (or waiting on a permission), the send arrow becomes a red stop button. Tap it to interrupt the turn, exactly like pressing Escape in the terminal. When the session is ready for you, the arrow returns.
+- Opening a session now always lands on the newest message, even when nothing is running.
+
+The phone-side half of these features needs companion app build 7 (1.0.3), rolling out on TestFlight now. The Mac-side fixes work with any phone build.
+
+### New here? Installing for the first time
+
+Download `cc-blackbox-4.4.8.dmg`, open it, and drag CC Blackbox into Applications. The other files on this release are for the app's built-in auto-updater; you never need them.
+
 ## v4.4.7 — 2026-09-01
 
 ### Restart to Update actually comes back
