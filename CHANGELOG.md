@@ -17,6 +17,20 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.4.11 — 2026-09-01
+
+### Toggles everywhere
+
+- Every on/off control in the app is now the same sliding toggle you know from Settings: the agent editor's "Run in a git worktree", "Auto-retry once on failure", and "Log decisions", plus the delete confirmation's "Don't ask again". No more checkboxes. The Extra abilities rows stay as selection chips on purpose; they are a pick-list, not settings.
+
+### The browser follows Claude's driving
+
+- When a Claude session drives the embedded browser, the Cockpit now flips to the Browser pane automatically, the same way the Simulator pane already did. You see what Claude is doing instead of it happening behind another tab, and the very first action waits for the pane to be on screen so nothing is lost while it appears.
+
+### New here? Installing for the first time
+
+Download `cc-blackbox-4.4.11.dmg`, open it, and drag CC Blackbox into Applications. The other files on this release are for the app's built-in auto-updater; you never need them.
+
 ## v4.4.10 — 2026-09-01
 
 ### A continued conversation keeps its name
