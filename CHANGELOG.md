@@ -17,6 +17,16 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.4.6 — 2026-08-31
+
+### Fixes "Could not check for updates"
+
+If Check for Updates started reporting that the update service was not reachable, this fixes it. The cause was a leftover download folder from an earlier version that the updater could not clean up on Apple's filesystem; that cleanup failure was being misreported as a network problem, so the check failed instantly every time. The updater now retries the cleanup, and a single stubborn leftover can no longer fail the whole check. Machines that hit this heal themselves on the next check once they are on this version.
+
+### Installing
+
+Already on 4.4.4 or newer with a working updater? Do nothing; it updates itself and applies on your next quit. If your updater is stuck on the error above, download `cc-blackbox-4.4.6.dmg` below, quit CC Blackbox, and drag it into Applications this once. The other files on this release are for the built-in auto-updater.
+
 ## v4.4.5 — 2026-08-31
 
 ### An honest Xcode checklist
