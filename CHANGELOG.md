@@ -17,6 +17,19 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.4.5 — 2026-08-31
+
+### An honest Xcode checklist
+
+The iOS Simulator setup strip's Xcode row now tells the truth on every machine:
+
+- The "Select Xcode" button appears only when a real Xcode is actually installed, and its command points at the copy that was found (wherever it lives, spaces and all). On a Mac with no Xcode, the row sends you to the App Store instead of offering a command that cannot work.
+- The raw command no longer crowds the row and truncates the explanation. Hover the Copy or action button to see exactly what will run.
+
+### Installing
+
+Already on 4.4.4? Do nothing; the app updates itself and applies the new version the next time you quit. On 4.4.3? That build's updater cannot apply updates; download `cc-blackbox-4.4.5.dmg` below, quit CC Blackbox, and drag it into Applications (one time; the app also tells you this on its own). New here? Same DMG steps. The other files on this release are for the built-in auto-updater.
+
 ## v4.4.4 — 2026-08-31
 
 ### Updates that finish the job
