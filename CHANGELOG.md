@@ -17,6 +17,19 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.4.12 — 2026-09-01
+
+### Session names that actually name things
+
+- A session's name now follows the last real thing you typed, so the list always tells you what each session is currently about. Slash commands like /catchup never become a name, and text injected behind the scenes cannot either.
+- Rename a session yourself and that name is permanent for its lifetime: from the session list in the app, or by holding down a session card on your phone (companion app build 10, on TestFlight now) and tapping Rename.
+- /clear starts a session fresh and unnamed; resuming in the tab keeps the name, since that continues the same conversation.
+- Names you set before this version are left exactly as they are.
+
+### New here? Installing for the first time
+
+Download `cc-blackbox-4.4.12.dmg`, open it, and drag CC Blackbox into Applications. The other files on this release are for the app's built-in auto-updater; you never need them.
+
 ## v4.4.11 — 2026-09-01
 
 ### Toggles everywhere
