@@ -17,6 +17,21 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.4.9 — 2026-09-01
+
+### Update problems now tell you what actually happened
+
+- When an update cannot be prepared, the message now names the real reason and the fix: a failed download points at your connection, a corrupted file says it was never installed and retries fresh, a signature refusal says the file was rejected to protect you, low disk space says how much to free, and a permissions problem names the Applications folder. Before this, every failure showed the same generic "download it manually" note with an internal error code in parentheses.
+- The Check for Updates window matches: its headline and detail now describe the same problem, and it only blames the network when the update service really was unreachable.
+
+### Session names stay yours
+
+- A session's name comes from the first thing you typed into it. Background Claude runs that share a terminal (like a pre-push code review) could previously get their text stamped as the session's name on the phone and in the session list before you typed anything. That door is closed; names only ever come from your own session.
+
+### New here? Installing for the first time
+
+Download `cc-blackbox-4.4.9.dmg`, open it, and drag CC Blackbox into Applications. The other files on this release are for the app's built-in auto-updater; you never need them.
+
 ## v4.4.8 — 2026-09-01
 
 ### Your phone now sees the whole conversation
