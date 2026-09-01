@@ -17,6 +17,18 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.4.7 — 2026-09-01
+
+### Restart to Update actually comes back
+
+This fixes the update relaunch for good. Restarting to update swapped the app correctly, but the copy the updater relaunched was starting in a headless mode with no window, so it bounced in the Dock and vanished, and you had to click the icon to open it. It now relaunches as a normal app and comes to the front on its own.
+
+Because this fix lives in the part of the app that performs the swap, you will see the smooth relaunch starting with the update AFTER this one. Updating into this version may still need one click to reopen; every update after that comes back by itself.
+
+### Installing
+
+Already on 4.4.4 or newer? Do nothing; it updates itself. If the relaunch leaves it in the Dock without opening, click the icon once. Fresh install or stuck updater? Download `cc-blackbox-4.4.7.dmg` below, quit CC Blackbox, and drag it into Applications. The other files on this release are for the built-in auto-updater.
+
 ## v4.4.6 — 2026-08-31
 
 ### Fixes "Could not check for updates"
