@@ -17,6 +17,18 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.4.10 — 2026-09-01
+
+### A continued conversation keeps its name
+
+- Resuming a session (in the tab with /resume, or reopening one with Resume) no longer renames it. Before this, the next thing you said after resuming became the session's name on the phone and in the session list. A continued conversation now carries its original name for good.
+
+This is a small companion release to 4.4.9; phone-side fixes from today (markdown tables, the stop button, always opening at the newest message) ride the companion app on TestFlight.
+
+### New here? Installing for the first time
+
+Download `cc-blackbox-4.4.10.dmg`, open it, and drag CC Blackbox into Applications. The other files on this release are for the app's built-in auto-updater; you never need them.
+
 ## v4.4.9 — 2026-09-01
 
 ### Update problems now tell you what actually happened
