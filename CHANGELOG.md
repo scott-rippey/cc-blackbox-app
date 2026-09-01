@@ -25,7 +25,7 @@ If Check for Updates started reporting that the update service was not reachable
 
 ### Installing
 
-Already on 4.4.4 or newer with a working updater? Do nothing; it updates itself and applies on your next quit. If your updater is stuck on the error above, download `cc-blackbox-4.4.6.dmg` below, quit CC Blackbox, and drag it into Applications this once. The other files on this release are for the built-in auto-updater.
+Already on 4.4.4 or newer with a working updater? Do nothing; it updates itself and applies on your next quit. If your updater is stuck on the error above, download the `.dmg` from this release (being re-attached shortly; if it is not present yet, use the previous release's DMG or wait for auto-update), quit CC Blackbox, and drag it into Applications this once. The other files on this release are for the built-in auto-updater.
 
 ## v4.4.5 — 2026-08-31
 
