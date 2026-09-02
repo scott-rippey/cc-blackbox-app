@@ -17,6 +17,17 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.4.13 — 2026-09-01
+
+### Session names roll everywhere now
+
+- 4.4.12 introduced names that follow the last thing you typed, but a safety rule froze the names of sessions that existed before the update, and resuming a session carried the freeze forward. This release lifts the freeze: every session's name now rolls with your latest message.
+- Renames you make yourself stay permanent, exactly as before: from the session list in the app, or by holding a session card on your phone and tapping Rename. If you renamed something during the few hours on 4.4.12, redo that rename once and it sticks for good.
+
+### New here? Installing for the first time
+
+Download `cc-blackbox-4.4.13.dmg`, open it, and drag CC Blackbox into Applications. The other files on this release are for the app's built-in auto-updater; you never need them.
+
 ## v4.4.12 — 2026-09-01
 
 ### Session names that actually name things

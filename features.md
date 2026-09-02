@@ -440,6 +440,12 @@ panel below (defaults: global).
   full input (a file edit shows a small red/green diff), and headless
   claude runs spawned inside a tab (a pre-push review, a scripted
   `claude -p`) stay out of the phone's view of that chat.
+- Session names follow the last thing you typed, so the list always
+  says what each session is currently about; slash commands never
+  become a name. Hold a session card on the phone and tap Rename to set
+  a permanent name of your own (the app's session list can rename too);
+  a rename holds everywhere for the session's lifetime. Ended sessions
+  leave the phone list immediately.
 
 
 ## Settings

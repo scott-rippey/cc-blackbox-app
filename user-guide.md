@@ -555,8 +555,15 @@ ask, interrupt, or stop a session from wherever you are.
    deciding. If nobody answers within 50 seconds, the normal terminal
    prompt appears and you answer at the keyboard.
 4. When a turn ends, type the next prompt on the phone. It is typed into
-   the tab and submitted as one line. Interrupt sends Esc; Stop closes the
-   tab.
+   the tab and submitted as one line. While Claude works, the send arrow
+   becomes a red stop button; tap it to interrupt, exactly like pressing
+   Esc. Stop (in the session menu) closes the tab.
+5. Session names on the list follow the last thing you typed, so you can
+   tell sessions apart at a glance; slash commands never become a name.
+   Hold a session card and tap **Rename** to set a permanent name of your
+   own; it holds on every device and in the app for the session's
+   lifetime. Tap a tool row in the chat to see its full input (file edits
+   show a small red and green diff); tap again to collapse.
 
 Good to know: prompts and interrupts are accepted only while a Claude
 process is in front in that tab (a tab whose claude just exited refuses
