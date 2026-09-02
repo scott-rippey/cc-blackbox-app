@@ -17,6 +17,19 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.5.0 — 2026-09-02
+
+## Reports, rebuilt
+
+The Cost report grew up in this release.
+
+- **Accurate pricing, including Fable 5.1.** The app now knows Claude Fable 5.1 and its pricing (including its unusual cache-read rate), and Sonnet 5's price is corrected to the current $2/$10 rate (the announced increase never happened). Cost lookups also fall back within a model family, so a new model variant can never silently count as $0 again.
+- **Your history gets re-priced once.** On first launch after this update, the app re-prices all recorded sessions with the corrected table. If your totals shift, that is the report getting more accurate: Fable 5.1 usage used to count as $0.
+- **One row per model.** The By Model view collapses id variants into their model family, so Fable 5.1 is one line and internal error records no longer appear as a model.
+- **Totals everywhere.** A totals row on every report table, and a summary strip at the top of the Cost tab: total spend, sessions, tokens in and out, cache hit rate, and agent spend for whatever range and filters you have set.
+- **Charts you can read.** By Client, By Project, and By Model draw horizontal bars: every name gets its own labeled row, long lists scroll instead of squeezing, and clicking a bar (or any table row) opens the sessions behind it. Time views keep their columns, now also clickable.
+- **Price edits re-price history.** Change a model price in Settings and all recorded history follows, safely in the background, even across restarts.
+
 ## v4.4.13 — 2026-09-01
 
 ### Session names roll everywhere now

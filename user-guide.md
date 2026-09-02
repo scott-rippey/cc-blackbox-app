@@ -502,14 +502,26 @@ dropdowns. Every panel below follows that scope, so "acme, last month" is
 two clicks and the whole view narrows to it. The rolling 5-hour usage chip
 in the corner approximates the plan's usage block and ignores the scope.
 
-- **Cost**: group by client, project, model, day, week, or month. The chart
-  stacks cost by model (each model keeps its color everywhere); the table
-  adds **Cache %** (how much of the prompt side came from cache) and
-  **Agent $** (spend from harness runs). Click a row's ▸ to expand its
-  per-model breakdown, including what caching saved you in dollars.
-  **Export CSV** includes the new columns. One honest caveat, also shown in
-  the UI: model rows are priced from per-message transcript data, so live or
-  unimported sessions count in the session totals but not the model rows.
+- **Cost**: group by client, project, model, day, week, or month. A row of
+  tiles at the top totals whatever the scope shows: total spend, sessions,
+  input and output tokens, cache hit rate, and agent spend. Client, project,
+  and model views draw horizontal bars stacked by model, so every name gets
+  its own labeled row (a long list scrolls instead of squeezing); the time
+  views keep vertical columns. Each model keeps its color everywhere, model
+  id variants roll up into one family row (Fable 5.1 is one line, not
+  several), and clicking a bar or a table row drills into its sessions. The
+  table adds **Cache %** (how much of the prompt side came from cache),
+  **Agent $** (spend from harness runs), and a **Total** footer row. Click
+  a row's ▸ to expand its per-model breakdown, including what caching saved
+  you in dollars. **Export CSV** includes the new columns. One honest
+  caveat, also shown in the UI: model rows are priced from per-message
+  transcript data, so live or unimported sessions count in the session
+  totals but not the model rows. Prices live in Settings and you can edit
+  them; an edit re-prices all recorded history, so old reports catch up
+  with the current price table automatically. Updating the app can also
+  shift past totals once: 4.5.0 ships corrected prices (Fable 5.1 usage
+  used to count as $0, and Sonnet 5's announced price increase never
+  happened), and the first launch re-prices your history with them.
 - **Drill-down**: click any row (or model sub-row) and the Sessions view
   opens filtered to exactly those sessions, with a pill showing the filter.
   Dismiss the pill (or just type in search) to get the full list back.

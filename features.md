@@ -364,13 +364,28 @@ the plan's usage block, scope-independent). The scope row holds range presets
 (this month → all time) plus **client and project filters** that govern every
 panel below (defaults: global).
 
-- **Cost report**: grouped by client, project, model, day, week, or month,
-  with a stacked-by-model chart (stable per-model colors), a token/cost
-  table with cache-efficiency (% of prompt tokens served from cache) and
-  agent-spend columns, expandable per-model sub-rows showing what caching
+- **Cost report**: grouped by client, project, model, day, week, or month.
+  A KPI strip totals everything the scope admits: total spend, sessions,
+  input and output tokens, cache hit rate, and agent spend. Client, project,
+  and model groupings draw horizontal stacked-by-model bars (one labeled row
+  per category, so long project names never collide; many categories scroll
+  vertically), while time groupings keep vertical columns; every model keeps
+  a stable color everywhere, and bars are clickable straight into the
+  drill-down. Model id variants always collapse into their major family
+  (a point release or dated snapshot is one row with its family, never a
+  duplicate entry; Claude Code's synthetic error records are excluded), and
+  pricing falls back along the same family, so a new id variant never
+  silently prices at $0. The token/cost table adds cache-efficiency (% of
+  prompt tokens served from cache) and agent-spend columns, a totals footer
+  row on every table, expandable per-model sub-rows showing what caching
   saved in dollars, and CSV export. Per-model rows are priced from
   per-message transcript data; live/unimported sessions appear only in the
-  session totals (disclosed in the UI).
+  session totals (disclosed in the UI). Editing a model price in Settings
+  re-prices all recorded history, so past reports always reflect the
+  current price table. The 4.5.0 update itself ships corrected prices
+  (Fable 5.1 added; Sonnet 5's cancelled increase rolled back) and
+  re-prices history once on first launch, so totals can shift after
+  updating: that is the report getting more accurate, not a data change.
 - **Drill-down**: click any cost row (or model sub-row) to open the Sessions
   view filtered to exactly the sessions behind that number, with a
   dismissible filter pill.
