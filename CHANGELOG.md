@@ -17,6 +17,15 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.5.2 — 2026-09-03
+
+## Stays connected, wherever you are
+
+Two fixes from a morning at a coffee shop.
+
+- **The Mac now notices dead relay connections and heals itself.** Public Wi-Fi and network switches can silently kill the connection your paired iPhone relies on, without the Mac ever being told. The app previously waited for a close that never came, so the phone showed a session that would not update. The Mac now checks its own connection every 20 seconds and automatically reconnects within about 45 seconds of it going quiet: no more toggling Mobile off and on after changing networks, and working from a coffee shop behaves like working from home.
+- **No more question-mark cursor.** Hovering the Reports info icons, tiles, and column headers kept the regular pointer instead of switching to the help cursor. The hover explanations are unchanged.
+
 ## v4.5.1 — 2026-09-02
 
 ## Operations, rebuilt
