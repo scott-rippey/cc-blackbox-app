@@ -17,6 +17,19 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.5.1 — 2026-09-02
+
+## Operations, rebuilt
+
+The Reports view finished growing up. Cost got its overhaul in 4.5.0; this release rebuilds Operations around your actual work.
+
+- **Activity, honestly measured.** Active time counts 10-minute blocks where Claude actually produced work, so a tab left open all day inflates nothing. You get totals, an average per working day, and a daily chart stacked by project.
+- **When you work.** A 24-hour profile shows which hours of the day your work really happens, in your local time.
+- **Friction, explained.** Permission asks and denials (ranked by tool, so you can see where an allowlist rule would help), compactions with the auto count, and a session-health line. Project rows click through to their sessions.
+- **Agents in their own place.** Run economics and each run's logged decisions (what was decided, why, and what was considered instead, with crew attribution) live in a section that stays out of the way when no agents ran.
+- **Hover anything.** Every section header carries a small i icon explaining what the numbers mean, and tiles and column headers explain themselves on hover.
+- **Cost polish.** Totals rows are highlighted across every table, By Model gets a real distinct-sessions total, and the guided walkthrough now tours Reports properly: scope, Cost, then Operations, switching tabs as it goes.
+
 ## v4.5.0 — 2026-09-02
 
 ## Reports, rebuilt

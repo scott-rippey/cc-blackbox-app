@@ -525,12 +525,22 @@ in the corner approximates the plan's usage block and ignores the scope.
 - **Drill-down**: click any row (or model sub-row) and the Sessions view
   opens filtered to exactly those sessions, with a pill showing the filter.
   Dismiss the pill (or just type in search) to get the full list back.
-- **Operations**: the harness ledger: KPI tiles (runs, success rate, agent
-  spend, average duration, timeouts, retries, session crashes, permission
-  denials), a per-agent table over every recorded run, and a **Friction**
-  panel: permission asks and denials (ranked by tool), compactions (with
-  the auto count: those mean a session filled its context), and a
-  session-health line.
+- **Operations**: how your work with Claude actually went. **Active time**
+  counts 10-minute blocks where Claude produced work, so an idle open tab
+  inflates nothing; you get totals, an average per working day, a daily
+  chart stacked by project, and a **when you work** strip showing which
+  hours of the day you really work (local time). The **Friction** panel
+  shows where things ground: permission asks and denials (ranked by tool;
+  a tool with many denials is your cue for an allowlist rule), compactions
+  (auto ones mean a session filled its context window), and a
+  session-health line; click a project row to see its sessions. **Agents**
+  sits below with run economics and logged decisions for the 30 most
+  recent runs that logged any
+  (expandable: what was decided, why, and what was considered instead,
+  including each crew member's own decisions); the whole section stays out
+  of the way when no agents ran. Not sure what a number means? Hover the
+  small i icon next to any section title, or the tiles and column headers
+  themselves.
 - **Churn**: the most re-touched files per project (edits × sessions), a
   spec-leak detector: files that keep getting edited across sessions usually
   mark unclear specs or unstable design. Obeys the scope row.

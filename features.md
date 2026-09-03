@@ -389,12 +389,23 @@ panel below (defaults: global).
 - **Drill-down**: click any cost row (or model sub-row) to open the Sessions
   view filtered to exactly the sessions behind that number, with a
   dismissible filter pill.
-- **Operations**: agent economics over ALL recorded runs, with KPI tiles (runs,
-  success rate, spend, average duration, timeouts, retries, session crashes,
-  permission denials) and a per-agent table, plus a friction panel:
-  permission requests/denials and compactions grouped by project or time,
-  denials ranked by tool, and a session-health line (clean / crashed /
-  closed mid-flight).
+- **Operations**: how the work went (Cost says what it cost). Activity
+  leads: KPI tiles for active time, average active time per working day,
+  sessions, busiest project, permission denials, compactions, and session
+  crashes; a daily/weekly/monthly activity chart stacked by project; and a
+  "when you work" profile showing which hours of the day the work happens
+  in, local time. Active time is measured in 10-minute blocks where Claude
+  actually produced work (from per-message timestamps), so a tab left open
+  all day counts for nothing. A friction panel shows where the work hit
+  resistance: permission requests and denials, compactions (auto ones mean
+  a session filled its context), denials ranked by tool, and a
+  session-health line; project rows click through to their sessions. Agent
+  economics and logged decisions (what, why, alternatives, with crew
+  attribution, expandable per run; the 30 most recent decision-logging
+  runs) live in an Agents section that only
+  grows when agents actually ran in the range. Every section header carries
+  a hover info icon explaining what the numbers mean, and KPI tiles and
+  cache columns explain themselves on hover too.
 - **Churn**: the most re-touched files per project, a spec-leak detector
   showing where edits keep landing session after session. Obeys the shared
   range row.
