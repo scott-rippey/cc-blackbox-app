@@ -6,10 +6,12 @@ How to use the app, task by task. For the at-a-glance feature list see
 ## First-time setup
 
 1. Launch the app. The **Workspace Picker** appears.
-2. Click **New Workspace**, then **+ Add root folder** and pick a project
-   folder (the first pick fills in the workspace name; edit it if you like).
-   Add more roots if the workspace spans several folders, then
-   **Create & Open**.
+2. Click **New Workspace**, then **+ Open your first project** and pick a
+   project folder (one git repo, not the folder that holds all your projects;
+   that would register as a single project and every session under it would
+   report as that one project). The first pick fills in the workspace name;
+   edit it if you like. **+ Add another project** puts more projects side by
+   side in the same workspace, now or later. Then **Create & Open**.
 3. Go to **Settings** (title bar) and click **Install hooks…** in the
    *Claude Code Hooks* card. Review the side-by-side diff of
    `~/.claude/settings.json` and click **Apply**. Without hooks installed,
@@ -235,7 +237,19 @@ terminal list mirrors your folder list. Anything outside the workspace
 folders appears under Other. The tab list shows the terminals of the workspace you have open. Switch
 workspaces and the list switches with you; the other workspace's shells and
 sessions keep running in the background and their tabs return when you
-switch back.
+switch back, scrollback and all, on the tab you left active. A Claude tab
+always runs Claude Code's fullscreen renderer: the prompt stays pinned to
+the bottom of the terminal, the conversation scrolls above it, and the
+mouse works inside Claude. To get the classic renderer back, add
+`"CLAUDE_CODE_DISABLE_ALTERNATE_SCREEN": "1"` to the `env` block of your
+`~/.claude/settings.json`; it outranks the app's setting.
+
+Right-click in a terminal for Copy, Paste, and Select All (right-click also
+selects the word under the pointer, so right-click a path and Copy works in
+one motion); the editor's right-click menu adds Cut. Inside a Claude tab,
+Claude Code handles the mouse itself: click in the prompt to place the
+cursor, drag to select (it copies on release). To make a native terminal
+selection instead, hold Shift or Option while you drag.
 
 The Terminals list (a pane of its own, on the right by default; the terminal
 viewport is a separate pane so the two can sit apart) has two spawn buttons:
@@ -249,15 +263,19 @@ viewport is a separate pane so the two can sit apart) has two spawn buttons:
   run there records. The shell itself (your commands, other tools) is
   never recorded, and no client credentials are injected into shells.
 - **▶ Claude**: a dedicated Claude tab, via the **Launch Claude** modal.
-  Both tab types record; the dedicated tab adds two things. First, a
+  Both tab types record; the dedicated tab adds three things. First, a
   guaranteed clean launch: no shell in between, so nothing in a shell
-  profile can interfere. Second, and this is the multi-client feature:
-  the session gets the project's client **Vercel account** injected
-  automatically, so Claude working on client A's project reads deploys
-  and logs as client A, on client B's project as client B. A plain shell
-  only ever has your own Vercel login; client accounts never reach
-  shells. If you manage one account for yourself, both tab types behave
-  the same; the moment you manage clients, ▶ Claude is the switch.
+  profile can interfere. Second, the multi-client feature: the session
+  gets the project's client **Vercel account** injected automatically, so
+  Claude working on client A's project reads deploys and logs as client A,
+  on client B's project as client B. A plain shell only ever has your own
+  Vercel login; client accounts never reach shells. Third, Claude Code's
+  **fullscreen renderer**, always on: the prompt stays pinned to the bottom
+  of the terminal, you can click to place the cursor and drag to select
+  inside Claude, and scrolling is tuned for this terminal (a `claude` typed
+  in a shell uses whatever renderer Claude Code picks on its own). If you
+  manage one account for yourself, the first two make no difference; the
+  moment you manage clients, ▶ Claude is the switch.
   The modal:
   - **Workspace folders** lists your roots and any tracked projects in them
     (with the current git branch). **Launch** starts the session; on an
@@ -363,7 +381,8 @@ happens in the database, so "most expensive" really is the most expensive of
 all your sessions. Two hundred rows load at a time; **Load more** at the
 bottom appends the next two hundred in the same order. The search box is
 full-text over everything the session did (every command, file, prompt)
-plus titles, sorted the same way. Click a row to open it.
+plus titles, sorted the same way; the ✕ inside the box (or Esc while typing
+in it) clears the search and brings the full list back. Click a row to open it.
 
 To delete a session, click the ✕ at the end of its row (or **Delete…** in
 its detail page) and confirm; its events, token usage and cost history are

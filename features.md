@@ -173,9 +173,20 @@ timeline. This is the feature list; step-by-step usage lives in
   and an Other section for anything outside the workspace folders.
 - **The terminal list always matches the open workspace.** Tabs for other
   workspaces are tucked away with their shells and sessions running
-  untouched, and return the moment you switch back; terminals whose folder
-  belongs to no workspace stay visible everywhere.
+  untouched, and return the moment you switch back with their scrollback
+  and the tab you left active (the cockpit stays mounted under the Workspace
+  Picker); terminals whose folder belongs to no workspace stay visible
+  everywhere.
 
+- **Claude tabs run Claude Code's fullscreen renderer**, always: the
+  prompt is pinned to the bottom of the terminal from the first frame, the
+  mouse works inside Claude (click to place the cursor, drag to select),
+  and wheel scrolling is tuned for the app's terminal. Shells are untouched;
+  `CLAUDE_CODE_DISABLE_ALTERNATE_SCREEN=1` in settings.json `env` opts out.
+- **Right-click edit menu** in every terminal and editor: Copy, Paste,
+  Select All (Cut in the editor), native macOS menu; right-click selects
+  the word under the pointer in a terminal, and Option-drag forces a native
+  selection inside a Claude tab where Claude Code owns the mouse.
 - **Two kinds of tabs**: plain shells and Claude Code sessions (recorded;
   lamp dot shows live/finished state). A `claude` you type into a plain
   shell records too: every shell carries the recording token, so the moment
@@ -188,11 +199,14 @@ timeline. This is the feature list; step-by-step usage lives in
   receives client credentials. Drag tabs to reorder; the order survives
   window close-and-reopen.
 - **▶ Claude** opens the Launch Claude modal: pick a workspace folder or
-  any tracked project and launch a dedicated Claude tab. It is a clean
-  direct launch, and it is the multi-client Vercel switch: the session
-  carries the project's client Vercel account, so each client's work runs
-  as that client (a plain shell's typed claude records too, but only ever
-  has your own Vercel login). Launching a project outside the open
+  any tracked project and launch a dedicated Claude tab. Three things a
+  plain shell does not give you: a clean direct launch; the multi-client
+  Vercel switch (the session carries the project's client Vercel account,
+  so each client's work runs as that client, while a plain shell's typed
+  claude records too but only ever has your own login); and Claude Code's
+  fullscreen renderer, always on (prompt pinned to the bottom, click to
+  place the cursor, drag to select, tuned scrolling). The button's tooltip
+  and its tour stop list the same three. Launching a project outside the open
   workspace adds its folder to the workspace first, so a running terminal
   always has its files in Explorer.
 - **Folder-permission preflight (macOS)**: picking a folder deliberately
@@ -447,8 +461,10 @@ panel below (defaults: global).
   and its slots, model and caps, a crew member expanded, Plan only vs Edit
   files vs Full auto, extra abilities, the plain-English summary, worktree
   and retry, Log decisions, schedule, Create), then Run history, Reports
-  (the scope row, then the Cost and Operations tabs switched in front of
-  you), and every Settings card (hooks, Browser Control, projects and
+  panel by panel (the scope row, then the Cost tab switched in front of
+  you: totals, grouped spend, churn; then Operations: the how-the-work-went
+  totals, the activity calendar, the hour strip, agents, friction), and
+  every Settings card (hooks, Browser Control, projects and
   clients, credentials, appearance, model prices, database, sync, health).
   The card sits in one fixed spot with a step counter, each stop gets a
   glow ring, and the app stays fully clickable. Fires once, when a fresh

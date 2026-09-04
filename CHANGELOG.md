@@ -17,6 +17,30 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.6.0 — 2026-09-04
+
+## The Claude tab, fullscreen
+
+- **Claude tabs always run Claude Code's fullscreen renderer.** The prompt stays pinned to the bottom of the terminal from the first frame and the conversation scrolls above it, on every Mac, regardless of how Claude Code's own rollout would have started you. The mouse works inside Claude: click in the prompt to place the cursor, drag to select (it copies on release), scroll with the wheel at a speed tuned for this terminal. Plain shells are untouched. To get the classic renderer back, put `"CLAUDE_CODE_DISABLE_ALTERNATE_SCREEN": "1"` in the `env` block of your `~/.claude/settings.json`.
+- **The Claude button explains itself.** Its tooltip, its walkthrough stop, and the empty-terminal hint list what a Claude tab gives you over a plain shell: a clean direct launch, the project's client Vercel account, and the fullscreen renderer.
+
+## Right-click, at last
+
+- **Right-click in any terminal or editor.** Copy, Paste, and Select All in a native menu (Cut too in the editor). In a terminal, right-click also selects the word under the pointer, so right-click a path and Copy is one motion. Inside a Claude tab, hold Option (or Shift) while dragging to make a native terminal selection instead of Claude's.
+
+## Workspaces
+
+- **Leaving and re-entering a workspace no longer wipes your terminals.** Switching workspaces, or stepping out to the Workspace Picker and back, used to dispose every terminal: you came back to empty tabs that Claude redrew piece by piece, with no history. Terminals now keep their scrollback across the round trip, and you land on the tab you left.
+- **Clearer first-run wording.** The New Workspace form now says "Open your first project" and explains that a workspace is a set of project folders (one git repo each), not the folder that holds all of them.
+
+## Sessions
+
+- **A clear button in the search box.** The ✕ inside the Sessions search (or Esc while typing in it) empties the search and brings the full list back.
+
+## Walkthrough
+
+- **Reports, panel by panel.** The guided tour now walks the Cost tab (totals, grouped spend, churn) and the Operations tab (how the work went, the activity calendar, the hour strip, agents, friction) one panel at a time, switching tabs in front of you and explaining what each number means.
+
 ## v4.5.4 — 2026-09-03
 
 ## Sort your sessions
