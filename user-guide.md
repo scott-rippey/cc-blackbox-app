@@ -244,6 +244,12 @@ mouse works inside Claude. To get the classic renderer back, add
 `"CLAUDE_CODE_DISABLE_ALTERNATE_SCREEN": "1"` to the `env` block of your
 `~/.claude/settings.json`; it outranks the app's setting.
 
+You can also open a file from Finder: right-click it, choose Open With,
+and CC Blackbox is listed under Recommended for text, configuration, and
+source files (or drop the file on the Dock icon). It opens as an editor
+tab; a file outside your workspace folders opens as a standalone tab that
+lasts until you quit.
+
 Right-click in a terminal for Copy, Paste, and Select All (right-click also
 selects the word under the pointer, so right-click a path and Copy works in
 one motion); the editor's right-click menu adds Cut. Inside a Claude tab,

@@ -17,6 +17,13 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.6.1 — 2026-09-04
+
+## Open files from Finder
+
+- **CC Blackbox shows up under Recommended.** Right-click a text, configuration, or source file in Finder, choose Open With, and the app is listed with the other editors instead of hiding under All Applications. It never claims to be the default for a type; it just offers.
+- **Opening a file actually opens it.** Choosing the app from Open With, double-clicking a file you assigned to it, or dropping one on the Dock icon now lands the file as an editor tab. Before, the app came forward and nothing happened. A file inside your open workspace opens in place; one from anywhere else opens as a standalone tab for the rest of the session. If no workspace is open yet, the file waits and opens the moment you pick one.
+
 ## v4.6.0 — 2026-09-04
 
 ## The Claude tab, fullscreen

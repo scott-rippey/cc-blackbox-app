@@ -183,6 +183,11 @@ timeline. This is the feature list; step-by-step usage lives in
   mouse works inside Claude (click to place the cursor, drag to select),
   and wheel scrolling is tuned for the app's terminal. Shells are untouched;
   `CLAUDE_CODE_DISABLE_ALTERNATE_SCREEN=1` in settings.json `env` opts out.
+- **Open files from Finder.** The app is listed under Recommended in
+  Finder's Open With for text, configuration, and source files, and a
+  file opened that way (or dropped on the Dock icon) lands as an editor
+  tab: inside the open workspace if it belongs there, otherwise as a
+  standalone tab for this run.
 - **Right-click edit menu** in every terminal and editor: Copy, Paste,
   Select All (Cut in the editor), native macOS menu; right-click selects
   the word under the pointer in a terminal, and Option-drag forces a native
