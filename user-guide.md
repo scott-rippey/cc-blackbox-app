@@ -66,8 +66,8 @@ Click a file in the Explorer to open it. Right-click for the full menu:
 open, reveal in Finder, copy (relative) path, new file/folder, rename,
 delete, and, on a root, remove it from the workspace. Delete asks first,
 then moves the file or folder to the Trash, so you can put it back from
-Finder if you change your mind. If you would rather it stopped asking, tick
-"Don't ask again" in that dialog; **Settings -> Appearance -> Ask before
+Finder if you change your mind. If you would rather it stopped asking, switch
+on "Don't ask again" in that dialog; **Settings -> Appearance -> Ask before
 deleting a file** turns the prompt back on.
 With several roots, drag a root folder's header up or down to reorder them;
 the order sticks with the workspace.
@@ -134,7 +134,10 @@ the app is unaffected.
 
 Your Claude sessions can control this browser themselves: navigate, read the
 page, screenshot, click, type, run JavaScript, and read the console and
-network capture. That lets Claude verify frontend work in the same browser
+network capture. A click that opens a link waits for the new page before
+reporting back (a link that would open a new tab opens in place here), and
+console and network reads cover the current page unless Claude asks for the
+whole history. That lets Claude verify frontend work in the same browser
 you are watching, rather than asking you to check.
 
 This is set up for you: CC Blackbox adds a single entry to Claude Code's
@@ -147,7 +150,10 @@ that choice sticks across restarts until you click Install again.
 After that, the first time a Claude session in a terminal tries to use the
 browser, you get a one-time Allow / Deny prompt for that tab. Allow lasts as
 long as the tab is open; Deny sticks until you close and reopen it. This
-applies to both ▶ Claude tabs and a `claude` you run in a plain shell.
+applies to both ▶ Claude tabs and a `claude` you run in a plain shell. The
+permission belongs to the Claude process that asked: if some other program
+in that tab later tries to use it (a script, an npm install), it is refused
+and a notification tells you.
 While Claude is driving, a **Claude driving** badge appears in the browser
 toolbar. Because the browser holds your logged-in sessions, only allow it for
 work you trust. Everything Claude does is recorded in the session timeline
@@ -365,7 +371,8 @@ another Mac comes back on the next sync unless you delete it there too.
 
 In a session's detail page:
 
-- Rename it via the title field (saved on blur).
+- Rename it via the title field (saved on blur). Untouched titles follow
+  the last prompt you typed; a rename sticks.
 - The stat strip shows model, duration, token breakdown, and cost. If usage
   is missing, **re-import usage** retries the transcript import.
 - **↻ Resume**: continue the conversation in a new recorded Claude tab.
@@ -527,9 +534,15 @@ in the corner approximates the plan's usage block and ignores the scope.
   Dismiss the pill (or just type in search) to get the full list back.
 - **Operations**: how your work with Claude actually went. **Active time**
   counts 10-minute blocks where Claude produced work, so an idle open tab
-  inflates nothing; you get totals, an average per working day, a daily
-  chart stacked by project, and a **when you work** strip showing which
-  hours of the day you really work (local time). The **Friction** panel
+  inflates nothing. For a month or less you get a calendar: every day
+  tinted by how much you worked, the total in the cell, a thin bar of which
+  projects, week totals on the right; hover a day for the project breakdown
+  and click it to open those sessions. For 90 days or all time you get one
+  line of active time over the range (daily points, weekly past three
+  months) plus a bar of the projects and their totals. **Explore** opens any
+  month as a full-window calendar you can page through, with project chips
+  to narrow it. Below either, the **when you work** strip shows which hours
+  of the day you really work (local time; hover a bar). The **Friction** panel
   shows where things ground: permission asks and denials (ranked by tool;
   a tool with many denials is your cue for an allowlist rule), compactions
   (auto ones mean a session filled its context window), and a
@@ -552,9 +565,10 @@ To send feedback about the app: **Help → Send Feedback…** opens a GitHub
 issue with your app version already filled in.
 
 New here? The app gives first-time installs a guided walkthrough when the
-first workspace opens. It drives the real app as it goes: it switches the
-Browser on, opens the agent editor with an example agent filled in and walks
-every section (structure, crew, permissions, abilities, decisions, schedule),
+first workspace opens. It drives the real app as it goes: it brings the
+Browser and the Simulator forward, opens the agent editor with an example
+agent filled in and walks every section (structure, crew, permissions,
+abilities, decisions, schedule), switches the Reports tabs in front of you,
 and visits every Settings card, with the app staying fully usable throughout.
 Replay it whenever you like from **Help → Show Walkthrough** or
 **Settings → Appearance → Show walkthrough**.
@@ -567,7 +581,9 @@ ask, interrupt, or stop a session from wherever you are.
 
 1. **Settings → Mobile**: switch it on and click **Pair a phone**. A QR
    code appears; it works for five minutes and pairs one phone. Scan it
-   with the companion app, or copy the link into the phone.
+   with the companion app, or copy the link into the phone. If the card
+   warns that the hooks need this build's script, click its Reinstall button
+   first; without it the phone can watch but not answer permission asks.
 2. The phone shows this Mac's name; the Mac lists the phone with a live dot
    while it is connected and a last-seen time otherwise. Two phones can be
    paired; unpair from either side.
@@ -593,7 +609,9 @@ them), permission answers travel through Claude Code's own decision
 channel and can only apply to the exact prompt asked, and everything is
 end-to-end encrypted through a relay that cannot read it. Push
 notifications arrive when a session waits for you or ends, with the app
-in the background.
+in the background. If the Mac's link to the relay goes silent (a network
+switch, a hotel captive portal), the Mac notices within about a minute and
+reconnects on its own.
 
 ## Settings reference
 
@@ -629,8 +647,8 @@ in the background.
   **Show notifications** and **Play notification sound**: the app posts
   desktop notifications when an agent finishes, a session is waiting on
   you, an update is ready, or a credential or access notice needs a look.
-  Untick Show notifications to stop all of them, or keep them and untick
-  the sound to get them silently.
+  Switch Show notifications off to stop all of them, or keep them and
+  switch the sound off to get them silently.
   **Glass background**: the window turns genuinely transparent so your
   desktop shows through the app (subtle, still fully readable). The window
   blinks once as it recreates when you toggle; unsaved editor tabs are
@@ -712,13 +730,20 @@ in the background.
   and recording, and asks once first when something is still live. Runs
   interrupted by a restart are marked failed.
 - **Updates apply on quit, never mid-flight.** The app checks for updates on
-  its own (launch + every few hours, and only while nothing is live: no
-  recording session, agent run, or sync in progress) and notifies once when
-  a new version has downloaded. It installs on your next real quit (⌘Q), or immediately
-  via **CC Blackbox → Restart to Update**. **CC Blackbox → Check for
-  Updates** forces a check any time (it asks first if something is running,
-  since the download unpacks inside the app); **About CC Blackbox** shows your
-  version. After an update, the first launch greets you with a What's New
+  its own (launch + every few hours, waiting for an idle moment: no
+  recording session, agent run, or sync in progress). A new version is
+  downloaded in the background, checksum-verified, unpacked by a separate
+  helper process rather than inside the app, verified as a genuinely signed
+  CC Blackbox build, and staged; you get one notification. It installs on
+  your next real quit (⌘Q), or immediately via **CC Blackbox → Restart to
+  Update**, which swaps the app and relaunches it. **CC Blackbox → Check
+  for Updates** forces a check any time (if something is running it warns
+  and offers Check Anyway; checking only downloads and prepares, the swap
+  still waits for a quit); **About CC Blackbox** shows your version. If a
+  step fails, the message names the cause (download, corrupted file,
+  signature refused, disk space, unpack) and what fixes it; after repeated
+  failures on one version the app stops retrying and points at the manual
+  download. After an update, the first launch greets you with a What's New
   window listing exactly what changed in the version you just received;
   close it and it stays gone until the next update.
 - **If something crashes, the app picks itself up.** A crashed window is

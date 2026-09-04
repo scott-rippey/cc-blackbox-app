@@ -17,6 +17,23 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.5.3 — 2026-09-03
+
+## A calendar for your work
+
+The Operations tab's Activity section is rebuilt around the way you actually look at a month.
+
+- **A calendar instead of a bar chart.** For ranges up to about five weeks (this month, last month, 30 days) each day is a cell tinted by how much Claude actually worked, with the total in the cell, a thin bar showing which projects, and week totals down the right. Hover a day for the project breakdown; click it to open exactly those sessions. The Daily/Weekly/Monthly toggle is gone because all three are visible at once.
+- **One line for long ranges.** 90 days and All time show active time over the range as a single line (per day up to three months, per week beyond) with the busiest point marked, plus one bar of your projects and their totals.
+- **Explore any month.** A new Explore button opens a full-window calendar you can page through month by month, with project chips to narrow it. Esc closes it.
+- **When you work, with real hours.** Hovering the hour strip now reads like a clock ("2pm to 3pm, 2.8h active") instead of a 24-hour timestamp.
+- **Day totals never double count.** A block where two projects ran at the same time counts once, in the cell and in the week.
+
+## Claude in the browser: fewer wasted turns
+
+- **Clicks that open a page now wait for it.** A link that would open a new tab opens in place here, and the click reports the page it landed on instead of the old one, so Claude no longer has to navigate there by hand afterwards.
+- **Console and network reads cover the current page.** After visiting two pages, asking for the console returns only the page on screen; the whole history is one option away.
+
 ## v4.5.2 — 2026-09-03
 
 ## Stays connected, wherever you are

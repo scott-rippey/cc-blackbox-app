@@ -63,8 +63,8 @@ timeline. This is the feature list; step-by-step usage lives in
   servers over plain http work.
 - **One live page per workspace**, with its own persistent cookie profile
   per workspace, so client A's logged-in staging session is never ambient
-  while you work on client B. The last URL, panel layout, and Editor/Browser
-  choice persist per workspace.
+  while you work on client B. The last URL, panel layout, and pane
+  arrangement persist per workspace.
 - Chrome: back/forward/reload, a URL bar that accepts shorthand
   (localhost:3000 gets http, bare domains get https) and searches Google
   for anything that is not an address, open in the system
@@ -92,12 +92,18 @@ timeline. This is the feature list; step-by-step usage lives in
 - Any Claude session running in the app, a ▶ Claude tab or a `claude` you
   typed into a plain shell, can control the embedded browser: navigate, read
   the page, take a screenshot, click, type, scroll, run JavaScript, wait for
-  something to appear, and read the console and network capture. So Claude
+  something to appear, and read the console and network capture. A click
+  that opens a link (including one that would open a new tab) waits for the
+  page it opens and says so, and console and network reads cover the page
+  currently loaded unless Claude asks for the whole history. So Claude
   can build a page and then actually check it in the same browser you are
   watching, instead of asking you to look.
 - **You approve it per terminal tab.** The first time a session tries to use
   the browser, CC Blackbox asks once: Allow or Deny. Allow lasts for that
-  terminal tab; Deny sticks until you close and reopen the tab. While a
+  terminal tab; Deny sticks until you close and reopen the tab. The
+  permission belongs to the Claude process that asked: if some other
+  program in that tab later tries to use it, it is refused and you get a
+  notification saying so. While a
   session is driving, a **Claude driving** pill shows in the browser toolbar
   and pulses on each action. It acts inside that browser's logged-in
   sessions, which is why the consent is per tab and worth thinking about.
@@ -249,8 +255,9 @@ timeline. This is the feature list; step-by-step usage lives in
   user-editable model price table (including split 5m/1h cache-write pricing).
 - Hooks are observe-only and env-guarded: outside CC Blackbox they exit
   instantly and silently, and existing hooks in settings.json are preserved.
-- Sessions get auto-generated titles (editable), and crashed sessions are
-  detected and marked on next launch.
+- Session titles follow the last prompt you typed (slash commands never
+  become a title); rename one in Sessions or from the phone and the name
+  sticks. Crashed sessions are detected and marked on next launch.
 
 ## Live Visualization
 
@@ -328,7 +335,7 @@ timeline. This is the feature list; step-by-step usage lives in
   on a Claude plan), and max turns (default 50) caps agentic loops.
 - **Worktree isolation**: an agent can run in a throwaway git worktree so your
   working files are never touched; you review and merge its changes yourself.
-- **Decision logging**: one checkbox makes every process in a run (the
+- **Decision logging**: one switch makes every process in a run (the
   orchestrator and each crew member) record its significant decisions and
   why, as it goes, through a private logging tool. Nothing about the log
   enters any agent's output or another agent's context, so it never changes
@@ -392,9 +399,17 @@ panel below (defaults: global).
 - **Operations**: how the work went (Cost says what it cost). Activity
   leads: KPI tiles for active time, average active time per working day,
   sessions, busiest project, permission denials, compactions, and session
-  crashes; a daily/weekly/monthly activity chart stacked by project; and a
-  "when you work" profile showing which hours of the day the work happens
-  in, local time. Active time is measured in 10-minute blocks where Claude
+  crashes; then the range itself. A range of about a month or less (this
+  month, last month, 30 days) is a wall calendar: each day tinted by its
+  active time with the total and a thin per-project ribbon, week totals down
+  the right, and a hover card listing the day's projects largest first;
+  click a day to open its sessions. A longer range (90 days, all time) is a
+  single line of active time per day (per week past three months) with the
+  busiest point marked and one project bar with totals. **Explore** opens
+  any month as a full-window calendar with project filter chips and
+  previous/next paging inside the range. Under both, a "when you work"
+  profile shows which hours of the day the work happens in, local time,
+  with an AM/PM hover. Active time is measured in 10-minute blocks where Claude
   actually produced work (from per-message timestamps), so a tab left open
   all day counts for nothing. A friction panel shows where the work hit
   resistance: permission requests and denials, compactions (auto ones mean
@@ -419,23 +434,25 @@ panel below (defaults: global).
 - **Send Feedback** (Help menu): opens a prefilled GitHub issue on the
   public releases repo with the app version and macOS build filled in.
 - **Guided walkthrough that drives the app**: a tour over the live UI that
-  operates it as it goes. The Cockpit piece by piece (Explorer, editor,
-  the Editor|Browser toggle, then the Browser switched on with its toolbar
-  explained and how Claude can drive it, the visualizer, terminals, the
-  Claude button), Sessions, then the Agent Harness in depth: the tour opens
-  the New Agent editor pre-filled with an example and walks every section
-  in its real state (Auto vs Orchestrator + crew, the prompt and its slots,
-  model and caps, a crew member expanded, Plan only vs Edit files, extra
-  abilities, the plain-English summary, worktree and retry, Log decisions,
-  schedule, Create), then Run history, Reports, and every Settings card
-  (hooks, Browser Control, projects and clients, credentials, model prices,
-  database, sync, health). The card sits in one fixed spot with a step
-  counter, each stop gets a glow ring, and the app stays fully clickable.
-  Fires once, when a fresh install opens its first workspace; existing
-  installs never see it uninvited; **Help → Show Walkthrough** or
-  **Settings → Appearance → Show walkthrough** replays it any time. Leaving
-  the tour at any point puts everything back (the example agent closes
-  unsaved, the pane returns to the Editor).
+  operates it as it goes. The Cockpit piece by piece (Explorer, Editor,
+  moving panes, the Browser brought forward with its toolbar explained and
+  how Claude can drive it, the iOS Simulator the same way, the Visualizer,
+  Terminals, the Claude button), Sessions, then the Agent Harness in depth:
+  the tour opens the New Agent editor pre-filled with an example and walks
+  every section in its real state (Auto vs Orchestrator + crew, the prompt
+  and its slots, model and caps, a crew member expanded, Plan only vs Edit
+  files vs Full auto, extra abilities, the plain-English summary, worktree
+  and retry, Log decisions, schedule, Create), then Run history, Reports
+  (the scope row, then the Cost and Operations tabs switched in front of
+  you), and every Settings card (hooks, Browser Control, projects and
+  clients, credentials, appearance, model prices, database, sync, health).
+  The card sits in one fixed spot with a step counter, each stop gets a
+  glow ring, and the app stays fully clickable. Fires once, when a fresh
+  install opens its first workspace; existing installs never see it
+  uninvited; **Help → Show Walkthrough** or **Settings → Appearance → Show
+  walkthrough** replays it any time. Leaving the tour at any point puts
+  everything back (the example agent closes unsaved, the pane arrangement
+  returns to what it was).
 
 ## Mobile remote (iPhone companion)
 
@@ -458,7 +475,11 @@ panel below (defaults: global).
   waits for a permission, or ends; pushes are encrypted with a key set at
   pairing and the relay cannot read them.
 - Settings → Mobile: turn it on, pair a phone (QR or link), see each
-  phone's last-seen time and live dot, unpair.
+  phone's last-seen time and live dot, unpair. If the installed hooks
+  predate phone answers, the card says so with a Reinstall button.
+- The Mac keeps its own relay link honest: a connection that goes silent
+  (a network switch, a captive portal) is noticed within about a minute
+  and redialed on its own, so a paired phone never sits on a dead link.
 - A status readout above the chat shows the session's model and how full its context window is (green, then yellow at 60 percent, red at 85). It appears automatically; nothing to configure.
 - The chat mirrors the terminal's turn, not just its tool calls: what
   Claude says between tool calls reaches the phone and is kept for the
@@ -549,15 +570,20 @@ panel below (defaults: global).
   shutdown, and when a recording or an agent run is still active it asks
   once before ending them (closing the window instead keeps them going).
 - **Auto-updates**: installed builds check this app's release feed at launch
-  and every few hours, but only while the app is idle (no recording session,
-  no agent run, no sync import): the download unpacks inside the app, so a
-  due check waits for the first quiet moment rather than risking live work.
-  Updates download in the background and notify once when a
-  version is ready. The update applies on a real quit (⌘Q) or the app menu's
-  Restart to Update: never mid-flight, never by surprise. The app menu also
-  has Check for Updates for an on-demand check, and About shows the version.
-  If a downloaded update ever fails to install, the next launch says so and
-  points at the manual download; nothing fails silently. After an update
+  and every few hours, waiting for an idle moment (no recording session,
+  no agent run, no sync import) out of politeness to live work. The update
+  downloads in the background, is checked against the feed's checksum,
+  unpacked by a separate helper process (never inside the app), verified
+  as a genuinely signed CC Blackbox build of the announced version, and
+  only then staged; one notification says a version is ready. It applies
+  on a real quit (⌘Q) or the app menu's Restart to Update, which swaps the
+  app and relaunches it: never mid-flight, never by surprise. The app menu
+  also has Check for Updates for an on-demand check (it warns if something
+  is running and lets you check anyway), and About shows the version. If
+  any step fails, the message names what happened (download, corrupted
+  file, signature refused, disk space, unpack) and the one thing that
+  fixes it; after repeated failures on the same version the app stops
+  retrying and points at the manual download. Nothing fails silently. After an update
   installs, the first launch shows a What's New pop-up with that version's
   actual release notes (pulled from the release page; offline shows a link
   instead), once per version. And an app launched
