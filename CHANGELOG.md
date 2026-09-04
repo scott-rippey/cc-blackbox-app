@@ -17,6 +17,18 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.5.4 — 2026-09-03
+
+## Sort your sessions
+
+- **Every column in Sessions sorts.** Click Title, Project, Client, Branch, Date, Duration, Tokens, or Cost to sort by it; click again to flip. Dates and numbers start biggest or newest first, text starts A to Z, and the arrow marks the active sort.
+- **The top really is the top.** Sorting runs in the database, not on the rows already on screen, so "most expensive" is the most expensive of all your sessions. The list loads two hundred at a time; a Load more button at the bottom appends the next two hundred in the same order, and search results sort the same way.
+- **Nothing gets lost on a live update.** When a session ends while you are looking at the list, the rows you had paged in stay put, and a failed load says so in the toolbar instead of showing an empty list.
+
+## Operations
+
+- **The busiest-day label no longer gets clipped.** On the 90 day and All time views the peak label sits inside the chart with room above it, and swings to the side when the busiest day is at either edge of the range.
+
 ## v4.5.3 — 2026-09-03
 
 ## A calendar for your work

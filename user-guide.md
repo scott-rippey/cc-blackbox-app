@@ -357,8 +357,13 @@ live subagent, working-set files, last report) update live.
 ## Reviewing past sessions
 
 **Sessions** lists every recorded session with project, client, branch, date,
-duration, tokens, and cost. The search box is full-text over everything the
-session did (every command, file, prompt) plus titles. Click a row to open it.
+duration, tokens, and cost. Click a column header to sort by it (dates and
+numbers start biggest first, text A to Z; click again to flip); sorting
+happens in the database, so "most expensive" really is the most expensive of
+all your sessions. Two hundred rows load at a time; **Load more** at the
+bottom appends the next two hundred in the same order. The search box is
+full-text over everything the session did (every command, file, prompt)
+plus titles, sorted the same way. Click a row to open it.
 
 To delete a session, click the ✕ at the end of its row (or **Delete…** in
 its detail page) and confirm; its events, token usage and cost history are

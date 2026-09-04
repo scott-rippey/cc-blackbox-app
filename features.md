@@ -275,8 +275,12 @@ timeline. This is the feature list; step-by-step usage lives in
 ## Sessions & Flight Playback
 
 - **Sessions view**: every recorded session with project, client, branch,
-  duration, tokens, and cost. Search is instant full-text (SQLite FTS5) over
-  everything the session did, plus titles.
+  duration, tokens, and cost. Click any column header to sort by it (click
+  again to flip); the sort runs in the database, so the top of the list is
+  the true top across all your sessions, not just the ones on screen. The
+  list loads 200 at a time with a Load more button, in the same order.
+  Search is instant full-text (SQLite FTS5) over everything the session
+  did, plus titles, and sorts the same way.
 - **Session detail**: stat strip, Activity EKG, Ops Board, full event feed,
   and per-file touch counts, all live-updating while the session runs.
 - **↻ Resume** continues any finished session's conversation in a new
