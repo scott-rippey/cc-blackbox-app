@@ -488,14 +488,39 @@ Click **+ New Agent**:
    crew member) records its significant decisions and why as it works,
    through a private logging tool the app provides. Nothing about the log
    enters any output or any other agent, so it never changes what the run
-   does. The agent card's **◇ Decisions** button opens a scrolling list of
-   the runs that logged decisions (newest first); click a run to read its
-   decisions in the same window, and use Back to return to the list. Use it
-   to improve the prompt. Each logged decision costs one tool turn. The tool
+   does. The agent card's **◇ Decisions** button opens the decisions
+   window: its Runs tab lists the runs that logged decisions (newest
+   first; click one to read its decisions, Back returns to the list), and
+   its Patterns tab shows what repeats across runs (see Decision Patterns
+   below). Each logged decision costs one tool turn. The tool
    arrives through the same config entry as browser control (see Letting
    Claude drive the browser), so that entry must be installed. In a Plan
    only run, Claude Code refuses the tool call itself, but the decision is
    still recorded the moment it is made, so the log works in every mode.
+   **Decision Patterns**: once the first analysis has run, the window
+   opens on Patterns (before that it opens on Runs, with Analyze now on the
+   Patterns tab). After each run that logs decisions the app runs one
+   Claude pass (Haiku, a few cents; the status line under the title shows
+   when it ran, the model, the cost, how many decisions it read, and how
+   long it took) that names the recurring themes; every number on the
+   screen is then computed from the recorded log. Top to bottom: KPI tiles,
+   a decisions-per-run strip (one bar per run, colored by how the run
+   ended; click a bar to read that run), **What it keeps choosing** (each
+   theme with its count, the runs it touched, a per-run trend, crew,
+   outcome and cost share; click a count for the decisions, a runs figure
+   for the runs), **Where it wavers** (the same question answered
+   differently; click an answer for the runs that chose it), **Suggestions**
+   (lock in, forbid or clarify lines with the evidence behind them; **Add
+   to prompt** puts the line into the agent editor with the prompt editor
+   open at the new line, and you still press Save; **In prompt** means the
+   agent already carries it), **Applied** (lines you added, with the runs
+   since and a verdict: stopped, reduced, unchanged, holding, slipping,
+   settled, still wavering, or too early to tell), and **Analysis history**
+   (every pass with its cost; click a row for the raw answer, which is how
+   you read a failed pass). Badges warn when new decisions or a prompt
+   change landed after the last pass; **Refresh** runs the pass now, and
+   the whole thing costs cents per run. Nothing from this analysis is ever
+   shown to the agent; it only reaches a prompt when you save it.
 8. **Schedule**: Manual only, Daily, or Weekly at a set time. Schedules fire
    only while the app is open; missed times are skipped. At most 3 runs
    execute concurrently, and each run is killed after 30 minutes.
@@ -580,8 +605,10 @@ in the corner approximates the plan's usage block and ignores the scope.
   sits below with run economics and logged decisions for the 30 most
   recent runs that logged any
   (expandable: what was decided, why, and what was considered instead,
-  including each crew member's own decisions); the whole section stays out
-  of the way when no agents ran. Not sure what a number means? Hover the
+  including each crew member's own decisions), and a **Decision patterns**
+  line per agent (its top themes, how many questions it wavers on, when it
+  was last analyzed) that opens the agent's Patterns window; the whole
+  section stays out of the way when no agents ran. Not sure what a number means? Hover the
   small i icon next to any section title, or the tiles and column headers
   themselves.
 - **Churn**: the most re-touched files per project (edits × sessions), a

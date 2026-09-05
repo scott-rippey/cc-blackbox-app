@@ -367,6 +367,20 @@ timeline. This is the feature list; step-by-step usage lives in
   run opens into its decisions in the same window, and a run row's Decisions
   button opens straight into that run. Use it to tune a prompt against what
   the agent actually chose. Each logged decision costs one tool turn.
+- **Decision Patterns**: the same window's Patterns tab shows what repeats
+  across all of an agent's runs. After each run that logs decisions, the app
+  runs one Claude pass (Haiku, cents; its model, cost and time show in the
+  window) that names the themes; every number is then computed from the
+  recorded log, so the dashboard is trustworthy: what the agent keeps
+  choosing (count, runs touched, a per-run trend, crew, how those runs
+  ended, cost share), where it wavers (the same question answered
+  differently, each answer with the runs that chose it), decisions per run,
+  and suggestions: lock in, forbid or clarify lines with the evidence behind
+  them. Add to prompt drops a line into the agent editor (you still save),
+  and later passes report whether the change worked: stopped, reduced,
+  holding, settled, still wavering. Every number opens the runs and
+  decisions behind it; Refresh runs the pass on demand; a History
+  disclosure lists every pass with its cost and any failure's raw answer.
 - **Schedules**: manual, daily, or weekly. They fire only while the app is
   open; missed occurrences are skipped. Guards: max 3 concurrent runs,
   30-minute wall-clock kill.
@@ -441,7 +455,9 @@ panel below (defaults: global).
   economics and logged decisions (what, why, alternatives, with crew
   attribution, expandable per run; the 30 most recent decision-logging
   runs) live in an Agents section that only
-  grows when agents actually ran in the range. Every section header carries
+  grows when agents actually ran in the range; agents that log decisions
+  get a Decision patterns line (top themes, wavering count, when they were
+  last analyzed) that opens their Patterns window. Every section header carries
   a hover info icon explaining what the numbers mean, and KPI tiles and
   cache columns explain themselves on hover too.
 - **Churn**: the most re-touched files per project, a spec-leak detector

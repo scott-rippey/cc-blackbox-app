@@ -17,6 +17,21 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.7.0 — 2026-09-05
+
+## Decision Patterns: see what your agents keep choosing
+
+- **A Patterns tab in the agent's Decisions window.** After each run that logs decisions, CC Blackbox runs one small Claude pass (Haiku, a few cents; the model, cost and time show right in the window) that names the recurring themes. Every number on the screen is then computed from the recorded log itself: what the agent keeps choosing, with a count, the runs it touched, a per-run trend, the crew members involved, how those runs ended and their share of the spend; where it wavers (the same question answered differently across runs, each answer with the runs that chose it); and decisions per run against outcome and cost. Every number opens the runs and decisions behind it.
+- **Suggestions you can apply in one click.** The pass proposes prompt lines: lock in a choice the agent already makes well, forbid one it should stop making, or clarify an instruction it reads inconsistently, each with the evidence behind it. Add to prompt opens the agent editor with the line already in place; you still press Save. Later passes then report whether the change worked: stopped, reduced, unchanged, holding, slipping, settled, or still wavering.
+- **Fully observable.** The status line shows when the last pass ran and what it cost; badges flag new decisions or a prompt change since; Refresh runs it again on demand; Analysis history lists every pass, and a failed pass keeps the model's raw answer so you can see why.
+- **Reports > Operations > Agents** gains a Decision patterns line per agent (top themes, how many questions it wavers on, when it was last analyzed) that opens the same window.
+
+The analysis is private to you: nothing from it is ever shown to an agent, and it only reaches a prompt when you save it. The pass itself is never recorded as a session and never counts toward your session costs.
+
+## New here? Installing for the first time
+
+Download the `.dmg` file below and drag CC Blackbox to Applications. The other files on this release are for the app's built-in auto-updater; you do not need them.
+
 ## v4.6.2 — 2026-09-05
 
 ## Cleaner updates, and a way to find the rest of the family
