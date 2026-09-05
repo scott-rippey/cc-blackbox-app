@@ -591,6 +591,10 @@ in the corner approximates the plan's usage block and ignores the scope.
   (summary tiles, charts, every table) and opens it. Scope it to one client
   first and the header reads as that client's report; handy for sharing.
 
+Want the rest of the family? **Help → More Power Your Process Apps** opens
+the Hangar Deck download page in your browser. Hangar Deck is the launcher
+that installs and updates this app and its siblings from one place.
+
 To send feedback about the app: **Help → Send Feedback…** opens a GitHub
 issue with your app version already filled in.
 

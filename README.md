@@ -84,6 +84,10 @@ carries end-to-end encrypted traffic it cannot read.
 Install once. The app keeps itself current from this repository's releases
 automatically; a fresh download is only needed for a new machine.
 
+Prefer one place for all the Power Your Process apps? **[Hangar Deck](https://github.com/scott-rippey/hangar-deck-app)**
+installs and updates CC Blackbox, Model Radar, and whatever comes next, and
+tells you when a new version lands.
+
 New to the app? The **[User Guide](user-guide.md)** walks through everything
 task by task, and the **[feature list](features.md)** is the at-a-glance
 overview. A short in-app walkthrough also runs on first launch

@@ -456,6 +456,10 @@ panel below (defaults: global).
   reads as that client's report.
 - **Send Feedback** (Help menu): opens a prefilled GitHub issue on the
   public releases repo with the app version and macOS build filled in.
+- **More Power Your Process Apps** (Help menu): opens the Hangar Deck
+  download page in the browser. Hangar Deck is the launcher that installs
+  and updates CC Blackbox, Model Radar, and every Power Your Process app
+  that follows.
 - **Guided walkthrough that drives the app**: a tour over the live UI that
   operates it as it goes. The Cockpit piece by piece (Explorer, Editor,
   moving panes, the Browser brought forward with its toolbar explained and

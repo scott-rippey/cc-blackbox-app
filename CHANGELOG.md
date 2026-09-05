@@ -17,6 +17,17 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.6.2 — 2026-09-05
+
+## Cleaner updates, and a way to find the rest of the family
+
+- **Old update files are now removed properly.** After an update, the previous copy of the app and the unpacked download are deleted for good. Before, a quirk in how Electron reads app archives could leave a hidden leftover bundle behind beside the app, which occasionally made the next update stumble.
+- **Help > More Power Your Process Apps.** Opens the Hangar Deck download page in your browser. Hangar Deck is the launcher that installs and updates CC Blackbox, Model Radar, and every Power Your Process app that follows, from one place.
+
+## New here? Installing for the first time
+
+Download the `.dmg` file below and drag CC Blackbox to Applications. The other files on this release are for the app's built-in auto-updater; you do not need them.
+
 ## v4.6.1 — 2026-09-04
 
 ## Open files from Finder
