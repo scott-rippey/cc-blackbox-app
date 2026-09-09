@@ -17,6 +17,11 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.8.0 — 2026-09-09
+
+### New
+- **Start a session from your phone.** A plus on the phone's session list: pick one of the folders in the workspace this Mac has open, type the first prompt, tap Start. A Claude tab opens in the app as the active tab and the prompt is sent the moment the session is at its prompt. The phone sees only the workspace the Mac has open right now; with none open it says so. A folder the app has not tracked yet is registered as it launches. With more than one Mac paired, folders are listed under each Mac's name and the Start button names the Mac. If the session is slow to come up or the Mac refuses, the first prompt lands in the phone's composer instead of vanishing. Needs the phone app 1.1.
+
 ## v4.7.1 — 2026-09-09
 
 ### Fixed

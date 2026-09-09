@@ -666,6 +666,13 @@ ask, interrupt, or stop a session from wherever you are.
    own; it holds on every device and in the app for the session's
    lifetime. Tap a tool row in the chat to see its full input (file edits
    show a small red and green diff); tap again to collapse.
+6. To start a session from the phone, tap **+** on the session list, pick
+   one of the folders in the workspace this Mac has open, type the first
+   prompt, and tap **Start**. A Claude tab opens in the app and the prompt
+   is sent as soon as the session is ready. Keep a workspace open on the
+   Mac; if none is open, the phone tells you. With two Macs paired, the
+   folders are listed under each Mac's name and the button says which Mac
+   it starts on.
 
 Good to know: prompts and interrupts are accepted only while a Claude
 process is in front in that tab (a tab whose claude just exited refuses

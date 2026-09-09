@@ -538,6 +538,14 @@ panel below (defaults: global).
   a permanent name of your own (the app's session list can rename too);
   a rename holds everywhere for the session's lifetime. Ended sessions
   leave the phone list immediately.
+- Start a session from the phone (4.8.0, phone 1.1): the plus on the
+  phone's session list offers the folders of the workspace this Mac has
+  open, and a tap starts a Claude tab there, exactly like ▶ Claude in the
+  app. The tab opens in the app as the active tab; the first prompt is
+  typed on the phone and sent once the session is at its prompt. Leave a
+  workspace open on the Mac and the phone can start work in any of its
+  folders; with no workspace open the phone says so. A folder the app has
+  not tracked yet is registered (with no client) as it launches.
 
 
 ## Settings
