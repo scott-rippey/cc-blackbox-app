@@ -300,7 +300,10 @@ viewport is a separate pane so the two can sit apart) has two spawn buttons:
 
 A live Claude tab shows a pulsing lamp and a glow border. When Claude finishes
 or asks for input on a background tab, that tab gets an amber dot; if the
-window is unfocused you get a native notification instead. When the process
+window is unfocused you get a native notification instead. You get one
+"waiting for your input" notification per turn, and only for that tab's own
+session (a code review or another claude process the tab spawns never
+triggers one); a permission ask always notifies, even from one of those. When the process
 exits the tab flashes green and removes itself. Drag a tab up or down the
 list to reorder; the order sticks, even across a window close-and-reopen.
 

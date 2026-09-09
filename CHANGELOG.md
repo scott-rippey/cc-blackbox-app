@@ -17,6 +17,11 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.7.1 — 2026-09-09
+
+### Fixed
+- **One "waiting for your input" notification per turn, and only for your own session.** Two things were stacking up: a claude process spawned inside a tab (a pre-push code review, any `claude -p`) fired its own "Claude finished" onto the tab, so a review of nine files meant nine alerts while the tab was still working; and every real turn end alerted twice, once when Claude finished and again a minute later when Claude Code's own idle reminder arrived. Now a tab notifies once per turn, only for its own session, and the amber tab dot follows the same rule. A permission ask still notifies every time.
+
 ## v4.7.0 — 2026-09-05
 
 ## Decision Patterns: see what your agents keep choosing

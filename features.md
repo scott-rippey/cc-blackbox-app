@@ -650,7 +650,11 @@ panel below (defaults: global).
   resume on the next launch, one click each or all at once, with their
   conversations intact (Claude keeps them on disk continuously).
 - Native notifications fire when Claude finishes or needs input while the
-  window is unfocused; in-app, the tab gets an amber dot instead.
+  window is unfocused; in-app, the tab gets an amber dot instead. One
+  "waiting for your input" notification per turn (Claude Code's own idle
+  reminder a minute later does not repeat it), and only for the tab's own
+  session: reviewers or other claude processes a tab spawns never raise
+  it. A permission ask always notifies, even from one of those.
 - Links in any rendered content (markdown, DOCX, agent reports) open in the
   system browser; the window itself never navigates.
 - All data lives locally in `~/Library/Application Support/CC-Blackbox/ccb.db`.
