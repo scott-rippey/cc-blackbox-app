@@ -186,6 +186,15 @@ something is missing it opens into a checklist:
 
 Click the line to see the rows any time; ↻ re-checks.
 
+The rows also keep an eye on versions. Once a day the app checks whether a
+newer Xcode is in the App Store, whether an iOS runtime matching your
+Xcode's SDK is installed, and whether Homebrew has a newer driver. A row
+that is behind reads "26.3 · 26.6 available" with the matching button:
+**Open App Store**, the runtime download command, or **Upgrade** (which
+opens a terminal with `brew upgrade baguette` typed in; the row also says
+which driver version the app was tested with). The green line stays green;
+an available update is information, not a fault. ↻ asks again.
+
 What the toolbar gives you:
 
 - **The device menu** lists every iOS simulator on this Mac, grouped by
@@ -697,10 +706,15 @@ reconnects on its own.
   mint a second client). **+ Add project folder…** tracks anything the
   auto-ask skipped. Changing a client re-attributes that project's recorded
   history retroactively; renaming into an existing client merges histories.
+  The card starts collapsed to a one-line summary (projects, clients, any
+  without a client, any synced only); click the header to expand it, and
+  the app remembers your choice.
 - **Client Credentials**: per-client Vercel tokens: connect, verify
   (read-only), remove. Stored encrypted in the macOS Keychain, never in the
-  database. Why this exists and how tokens reach sessions:
-  [Vercel access per client](#vercel-access-per-client).
+  database. Also collapsed to a summary by default (clients, connected, any
+  needing a reconnect); a badge on the header flags a keychain problem or an
+  expired credential even while collapsed. Why this exists and how tokens
+  reach sessions: [Vercel access per client](#vercel-access-per-client).
 - **Browser Control (MCP)**: the one entry the app keeps in Claude Code's
   own config (`~/.claude.json`) so your Claude sessions can reach the app's
   tool server: browser driving and decision logging both go through it. It
@@ -709,8 +723,24 @@ reconnects on its own.
   sticks until you click Install again). Outside CC Blackbox the entry
   stays dormant and never connects.
 - **iOS Simulator**: the same setup check the Simulator pane shows (Xcode,
-  iOS runtime, Homebrew, driver) with a Re-check button, and how device
-  shutdown and Claude's per-tab permission work.
+  iOS runtime, Homebrew, driver) with a Re-check button, each row saying
+  when a newer version is available with the button to get it, and how
+  device shutdown and Claude's per-tab permission work.
+- **Platform**: what the app runs on and whether it is current.
+  - **CC Blackbox**: the installed version, when the app last checked for
+    an update, and **Check for Updates** (the same check as the app menu;
+    it stages an update in the background and offers a restart).
+  - **Browser engine**: the Chromium the embedded browser runs on and the
+    Electron it ships with. Engine updates arrive with app updates, so a
+    note that a newer engine build exists upstream is just information.
+    The only warning is when the engine line has left its support window,
+    which means the app itself is out of date: update CC Blackbox.
+  - **iOS Simulator**: a one-line roll-up of the Xcode, iOS runtime, and
+    driver updates listed on the iOS Simulator card.
+  - The checks run once a day against the npm registry (Electron), the
+    App Store (Xcode), and Homebrew (the driver); **Check now** asks
+    again. Offline, the last answers stay on screen with their age.
+    Nothing installs by itself.
 - **Appearance**: app-wide font size (10–18 px; the slider previews on the
   card, Apply resizes the whole app; the title bar stays its normal size),
   the autosave switch, a **Show walkthrough** switch that runs the guided

@@ -128,6 +128,9 @@ timeline. This is the feature list; step-by-step usage lives in
   line; when something is missing it opens into a checklist with a link or
   a one-line install command per row. Install buttons open a terminal with
   the command typed in for you to run; nothing installs behind your back.
+  The same rows also say when a newer Xcode, iOS runtime, or driver is
+  available (checked once a day, or on Re-check), with the matching button:
+  Open App Store, the runtime download command, or Upgrade for the driver.
 - **One device per workspace.** The device menu lists every iOS simulator
   on the Mac by runtime with its boot state; picking a shut-down one boots
   it. The attached device and the stream settings persist per workspace.
@@ -489,7 +492,7 @@ panel below (defaults: global).
   panel by panel (the scope row, then the Cost tab switched in front of
   you: totals, grouped spend, churn; then Operations: the how-the-work-went
   totals, the activity calendar, the hour strip, agents, friction), and
-  every Settings card (hooks, Browser Control, projects and
+  every Settings card (hooks, Browser Control, platform, projects and
   clients, credentials, appearance, model prices, database, sync, health).
   The card sits in one fixed spot with a step counter, each stop gets a
   glow ring, and the app stays fully clickable. Fires once, when a fresh
@@ -559,7 +562,10 @@ panel below (defaults: global).
   side-by-side diff of the settings.json change before anything is applied;
   timestamped backups are written first.
 - **Projects**: every tracked folder in one list: client tag inline-editable
-  with suggestions, current branch, path, and an add-folder button. The
+  with suggestions, current branch, path, and an add-folder button. The card
+  is collapsed to a one-line summary by default (how many projects and
+  clients, any without a client, any synced only); click the header to
+  expand, and the choice is remembered. The
   manual home for anything the auto-ask skipped; client changes re-attribute
   the project's recorded history retroactively. **Remove…** takes a project
   out of the app for good: its recorded sessions (events, token usage, cost
@@ -572,7 +578,19 @@ panel below (defaults: global).
   project is removed there too.
 - **Client credentials**: per-client Vercel access, with browser-based
   **Connect Vercel…** (or paste a token), Keychain storage, read-only
-  verify, remove.
+  verify, remove. Collapsed to a summary by default (clients, connected,
+  any that need a reconnect); a badge on the collapsed header flags a
+  keychain problem or an expired credential so nothing hides behind the fold.
+- **Platform**: what the app runs on and whether it is current. The CC
+  Blackbox version with a **Check for Updates** button (the same check as
+  the app menu) and when it last ran; the Chromium engine the browser uses
+  and the Electron it ships with (engine updates arrive with app updates,
+  so a newer engine upstream is information, not a chore; a warning appears
+  only if the engine line has left its support window, which means the app
+  itself is out of date); and a one-line roll-up of the Xcode, iOS runtime,
+  and simulator driver updates the iOS Simulator card lists. Checked once a
+  day against the npm registry, the App Store, and Homebrew, or on **Check
+  now**. Nothing installs by itself.
 - **Model prices**: the editable $/MTok table (input, output, cache read,
   cache write 5m/1h) behind all cost math; add or remove models freely.
 - **Appearance**: the app-wide font-size slider (previews on the card;

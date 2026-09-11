@@ -17,6 +17,17 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.9.0 — 2026-09-11
+
+### New
+- **Settings → Platform: what the app runs on, and whether it is current.** The CC Blackbox version with a Check for Updates button (the same check as the app menu) and when it last ran; the Chromium engine the embedded browser uses and the Electron it ships with, with a plain note when a newer engine build exists upstream (it arrives with the next app update) and a warning only if the engine line has left its support window; and a one-line roll-up of the simulator updates below. Checked once a day; Check now asks again. Nothing installs by itself.
+- **The iOS Simulator rows now say when something newer is available.** Xcode against the App Store, the iOS runtime against your Xcode's SDK, and the baguette driver against Homebrew, each with the button to get it: Open App Store, the runtime download command, or Upgrade, which opens a terminal with `brew upgrade baguette` typed in for you. The rows also name the driver version the app was tested with. The setup strip in the Cockpit shows the same rows.
+
+### Improved
+- **Settings takes less room.** Projects and Client Credentials start collapsed to a one-line summary (how many projects and clients, anything without a client or synced only; clients connected, any needing a reconnect). Click a header to expand; the app remembers your choice. A badge on the collapsed header still flags a keychain problem or an expired credential. Appearance moved to the bottom of the left column so the two columns end near each other again.
+- **The walkthrough has a Platform stop** and opens the collapsed cards before it points at them.
+- **Electron 43.7.0** (Chromium 150.0.7871.250), the newest patch of the current line, carrying its security fixes.
+
 ## v4.8.1 — 2026-09-11
 
 ### Fixed
