@@ -651,7 +651,8 @@ ask, interrupt, or stop a session from wherever you are.
 2. The phone shows this Mac's name; the Mac lists the phone with a live dot
    while it is connected and a last-seen time otherwise. Two phones can be
    paired; unpair from either side.
-3. On the phone, open a session to watch it. When Claude asks for
+3. On the phone, open a session to watch it. Its name on the phone follows
+   the name here, and the whole conversation loads when you open it. When Claude asks for
    permission, the ask appears on the phone with **Allow** and **Deny**; the
    terminal shows a small **phone** pill on that tab while the phone is
    deciding. If nobody answers within 50 seconds, the normal terminal

@@ -519,6 +519,11 @@ panel below (defaults: global).
 - A push notification reaches the phone when a session waits for input,
   waits for a permission, or ends; pushes are encrypted with a key set at
   pairing and the relay cannot read them.
+- The phone's list follows the Mac live: a session's name updates on the
+  phone the moment it changes here (the rolling title on a typed prompt, a
+  rename in Sessions), and a long conversation's history arrives complete
+  when the phone opens it. After the Mac wakes from sleep it redials the
+  relay at once instead of waiting for the dead socket to time out.
 - Settings → Mobile: turn it on, pair a phone (QR or link), see each
   phone's last-seen time and live dot, unpair. If the installed hooks
   predate phone answers, the card says so with a Reinstall button.

@@ -17,6 +17,14 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.8.1 — 2026-09-11
+
+### Fixed
+- **The whole conversation loads.** Opening a busy session on the phone used to show an old prompt at the top, the live tool rows, and none of your newest prompts: the phone kept only the first slice of the history the Mac sent. The Mac now marks the end of the history it sends, and the phone app 1.1.1 reads every slice.
+- **Session names update as they change.** The list card kept its old name until the phone reconnected. The Mac now tells every connected phone the moment a name changes: the rolling title on a typed prompt, a rename in Sessions, a rename from another phone.
+- **Back online faster after sleep.** When the Mac wakes, it redials the relay right away instead of waiting a minute for the dead connection to time out, so the phone sees the Mac come back sooner.
+- **Honest disconnects.** The relay now tells your phones the moment this Mac goes away (quit, sleep, network loss), so a chat never claims Claude is working on a Mac that is unreachable. Pairs with the phone app 1.1.1, which also fixes the "Offline" Mac that only a relaunch would bring back, checks its connection on every return to the foreground, redials on pull-to-refresh, and says "Disconnected" instead of a stale "Working".
+
 ## v4.8.0 — 2026-09-09
 
 ### New
