@@ -17,6 +17,13 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.10.1 — 2026-09-17
+
+### Fixed
+- **An update check right at launch can no longer lose its own download.** The cleanup the app runs at startup and the first update check shared one folder, and in rare timing the cleanup could delete the update that had just started downloading. The check now waits for the cleanup.
+- **The message for a Mac that needs a newer macOS now gives directions that work on older Macs too:** Software Update, in System Settings or in System Preferences on older versions.
+- **A failure to start the update helper at quit is logged** instead of being recorded as a crash.
+
 ## v4.10.0 — 2026-09-17
 
 ### Improved
