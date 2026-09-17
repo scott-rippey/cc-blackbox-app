@@ -492,8 +492,9 @@ panel below (defaults: global).
   panel by panel (the scope row, then the Cost tab switched in front of
   you: totals, grouped spend, churn; then Operations: the how-the-work-went
   totals, the activity calendar, the hour strip, agents, friction), and
-  every Settings card (hooks, Browser Control, platform, projects and
-  clients, credentials, appearance, model prices, database, sync, health).
+  every Settings card (hooks, Browser Control, iOS Simulator, platform,
+  projects and clients, credentials, appearance, model prices, database,
+  sync, health).
   The card sits in one fixed spot with a step counter, each stop gets a
   glow ring, and the app stays fully clickable. Fires once, when a fresh
   install opens its first workspace; existing installs never see it
@@ -659,7 +660,11 @@ panel below (defaults: global).
   any step fails, the message names what happened (download, corrupted
   file, signature refused, disk space, unpack) and the one thing that
   fixes it; after repeated failures on the same version the app stops
-  retrying and points at the manual download. Nothing fails silently. After an update
+  retrying and points at the manual download. Nothing fails silently. If a
+  new version needs a newer macOS than this Mac runs, the app does not
+  install it: a notification, the Check for Updates dialog and the Platform
+  card say which macOS it needs, and the version you have keeps working.
+  After an update
   installs, the first launch shows a What's New pop-up with that version's
   actual release notes (pulled from the release page; offline shows a link
   instead), once per version. And an app launched

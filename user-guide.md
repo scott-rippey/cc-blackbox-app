@@ -845,7 +845,11 @@ reconnects on its own.
   step fails, the message names the cause (download, corrupted file,
   signature refused, disk space, unpack) and what fixes it; after repeated
   failures on one version the app stops retrying and points at the manual
-  download. After an update, the first launch greets you with a What's New
+  download. If a new version needs a newer macOS than your Mac runs, the
+  app leaves it alone and tells you which macOS it needs (a notification,
+  the Check for Updates dialog, and Settings → Platform); the version you
+  have keeps working, and the update installs after you update macOS. After
+  an update, the first launch greets you with a What's New
   window listing exactly what changed in the version you just received;
   close it and it stays gone until the next update.
 - **If something crashes, the app picks itself up.** A crashed window is

@@ -17,6 +17,17 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.10.0 — 2026-09-17
+
+### Improved
+- **Electron 44.4.1 (Chromium 152).** The embedded browser and the app itself move to the current engine line, with its security fixes. Nothing changes in how the app works.
+- **The Settings walkthrough has its own iOS Simulator stop.** It sits between Browser Control and Platform, and the Platform stop now covers only the app and the engine.
+- **The iOS Simulator card names baguette 0.1.97** as the driver version the app was tested with.
+- **Updates check your macOS first.** If a future version needs a newer macOS than your Mac runs, the app does not install it. A notification, the Check for Updates dialog and Settings → Platform tell you which macOS it needs, and the version you have keeps working.
+
+### Changed
+- **macOS 13 (Ventura) or later is now required.** The new engine no longer runs on macOS 12.
+
 ## v4.9.0 — 2026-09-11
 
 ### New
