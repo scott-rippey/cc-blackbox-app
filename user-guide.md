@@ -54,6 +54,13 @@ remembered per workspace.
   slider previews on the Appearance card; **Apply** resizes the app in one
   jump. The title bar (window buttons, recording dot, view tabs) keeps its
   normal size at every setting, like a native toolbar.
+- **Settings → Projects → Folder moved…** is for a folder you renamed or
+  moved in Finder, outside the app. The project's row then points at a
+  folder that is not there any more (it shows a "folder not found" pill).
+  Click it, pick the folder's new location, and the project, its history,
+  client tag, agents and workspace entries move over in one step. Prefer
+  renaming from the Explorer when you can; this is the catch-up for renames
+  the app did not see.
 - **Settings → Projects → Remove…** takes a folder out of the app for good:
   its recorded sessions and cost history, any transcript copies synced from
   another Mac, and its agents and runs. The dialog shows exactly what goes
@@ -66,7 +73,11 @@ remembered per workspace.
 
 Click a file in the Explorer to open it. Right-click for the full menu:
 open, reveal in Finder, copy (relative) path, new file/folder, rename,
-delete, and, on a root, remove it from the workspace. Delete asks first,
+delete, and, on a root, remove it from the workspace. Renaming a root
+folder renames it on disk and moves everything that knows the folder with
+it: the project, its recorded sessions and cost history, the client tag,
+its agents, and every workspace that lists it. Nothing to re-add, no second
+project. Delete asks first,
 then moves the file or folder to the Trash, so you can put it back from
 Finder if you change your mind. If you would rather it stopped asking, switch
 on "Don't ask again" in that dialog; **Settings -> Appearance -> Ask before

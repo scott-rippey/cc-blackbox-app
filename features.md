@@ -37,7 +37,10 @@ timeline. This is the feature list; step-by-step usage lives in
 
 - File tree per root with live refresh, gitignored files dimmed, and full
   context menu: open, reveal in Finder, copy path, new file/folder, rename,
-  delete, remove root from workspace. Delete asks first (Move to Trash /
+  delete, remove root from workspace. Rename works on a root folder too:
+  the folder is renamed on disk and its project, recorded sessions, cost
+  history, client tag, agents and every workspace that lists it move with
+  it, so history stays one project under the new name. Delete asks first (Move to Trash /
   Cancel, Esc or Cancel only) and moves the item to the Trash, so it can be
   put back from Finder; the dialog's "Don't ask again" turns the prompt off
   (Settings -> Appearance turns it back on). Folder rows carry a VS Code
@@ -568,7 +571,11 @@ panel below (defaults: global).
   clients, any without a client, any synced only); click the header to
   expand, and the choice is remembered. The
   manual home for anything the auto-ask skipped; client changes re-attribute
-  the project's recorded history retroactively. **Remove…** takes a project
+  the project's recorded history retroactively. **Folder moved…** re-points
+  a project whose folder was renamed or moved in Finder: pick the new
+  location and the project, its history, client tag, agents and workspace
+  entries follow in one step (a row whose folder is gone shows a "folder not
+  found" pill that leads straight there). **Remove…** takes a project
   out of the app for good: its recorded sessions (events, token usage, cost
   history), any transcript copies synced from another Mac, and its agents
   and runs (surviving worktrees removed from disk). The confirm shows the

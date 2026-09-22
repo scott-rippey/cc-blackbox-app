@@ -17,6 +17,15 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.11.0 — 2026-09-21
+
+### New
+- **Rename a folder from the Explorer and everything moves with it.** Right-click a root folder, choose Rename, and the folder is renamed on disk while its project, recorded sessions, cost history, client tag, agents and every workspace that lists it follow along. History stays one project under the new name; nothing to re-add.
+- **Settings, Projects, Folder moved.** For a folder you renamed or moved in Finder, outside the app: the project's row shows a "folder not found" pill. Click it, pick the folder's new location, and the project and its history re-point in one step instead of splitting into a second project.
+
+### Improved
+- **Electron 44.4.3.** The newest patch of the current engine line.
+
 ## v4.10.1 — 2026-09-17
 
 ### Fixed
