@@ -54,13 +54,20 @@ remembered per workspace.
   slider previews on the Appearance card; **Apply** resizes the app in one
   jump. The title bar (window buttons, recording dot, view tabs) keeps its
   normal size at every setting, like a native toolbar.
-- **Settings → Projects → Folder moved…** is for a folder you renamed or
-  moved in Finder, outside the app. The project's row then points at a
-  folder that is not there any more (it shows a "folder not found" pill).
-  Click it, pick the folder's new location, and the project, its history,
-  client tag, agents and workspace entries move over in one step. Prefer
-  renaming from the Explorer when you can; this is the catch-up for renames
-  the app did not see.
+- **Folder moved.** If you rename or move a tracked folder outside the app
+  (Finder, or a sync tool on another Mac), the app finds it again on its
+  own: at launch, or the next time Claude runs inside it, it offers to point
+  the project at the new location, and Settings → Projects shows "folder
+  moved · point at …" on that row for one click. Accept, and the project,
+  its history, client tag, agents and workspace entries move over; nothing
+  splits into a second project. **Not now** keeps things as they are and
+  does not ask again for that destination. If the app could not find the
+  folder (it was moved before this version ever saw it), the row shows
+  "folder not found · folder moved…": click it and pick the folder yourself.
+  If the new location is already tracked as its own project, the app offers
+  to merge the two; the duplicate's sessions and agents join the original
+  and the extra entry goes away. Prefer renaming from the Explorer when you
+  can; these are the catch-ups for renames the app did not see.
 - **Settings → Projects → Remove…** takes a folder out of the app for good:
   its recorded sessions and cost history, any transcript copies synced from
   another Mac, and its agents and runs. The dialog shows exactly what goes

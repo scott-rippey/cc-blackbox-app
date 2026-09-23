@@ -17,6 +17,15 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.11.1 — 2026-09-22
+
+### New
+- **The app finds a moved folder on its own.** Rename or move a tracked folder outside the app (Finder, or a sync tool on another Mac) and at launch, or the next time Claude runs inside it, the app offers to point the project at the new location; Settings, Projects shows "folder moved, point at …" for one click. History, client tag, agents and workspace entries move over; nothing splits.
+- **Merge a duplicate project.** If a folder's new location was already tracked as its own project, the move offers to merge the two: the duplicate's sessions and agents join the original and the extra entry goes away.
+
+### Improved
+- **Electron 44.4.4.** The newest patch of the current engine line.
+
 ## v4.11.0 — 2026-09-21
 
 ### New

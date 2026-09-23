@@ -574,8 +574,14 @@ panel below (defaults: global).
   the project's recorded history retroactively. **Folder moved…** re-points
   a project whose folder was renamed or moved in Finder: pick the new
   location and the project, its history, client tag, agents and workspace
-  entries follow in one step (a row whose folder is gone shows a "folder not
-  found" pill that leads straight there). **Remove…** takes a project
+  entries follow in one step. The app usually finds the folder itself: a
+  renamed or moved folder keeps its identity, so at launch (or the next time
+  Claude runs inside it) the app offers "Folder moved" with the new location
+  already named, and the Projects row shows "folder moved · point at …" for
+  one click. If the new location is already tracked as its own project (a
+  duplicate that was created before the move was known), the app offers to
+  merge the two: the duplicate's sessions and agents join the original and
+  its entry goes away, so the history is one project again. **Remove…** takes a project
   out of the app for good: its recorded sessions (events, token usage, cost
   history), any transcript copies synced from another Mac, and its agents
   and runs (surviving worktrees removed from disk). The confirm shows the
