@@ -17,6 +17,14 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.12.0 — 2026-09-24
+
+### Improved
+- **Faster launch, and a smoother app, with many folders open.** The folder watcher that keeps the Explorer live now uses the system's native file events instead of walking every folder at startup. On a workspace with fourteen folders, launch to a ready cockpit went from about 1.1 seconds to about 0.6, and the same stall no longer hits when you open or switch a workspace or add a folder.
+- **The iOS Simulator no longer holds up the cockpit.** Opening a workspace shows the cockpit right away; the simulator pane catches up on its own.
+- **A boot benchmark ships in the tree** (`npm run bench:boot`), so future launch changes are measured before they are kept.
+- **Electron 44.4.5.** The newest patch of the current engine line.
+
 ## v4.11.1 — 2026-09-22
 
 ### New
