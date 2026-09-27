@@ -17,6 +17,13 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.13.3 — 2026-09-27
+
+### Improved
+- **One button style across the app.** Every button now has the same raised Mac look with regular-weight text that brightens on hover, and every set of tabs, ranges and modes is a Mac segmented control. No more mismatched sizes, flat gradients or wrapped labels.
+- **Tidier Agent editor.** The Structure and Permissions choices now line their text up at the top of each card, and the Run in a git worktree, Auto-retry and Log decisions options sit in two even columns.
+- **Settings, Reset Cockpit layout** is a regular button now: it no longer wraps onto two lines and matches the other buttons in Settings.
+
 ## v4.13.2 — 2026-09-27
 
 ### Improved
