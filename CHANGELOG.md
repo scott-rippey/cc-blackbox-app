@@ -17,6 +17,13 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.13.2 — 2026-09-27
+
+### Improved
+- **Real icons everywhere.** Every button, marker and label across the app, including the Agent Harness, Sessions, Settings, Terminals, Reports and the Visualizer, now uses the same set of line icons instead of text symbols and emoji, so they all match in size and weight.
+- **The window buttons line up with the title bar.** The close, minimize and zoom buttons sat a little low; they are now centered with CC Blackbox and the view tabs.
+- **Cleaner wording.** Messages, hints and status lines across the app were rewritten to read more naturally.
+
 ## v4.13.1 — 2026-09-27
 
 ### Improved
