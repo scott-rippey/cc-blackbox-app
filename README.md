@@ -50,10 +50,10 @@ Claude terminal tabs, fuzzy quick open, and ripgrep-powered workspace search.
 right in the workspace, with console and network capture and docked DevTools.
 Apple's iOS Simulator can be mirrored and driven beside your code. Claude
 sessions can drive both, each behind its own per-session consent prompt:
-navigate, click, type, read the page, or tap through an iOS app while you
-watch.
+navigate, click, type, read the page, view it at phone or desktop size, or
+tap through an iOS app while you watch.
 
-**Your phone as a remote.** Pair the CC Blackbox iPhone companion (TestFlight)
+**Your phone as a remote.** Pair the CC Blackbox iPhone companion ([App Store](https://apps.apple.com/us/app/cc-blackbox/id6807098539))
 and every live session follows you: watch the conversation, send the next
 prompt, answer permission asks, or interrupt from anywhere. A status strip
 shows the model and context usage per session, and pushes arrive when a turn
@@ -95,7 +95,7 @@ overview. A short in-app walkthrough also runs on first launch
 
 ## Requirements
 
-- Apple Silicon Mac on a recent macOS
+- Apple Silicon Mac on macOS 13 or later
 - [Claude Code CLI](https://code.claude.com) installed and authenticated
 
 ## About
