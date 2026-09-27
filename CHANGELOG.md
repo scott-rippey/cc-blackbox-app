@@ -17,6 +17,12 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.13.1 — 2026-09-27
+
+### Improved
+- **Hover cards wait for you.** A card now appears only after the pointer rests on a control for a second, the same delay macOS uses, and every card waits the full second. Moving the mouse across the app no longer sets cards off.
+- **The Browser's address bar gets its own row.** All the buttons sit in one row under the pane tabs, lined up from the left, and the address bar runs the full width right above the page.
+
 ## v4.13.0 — 2026-09-27
 
 ### New

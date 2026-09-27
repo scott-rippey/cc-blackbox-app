@@ -118,11 +118,12 @@ https), and anything that is not an address becomes a Google search, so
 typing `github` gets you there in two steps. This is not a preview iframe: sites that refuse to be embedded
 elsewhere, like GitHub or your deployed apps, load normally here.
 
-The toolbar sits under the tab row in two rows, so a narrow pane never
-crushes it: back, forward, reload, clear and the address bar on top; the
-**Claude driving** badge, the viewport chip and the actions below. Hover over
-any control for a card that names it and says what it does. What the
-toolbar gives you:
+The toolbar sits under the tab row in two rows: every button on top, lined
+up from the left (back, forward, reload and clear, then the actions, then the
+**Claude driving** badge and the viewport chip), and the address bar below at
+full width, right above the page. Rest the pointer on any control for a
+second for a card that names it and says what it does. What the toolbar
+gives you:
 
 - **Back, forward, reload** arrows (reload becomes an **X** that stops the
   page while it is loading).
@@ -228,7 +229,7 @@ Shut down on the left; the **Claude driving** badge, the stream settings and
 maximize on the right. It wraps onto a second line on a narrow pane rather
 than squeezing. The device's own buttons sit on a rail beside the screen,
 like the buttons on the side of a real phone (under the screen when the
-pane is narrow). Hover over any control for a card that names it, says what
+pane is narrow). Rest the pointer on any control for a second for a card that names it, says what
 it does, and shows its shortcut.
 
 What the toolbar and the rail give you:
