@@ -118,12 +118,17 @@ https), and anything that is not an address becomes a Google search, so
 typing `github` gets you there in two steps. This is not a preview iframe: sites that refuse to be embedded
 elsewhere, like GitHub or your deployed apps, load normally here.
 
-What the toolbar gives you:
+The toolbar sits under the tab row in two rows, so a narrow pane never
+crushes it: back, forward, reload, clear and the address bar on top; the
+**Claude driving** badge, the viewport chip and the actions below. Hover over
+any control for a card that names it and says what it does. What the
+toolbar gives you:
 
-- **← → ⟳** back, forward, reload (the reload button becomes ✕ while a page
-  is loading).
-- **↗** opens the current page in your system browser.
-- **○** clears the page back to a blank tab, so you are never stuck
+- **Back, forward, reload** arrows (reload becomes an **X** that stops the
+  page while it is loading).
+- The **open in system browser** arrow-out-of-a-box opens the current page in
+  your system browser.
+- The **blank page** icon clears the page back to a blank tab, so you are never stuck
   displaying whatever you last opened. The cleared page also stays cleared
   when you reopen the workspace.
 - **DevTools** docks the full Chrome DevTools next to the page. Drag the
@@ -132,8 +137,8 @@ What the toolbar gives you:
   errors, and every network request with status, duration, and size. The
   badge counts errors. Capture runs all the time, even with DevTools open,
   so the history from before you opened the panel is already there.
-- **⤢** maximizes the page to the whole window; press **Esc** or click **⤡**
-  to come back. The page never reloads when you switch around.
+- The **expand arrows** maximize the page to the whole window; press **Esc**
+  or click the inward arrows to come back. The page never reloads when you switch around.
 
 Each workspace gets its own browser profile (cookies and logins), and the
 page you were on comes back when you reopen the workspace. Opening a file
@@ -175,7 +180,12 @@ permission belongs to the Claude process that asked: if some other program
 in that tab later tries to use it (a script, an npm install), it is refused
 and a notification tells you.
 While Claude is driving, a **Claude driving** badge appears in the browser
-toolbar. Because the browser holds your logged-in sessions, only allow it for
+toolbar; it disappears when Claude finishes that turn, or after 30 seconds
+with no browser action. When Claude tests a layout at another size (a phone, a tablet, a
+wide desktop), the page appears centered in the pane at that size and a chip
+such as **390 × 844 · mobile** appears in the toolbar. Click the chip to put
+the browser back to the pane's size; it also resets on its own when that
+Claude session ends. Because the browser holds your logged-in sessions, only allow it for
 work you trust. Everything Claude does is recorded in the session timeline
 like any other tool.
 
@@ -213,20 +223,33 @@ opens a terminal with `brew upgrade baguette` typed in; the row also says
 which driver version the app was tested with). The green line stays green;
 an available update is information, not a fault. ↻ asks again.
 
-What the toolbar gives you:
+The toolbar sits under the tab row: the device menu, its state and Boot or
+Shut down on the left; the **Claude driving** badge, the stream settings and
+maximize on the right. It wraps onto a second line on a narrow pane rather
+than squeezing. The device's own buttons sit on a rail beside the screen,
+like the buttons on the side of a real phone (under the screen when the
+pane is narrow). Hover over any control for a card that names it, says what
+it does, and shows its shortcut.
+
+What the toolbar and the rail give you:
 
 - **The device menu** lists every iOS simulator on this Mac, grouped by
   runtime, with a dot on the booted ones. Picking a shut-down device boots
   it (a few seconds). Each workspace remembers its device.
 - **● live / ○ off** shows the real state; **Boot** and **Shut down** do what
   they say.
-- **⌂ ⏻ + −** are Home, Lock, and volume; the shortcuts are Simulator.app's
-  own (**⌘⇧H**, **⌘L**, **⌘↑ / ⌘↓**) while the screen has focus.
-- **◔** saves a full-resolution PNG to your Desktop (**⌘S**).
-- **fps** and **size** tune the stream. Half size at 30 fps is the default
-  and is easy on the Mac; full size costs more CPU. A small fps readout
-  sits in the corner of the screen.
-- **⤢** maximizes the device to the whole window; **Esc** or **⤡** restores.
+- On the rail, the **house, padlock and speaker** icons are Home, Lock, and
+  volume up and down; the shortcuts are Simulator.app's own (**⌘⇧H**,
+  **⌘L**, **⌘↑ / ⌘↓**) while the screen has focus.
+- The **camera** on the rail saves a full-resolution PNG of the device
+  screen to your Desktop (**⌘S**), and a note at the top of the screen says
+  the file name.
+- The **stream button** (a gear with "30 fps · 1/2") opens the stream
+  settings: frame rate and size. Half size at 30 fps is the default and is
+  easy on the Mac; full size costs more CPU. A small fps readout sits in the
+  corner of the screen.
+- The **expand arrows** maximize the device to the whole window; **Esc** or
+  the inward arrows restore it.
 
 On the screen itself: click to tap, press and hold for a long press, drag
 to swipe, scroll with the wheel, and type once you have clicked into it;
@@ -250,7 +273,8 @@ terminal (`xcodebuild`); the simulator tools take over from there.
 The first time a session in a terminal tries, you get a one-time Allow /
 Deny prompt for that tab, separate from the browser one. Allow lasts as long
 as the tab is open; Deny sticks until you close and reopen it. While Claude
-is driving, a **Claude driving** badge appears in the simulator toolbar,
+is driving, a **Claude driving** badge appears in the simulator toolbar (it
+disappears when Claude finishes that turn),
 and when Claude attaches a device the Cockpit switches to the Simulator so
 you can watch. It only ever touches the simulated device, never your Mac.
 Everything Claude does is recorded in the session timeline like any other

@@ -101,6 +101,13 @@ timeline. This is the feature list; step-by-step usage lives in
   currently loaded unless Claude asks for the whole history. So Claude
   can build a page and then actually check it in the same browser you are
   watching, instead of asking you to look.
+- **Claude can test other screen sizes.** Asked to check a phone, tablet or
+  desktop layout, Claude sets the browser to that size and the page really
+  lays out at it: media queries, touch behavior and screenshots all follow.
+  The page shows centered in the browser pane at that size (shrunk to fit
+  when it is bigger than the pane), and a chip in the toolbar names the size.
+  Click the chip to go back to the pane's own size; it also goes back by
+  itself when the Claude session that set it ends.
 - **You approve it per terminal tab.** The first time a session tries to use
   the browser, CC Blackbox asks once: Allow or Deny. Allow lasts for that
   terminal tab; Deny sticks until you close and reopen the tab. The
@@ -108,7 +115,9 @@ timeline. This is the feature list; step-by-step usage lives in
   program in that tab later tries to use it, it is refused and you get a
   notification saying so. While a
   session is driving, a **Claude driving** pill shows in the browser toolbar
-  and pulses on each action. It acts inside that browser's logged-in
+  and pulses on each action. It shows only while Claude is actually working
+  in the browser and goes away when that Claude turn finishes (or after 30
+  seconds with no browser action). It acts inside that browser's logged-in
   sessions, which is why the consent is per tab and worth thinking about.
 - It works through a small local server the app runs; nothing leaves your
   machine. Setup is automatic: the app adds one entry to Claude Code's config
@@ -139,9 +148,10 @@ timeline. This is the feature list; step-by-step usage lives in
   it. The attached device and the stream settings persist per workspace.
 - **Tap it yourself**: click to tap, drag to swipe, scroll with the wheel,
   type when the screen has focus (Unicode pastes through the pasteboard).
-  Toolbar buttons and Simulator.app's shortcuts for Home (⌘⇧H), Lock (⌘L),
-  and volume (⌘↑/⌘↓); a Desktop screenshot (⌘S); frame rate and stream
-  size controls with a live fps readout; and a **Maximize** mode (Esc
+  A rail of hardware buttons beside the screen, like a real phone's side
+  buttons, with Simulator.app's shortcuts for Home (⌘⇧H), Lock (⌘L) and
+  volume (⌘↑/⌘↓) and a Desktop screenshot (⌘S); a stream menu for frame
+  rate and size with a live fps readout; hover cards on every control; and a **Maximize** mode (Esc
   restores).
 - Honest about the device: the pane polls the real boot state, so a device
   shut down elsewhere (quitting Simulator.app shuts its devices down) shows
@@ -162,7 +172,8 @@ timeline. This is the feature list; step-by-step usage lives in
 - **Separate consent from the browser.** The first time a session tries to
   use the simulator, CC Blackbox asks once: Allow or Deny, per terminal tab,
   independent of the browser permission. While a session is driving, a
-  **Claude driving** pill shows in the simulator toolbar; when Claude
+  **Claude driving** pill shows in the simulator toolbar, and it goes away
+  when that Claude turn finishes; when Claude
   attaches a device, the Cockpit switches to the Simulator so you see it.
 - Same plumbing as the browser: the app's local MCP entry, nothing leaving
   the Mac, every action recorded in the session timeline and shown on the

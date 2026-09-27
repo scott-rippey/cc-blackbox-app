@@ -17,6 +17,17 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.13.0 — 2026-09-27
+
+### New
+- **Claude can test your site at real phone, tablet and desktop sizes.** Asked to check a mobile or desktop layout, Claude sets the embedded browser to that size and the page really lays out at it: media queries, touch behavior and screenshots all follow. The page sits centered in the pane at that size (shrunk to fit when it is larger than the pane), a chip in the toolbar names the size, and clicking the chip or ending that Claude session puts the browser back.
+- **Hover cards across the whole app.** Every button, badge and control now explains itself when you hover over it: its name, what it does, and its keyboard shortcut. Disabled buttons say why they are disabled. Cards next to the browser page open away from it, so the page never covers them.
+- **The Simulator's hardware buttons sit beside the phone.** Home, Lock, volume and screenshot moved to a rail next to the device screen, like the buttons on the side of a real phone (under the screen when the pane is narrow). Frame rate and size now live in one stream menu. The screenshot button saves a full-resolution PNG to your Desktop and shows the file name.
+
+### Improved
+- **"Claude driving" now means Claude is working.** The badge shows while a Claude session is using the browser or simulator and clears when its turn finishes, instead of staying on for as long as the tab was open.
+- **Browser and Simulator toolbars have room.** They sit under the pane tabs in two rows that wrap on a narrow pane instead of squeezing the address bar or cutting controls off, and every toolbar button is a matching line icon.
+
 ## v4.12.0 — 2026-09-24
 
 ### Improved
