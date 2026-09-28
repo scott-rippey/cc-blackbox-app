@@ -17,6 +17,14 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.13.4 — 2026-09-28
+
+### Fixed
+- **Opus 5.5 and Sonnet 5.5 are named as themselves.** The phone's status strip and the Reports charts showed an Opus 5.5 session as "Opus 5" and a Sonnet 5.5 session as "Sonnet 5", and Opus 5.5 usage was priced at Opus 5 rates. Both models now have their own entry, price row and chart color, and the cost of earlier Opus 5.5 sessions is recomputed at the real rate ($4 in / $20 out per million tokens instead of $5 / $25).
+
+### Improved
+- **New agents default to Opus 5.5.** The Agent editor's model list now offers Opus 5.5 and Sonnet 5.5, and a new agent starts on Opus 5.5 at high effort. Existing agents keep the model they were saved with.
+
 ## v4.13.3 — 2026-09-27
 
 ### Improved
