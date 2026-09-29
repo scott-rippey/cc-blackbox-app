@@ -320,6 +320,9 @@ viewport is a separate pane so the two can sit apart) has two spawn buttons:
   folder the app asks **Track this folder?** once, and the *next* claude
   run there records. The shell itself (your commands, other tools) is
   never recorded, and no client credentials are injected into shells.
+  Under each folder header the tabs are named by kind, **Shell** or
+  **Claude**, and hovering a tab shows what opened it (opening the
+  workspace, the Shell button, a resume, your phone, and so on).
 - **▶ Claude**: a dedicated Claude tab, via the **Launch Claude** modal.
   Both tab types record; the dedicated tab adds three things. First, a
   guaranteed clean launch: no shell in between, so nothing in a shell
@@ -907,7 +910,10 @@ reconnects on its own.
   the report file. And if Claude sessions were running when the app
   closed (a crash, a force quit, a Mac restart, or a normal quit with
   sessions still running), the next launch offers to resume them: Claude keeps every conversation on disk, so each session
-  reopens in a terminal and picks up exactly where it left off.
+  reopens in a terminal and picks up exactly where it left off. A session
+  you ran by typing `claude` in a folder's shell resumes inside that
+  folder's shell (or in one new shell for the folder if yours is busy);
+  a session from the ▶ Claude button comes back as a Claude tab.
 - Links in rendered markdown, DOCX, and agent reports open in your system
   browser, never inside the app.
 - Folders become workspace roots or projects only through the native folder

@@ -187,7 +187,10 @@ timeline. This is the feature list; step-by-step usage lives in
   shows the active terminal wherever you put it.
 - **The terminal list is grouped by workspace folder**: a header per
   folder in Explorer order, that folder's shells and sessions underneath,
-  and an Other section for anything outside the workspace folders.
+  and an Other section for anything outside the workspace folders. Since the
+  header names the folder, the tabs under it are named by what they are,
+  **Shell** (with a terminal icon) or **Claude**, and hovering a tab shows
+  what opened it.
 - **The terminal list always matches the open workspace.** Tabs for other
   workspaces are tucked away with their shells and sessions running
   untouched, and return the moment you switch back with their scrollback
@@ -708,7 +711,10 @@ panel below (defaults: global).
   the Health card at the next launch. Claude sessions that were running
   when the app closed, whether by crash or a normal quit, are offered for
   resume on the next launch, one click each or all at once, with their
-  conversations intact (Claude keeps them on disk continuously).
+  conversations intact (Claude keeps them on disk continuously). A session
+  you started by typing `claude` in a folder's shell resumes right in that
+  folder's shell, so no second tab appears; if that shell is busy, it
+  resumes in one new shell for the folder.
 - Native notifications fire when Claude finishes or needs input while the
   window is unfocused; in-app, the tab gets an amber dot instead. One
   "waiting for your input" notification per turn (Claude Code's own idle

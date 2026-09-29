@@ -17,6 +17,15 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.14.0 — 2026-09-29
+
+### Fixed
+- **No more look-alike tab after a relaunch.** If you work by typing `claude` in a folder's shell, reopening the app (after a quit, an update or a crash) used to resume your session as a separate Claude tab next to the folder's fresh shell, so the folder showed two tabs with the same name. Resume now picks the session up right inside that folder's shell. If the shell is busy with something else, it resumes in one new shell for the folder instead.
+
+### Improved
+- **Tabs say what they are.** Under each folder header in the Terminals list, tabs now read **Shell** (with a terminal icon) or **Claude** instead of repeating the folder name.
+- **Hover a tab to see what opened it**, such as opening the workspace, the Shell button, a resume or your phone.
+
 ## v4.13.5 — 2026-09-29
 
 ### Fixed
