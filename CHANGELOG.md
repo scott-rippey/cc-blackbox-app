@@ -17,6 +17,11 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.13.5 — 2026-09-29
+
+### Fixed
+- **Resizing the Browser for a phone or desktop check can no longer crash the app.** When a Claude session asked the Browser to emulate a device size while no page was loaded (for example right after the app reopened, or while a page was restarting), CC Blackbox quit on the spot. It now tells Claude to load the page first, and a size that was already set is applied as soon as the next page finishes loading.
+
 ## v4.13.4 — 2026-09-28
 
 ### Fixed
