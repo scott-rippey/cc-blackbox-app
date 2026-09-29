@@ -17,7 +17,8 @@ timeline. This is the feature list; step-by-step usage lives in
   default is Explorer (left), Editor with Browser and Simulator as its tabs
   over the Visualizer (middle), Terminal and its list (right). Drag any pane
   by its title tab: drop on the edge of another pane to split, onto its tab
-  strip or its middle to stack them as tabs, or on the outer edge of the
+  strip or its middle to stack them as tabs (at the spot you drop it; a
+  drag along a pane's own strip reorders its tabs), or on the outer edge of the
   Cockpit for a new column or row.
   The ✕ on a title hides a pane; the **View** menu shows it again, and **View
   → Reset Cockpit Layout** (also in Settings → Appearance) restores the
@@ -190,7 +191,9 @@ timeline. This is the feature list; step-by-step usage lives in
   and an Other section for anything outside the workspace folders. Since the
   header names the folder, the tabs under it are named by what they are,
   **Shell** (with a terminal icon) or **Claude**, and hovering a tab shows
-  what opened it.
+  what opened it. Double-click a tab to name it yourself: a session's name
+  is shared with the phone (either side can set it) and survives a resume;
+  a shell's name is remembered for that folder's shell across relaunches.
 - **The terminal list always matches the open workspace.** Tabs for other
   workspaces are tucked away with their shells and sessions running
   untouched, and return the moment you switch back with their scrollback

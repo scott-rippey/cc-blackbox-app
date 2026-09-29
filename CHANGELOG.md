@@ -17,6 +17,22 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.14.1 — 2026-09-29
+
+### Fixed
+- **The Terminals list could scroll sideways and hide its names.** With the list narrow, long folder headers made it scrollable left to right, and a sideways swipe left only the close buttons showing. Headers now shorten with an ellipsis and the list never scrolls sideways.
+- **Resume after a quick relaunch.** If the app was reopened (after a crash, say), you resumed your sessions, and then restarted again within moments for an update, the next launch had nothing to offer. Sessions resumed that way are now offered again.
+- **Your Mac's real name on the phone.** The phone could show a network-assigned name such as "Mac-7411". It now shows the name from System Settings, Sharing (for example "Scott's MacBook Pro").
+- **The Browser page stays inside its pane.** After a Claude session set a viewport size and then reset it, the page view could end up covering the whole pane (and what sat under it) with a small page in one corner. The view now keeps its fitted size until the reset has really landed on the page, and any stray view is removed.
+- **Update failures leave a note.** If an update download or install fails, the reason is now written to `updates/install.log` in the app's data folder, so a report can be traced instead of guessed at.
+
+### New
+- **Name your tabs.** Double-click a tab in the Terminals list to give it a name; Enter saves, Esc cancels, an empty name puts it back to Shell or Claude. A session's name shows on your phone as well (either side can set it) and comes back when the session is resumed; a shell's name is remembered for that folder.
+- **Reorder the Editor, Browser and Simulator tabs.** Drag a pane's title along its own tab strip to change the order, and a pane dropped onto a strip lands where you drop it instead of always last.
+
+### Improved
+- **Electron 44.5.0.** The newest patch of the current engine line.
+
 ## v4.14.0 — 2026-09-29
 
 ### Fixed

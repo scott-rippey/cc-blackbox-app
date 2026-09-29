@@ -31,7 +31,8 @@ Simulator tabs over the Visualizer (middle), and the Terminal with its
 Terminals list (right). Every pane has a title tab, and you can move it:
 drag the title and drop it on the edge of another pane to split that pane,
 onto the tab strip or the middle of another pane to stack the two as tabs, or
-on the outer edge of the Cockpit for a new column or row.
+on the outer edge of the Cockpit for a new column or row. Drag a title
+along its own tab strip to put the tabs in the order you want.
 The little ✕ on a title hides a pane; the **View** menu brings it back, and
 **View → Reset Cockpit Layout** puts everything back where it started. The
 Browser (**⌘⇧B**) and the iOS Simulator (**⌘⇧I**) are panes too, open as
@@ -323,6 +324,11 @@ viewport is a separate pane so the two can sit apart) has two spawn buttons:
   Under each folder header the tabs are named by kind, **Shell** or
   **Claude**, and hovering a tab shows what opened it (opening the
   workspace, the Shell button, a resume, your phone, and so on).
+  Double-click a tab to give it your own name; Enter saves, Esc cancels,
+  and an empty name puts it back to Shell or Claude. A named session shows
+  that name on your phone too (and a name given on the phone shows here),
+  and it comes back when the session is resumed. A named shell comes back
+  with the folder's shell the next time you open the app.
 - **▶ Claude**: a dedicated Claude tab, via the **Launch Claude** modal.
   Both tab types record; the dedicated tab adds three things. First, a
   guaranteed clean launch: no shell in between, so nothing in a shell
