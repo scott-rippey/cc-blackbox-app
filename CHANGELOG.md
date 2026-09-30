@@ -17,6 +17,15 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.14.2 — 2026-09-30
+
+### Fixed
+- **A scroll can no longer freeze the Browser controls.** When a Claude session scrolled the Browser, the app sometimes waited forever for the page to confirm the scroll, and every later action timed out until you switched tabs. Every browser command now has a time limit, and scrolling is carried out directly on the page instead of through a wheel event.
+
+### Improved
+- **Electron 44.5.1.** The newest patch of the current engine line.
+- **The Browser keeps a trail of its own layout.** Every move, resize, show or hide of the page view, every viewport change and what triggered it, is written to `browser-geometry.log` in the app's data folder (capped, restarts when full). If the page ever ends up outside its pane again, that file names the path; send it with the report.
+
 ## v4.14.1 — 2026-09-29
 
 ### Fixed
