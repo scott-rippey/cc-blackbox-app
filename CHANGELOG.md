@@ -17,6 +17,11 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.14.3 — 2026-10-01
+
+### Fixed
+- **The Browser stays inside its pane under a desktop size.** When a Claude session set a viewport wider than the Browser pane (such as 1440 by 900) and then opened a page on a different site, the page could spill out as a large dark box over the Terminal panes and block clicks on the rest of the app. The page now always stays shrunk to fit inside the Browser pane.
+
 ## v4.14.2 — 2026-09-30
 
 ### Fixed
