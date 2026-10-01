@@ -17,6 +17,12 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.14.4 — 2026-10-01
+
+### Fixed
+- **Quitting no longer crashes when terminals are open.** Quitting or restarting to update could end in a crash report if a terminal's program (Claude or a shell) closed at the exact moment the app was shutting down. The app now waits for every terminal to finish closing before it quits, and the terminal component is built so a late close can no longer take the app down.
+- **Only one copy of the app runs at a time.** Opening a second copy while CC Blackbox was already running could let both work on the same data and end a live session early. A second copy now brings the running window to the front and closes itself. If you open the app again while it is still quitting, it reopens once the old copy has closed.
+
 ## v4.14.3 — 2026-10-01
 
 ### Fixed
