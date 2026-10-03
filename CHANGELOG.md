@@ -17,6 +17,12 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.15.1 — 2026-10-03
+
+### Fixed
+- **Pasted-image thumbnails are no longer hidden behind the status line.** In a Claude tab that was open when the app started (a session resumed after a relaunch, for example), the terminal could draw its last rows over the thumbnail row, so with a multi-line status line the thumbnails were covered. The terminal now sizes itself correctly from the start, and the row sits below the status line where you can see it.
+- **The Browser's Console panel opens at a usable size.** Opening Console or Network from the Browser toolbar showed only a thin strip with its controls hanging over the edge. The panel now opens with room for output, its controls sit inside their own row, and it remembers the height you drag it to.
+
 ## v4.15.0 — 2026-10-03
 
 ### New
