@@ -98,6 +98,28 @@ Editor behavior by file type:
 - **Code**: syntax-highlighted editor. **⌘S** saves; enable
   **Autosave** in Settings to save 800 ms after you stop typing.
 - **Markdown**: toggle **Edit** / **Rendered** at the top right.
+- **HTML** (`.html`, `.htm`): toggle **Edit** / **Rendered**. Rendered shows
+  the page with its styles and images, from your current text, saved or
+  not; it reloads by itself when the page or a file it loaded changes on
+  disk, and **Reload** loads it again by hand. A page's JavaScript does not
+  run until you turn on **Run scripts** for that file, because an HTML file
+  can be someone else's code: a cloned repo, a download. The switch is for
+  what is on screen right now: it starts off every time you open a page,
+  goes off when you switch to Edit, and it turns itself off when the page or any file it loaded (its scripts,
+  styles, data) changes on disk, whoever changed it: your save, Claude, a
+  `git pull`. The bar then says "Files changed: scripts are off." until you
+  turn them on again. Turn it on for your own pages and the ones Claude
+  makes. With
+  scripts on, the page still runs walled off: it cannot reach CC Blackbox,
+  files outside its project, hidden files like `.env`, or key and
+  credential files; it loads only web files from its project plus
+  libraries from cdnjs, jsDelivr, unpkg and Google Fonts; its links and
+  popups go nowhere; and it gets no camera, microphone or location. Those
+  walls block the usual ways a page sends data out, not every one (a
+  running page could still reach the internet through those library sites
+  or WebRTC), which is why scripts stay off until you choose. Paths that
+  start with `/` mean the root of your disk, so a page written for a web
+  server's root needs that server.
 - **JSON**: toggle **Edit** / **Tree** (collapsible tree view; JSON linting
   in the editor).
 - **PDF / images / DOCX**: rendered previews. Binaries show an info card
@@ -302,6 +324,15 @@ and CC Blackbox is listed under Recommended for text, configuration, and
 source files (or drop the file on the Dock icon). It opens as an editor
 tab; a file outside your workspace folders opens as a standalone tab that
 lasts until you quit.
+
+When you paste an image into Claude (ctrl+v), a thumbnail appears in a row
+at the bottom of that tab, numbered like the `[Image #1]` tag in your
+prompt, so you can see what you are about to send. Wide screenshots stay
+wide and tall ones stay tall. The row clears when you send. Two things it
+cannot see, because they happen inside Claude's prompt box: if you delete
+an `[Image #n]` tag, its thumbnail stays until you send; and if you press
+Esc right after sending, Claude puts your prompt back with its images
+while the row shows only images you paste after that.
 
 Right-click in a terminal for Copy, Paste, and Select All (right-click also
 selects the word under the pointer, so right-click a path and Copy works in
@@ -921,7 +952,8 @@ reconnects on its own.
   folder's shell (or in one new shell for the folder if yours is busy);
   a session from the ▶ Claude button comes back as a Claude tab.
 - Links in rendered markdown, DOCX, and agent reports open in your system
-  browser, never inside the app.
+  browser, never inside the app. A rendered HTML page's links and popups go
+  nowhere, and its scripts run only when you turn on Run scripts.
 - Folders become workspace roots or projects only through the native folder
   dialog; the app refuses paths that weren't explicitly picked.
 - All data is local: `~/Library/Application Support/CC-Blackbox/ccb.db`.

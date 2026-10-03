@@ -17,6 +17,12 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.15.0 — 2026-10-03
+
+### New
+- **HTML files render as the real page in the editor.** Open an `.html` file and switch to **Rendered** to see the page with its styles and images, from your current edits even before you save; it reloads by itself when the page or a file it uses changes on disk. Its JavaScript runs only when you turn on **Run scripts**, since an HTML file can be someone else's code. The switch is for what is on screen: it starts off each time you open a page, goes off when you switch to Edit, and turns itself off when the page or a file it loaded changes on disk. A running page stays walled off: no access to CC Blackbox, files outside its project, hidden or credential files, or your camera, microphone and location, and it loads libraries only from cdnjs, jsDelivr, unpkg and Google Fonts.
+- **See the images you paste into Claude.** Paste an image into a Claude tab and a thumbnail appears at the bottom of the tab, numbered like the `[Image #1]` tag in your prompt, so you can check what you are about to send. Wide screenshots stay wide, tall ones stay tall, and the row clears when you send.
+
 ## v4.14.4 — 2026-10-01
 
 ### Fixed

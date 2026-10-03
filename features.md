@@ -51,8 +51,16 @@ timeline. This is the feature list; step-by-step usage lives in
 - **Live activity dots**: while a Claude session runs, files it reads (blue)
   and edits (pink) light up directly in the tree.
 - Editor tabs with per-kind rendering: CodeMirror with syntax highlighting for
-  code; Edit/Rendered toggle for Markdown; Edit/Tree toggle for JSON; native
-  PDF viewer; image and DOCX previews; an info card for binaries.
+  code; Edit/Rendered toggle for Markdown; Edit/Rendered for HTML, where
+  Rendered is the page with its styles and images and, once you turn on
+  Run scripts, its JavaScript (a switch for what is on screen: off when
+  the page opens, when you switch to Edit, and again whenever the page or a file it loaded changes on
+  disk, nothing stored), walled
+  off as untrusted code (only its own project's web files and public CDN
+  libraries, no hidden or credential files, no access to the app),
+  showing unsaved edits and reloading when the page or a file it loaded
+  changes; Edit/Tree toggle for JSON; native PDF viewer;
+  image and DOCX previews; an info card for binaries.
 - Safe editing: ⌘S save, optional autosave, and explicit conflict banners when
   a file is deleted or changed on disk while you have unsaved edits. Large
   files open read-only with a "load anyway" escape hatch.
@@ -186,6 +194,11 @@ timeline. This is the feature list; step-by-step usage lives in
   list (▶ Claude, + Shell, and the folder-grouped tabs) can sit anywhere in
   the Cockpit, on its own or stacked with another pane, while the viewport
   shows the active terminal wherever you put it.
+- **Pasted images show as thumbnails**: an image pasted into Claude
+  appears in a row at the bottom of its tab, numbered like its
+  `[Image #n]` tag and keeping its shape, and clears when you send. Works
+  for Claude tabs and for `claude` typed in a shell, resumed sessions
+  included.
 - **The terminal list is grouped by workspace folder**: a header per
   folder in Explorer order, that folder's shells and sessions underneath,
   and an Other section for anything outside the workspace folders. Since the
