@@ -113,8 +113,9 @@ timeline. This is the feature list; step-by-step usage lives in
 - **Claude can test other screen sizes.** Asked to check a phone, tablet or
   desktop layout, Claude sets the browser to that size and the page really
   lays out at it: media queries, touch behavior and screenshots all follow.
-  The page shows centered in the browser pane at that size (shrunk to fit
-  when it is bigger than the pane), and a chip in the toolbar names the size.
+  The page shows centered in the browser pane at that size, framed with a
+  thin border and a little room around it (shrunk to fit when it is bigger
+  than the pane), and a chip in the toolbar names the size.
   Click the chip to go back to the pane's own size; it also goes back by
   itself when the Claude session that set it ends.
 - **You approve it per terminal tab.** The first time a session tries to use

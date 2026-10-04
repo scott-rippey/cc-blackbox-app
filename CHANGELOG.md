@@ -17,6 +17,12 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.15.2 — 2026-10-04
+
+### Fixed
+- **A maximized Browser no longer shows the app through it.** With glass on, maximizing the Browser let the panes underneath show faintly around the page and behind its toolbar, so the page looked like it was floating over the app. The maximized Browser and Simulator now have a solid background.
+- **A page Claude has resized sits in a frame.** When Claude sets the Browser to a screen size, the page now has a thin border with a little room around it, docked or maximized, so you can see where the page ends and the pane begins.
+
 ## v4.15.1 — 2026-10-03
 
 ### Fixed
