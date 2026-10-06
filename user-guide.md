@@ -474,7 +474,9 @@ pink on files being edited.
 For the full picture, open the session in the **Sessions** view while it
 runs: the **Activity EKG** (event-density waveform with prompt, failure, and
 compaction markers) and the **Ops Board** (orchestrator orb, one card per
-live subagent, working-set files, last report) update live.
+live subagent, working-set files, last report) update live. When Claude
+finishes a turn, asks permission, or you press Esc, the orb turns amber and
+reads WAITING, "waiting for input", until you send the next prompt.
 
 ## Reviewing past sessions
 

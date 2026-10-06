@@ -17,6 +17,11 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.15.4 — 2026-10-06
+
+### Fixed
+- **An idle session no longer says it is thinking.** On the Sessions screen, the big circle for a live session read THINKING with "reasoning…" even after Claude had finished and was waiting for you. It now turns amber and reads WAITING, with "waiting for input", until you send the next prompt.
+
 ## v4.15.3 — 2026-10-06
 
 ### Fixed

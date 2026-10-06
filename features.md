@@ -321,7 +321,8 @@ timeline. This is the feature list; step-by-step usage lives in
   Live Feed (human-readable event stream), Files Touched (read/edit counts),
   and Heatmap (directory tree tinted by activity).
 - **Ops Board**: a live node scene showing the orchestrator orb with its current
-  verb (reading, editing, running, delegating…), one card per active subagent
+  verb (reading, editing, running, delegating…; an amber WAITING, "waiting
+  for input", once the turn is over), one card per active subagent
   with its own current action, completed-agent chips, a working-set file
   strip, and the agent's last report.
 - **Motion only while Claude works**: every glow, lamp, orb, ring and
