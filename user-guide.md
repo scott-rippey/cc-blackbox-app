@@ -390,7 +390,10 @@ viewport is a separate pane so the two can sit apart) has two spawn buttons:
   - **+ Track a folder** registers a folder anywhere on disk as a project
     (same ask). It then appears under Other projects, ready to launch.
 
-A live Claude tab shows a pulsing lamp and a glow border. When Claude finishes
+A live Claude tab shows a lamp and a glow border. They pulse while Claude is
+working and hold still (lit, small glow) while it waits for you, so an idle
+app uses no GPU; the Sessions view's live graph and Ops Board follow the
+same rule. When Claude finishes
 or asks for input on a background tab, that tab gets an amber dot; if the
 window is unfocused you get a native notification instead. You get one
 "waiting for your input" notification per turn, and only for that tab's own

@@ -324,6 +324,10 @@ timeline. This is the feature list; step-by-step usage lives in
   verb (reading, editing, running, delegating…), one card per active subagent
   with its own current action, completed-agent chips, a working-set file
   strip, and the agent's last report.
+- **Motion only while Claude works**: every glow, lamp, orb, ring and
+  waveform pulse animates only during a turn (prompt to Stop, permission
+  asks and Esc count as waiting) and holds a still, lit rest look
+  otherwise, so an idle app draws no frames (~0% GPU and renderer).
 - **Activity EKG**: a waveform of event density colored by category
   (read/edit/bash/other), with markers for prompts, failures, and compaction,
   plus a subagent band and live counters.

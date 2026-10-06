@@ -17,6 +17,11 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.15.3 — 2026-10-06
+
+### Fixed
+- **CC Blackbox no longer works the GPU while nothing is happening.** With a Claude session open and idle, the tab glow, status lamps, the Ops Board and the activity graph kept animating, which made the app draw the whole window on every screen refresh. On a long-running app that held the GPU and renderer at well over half a core each, slowing down other work. Now everything moves only while Claude is working on a turn. While it waits for you (turn done, a permission question, or after you press Esc), the glow and lamps stay lit but still, and the app sits near 0% CPU.
+
 ## v4.15.2 — 2026-10-04
 
 ### Fixed
