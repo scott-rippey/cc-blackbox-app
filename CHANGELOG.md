@@ -17,6 +17,16 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.15.5 — 2026-10-07
+
+### Fixed
+- **Quitting and updating offer to resume your sessions again.** Since 4.14.4, Claude sessions that were still open when you quit or used Restart to Update were marked as finished on the way out, so the next launch had nothing to offer and they were simply gone from your terminals. Now the next launch asks "Resume Claude sessions?" again and lists every session that was open. Resume brings a Claude tab back as a Claude tab, and a session you started by typing `claude` in a folder's shell back inside that shell, each with its conversation.
+- **Haiku 5.5 sessions show a real cost.** Claude Code's Haiku now runs Haiku 5.5, which the app had no price for, so those sessions and agent runs showed no cost. Haiku 5.5 is now priced, including its higher rate for prompts over 100,000 tokens, and past Haiku 5.5 sessions are re-priced when you update.
+- **Sonnet 5.5 cache reads cost what Anthropic charges.** The app priced Sonnet 5.5's cache reads at twice the published rate. Stored costs are corrected when you update, so Sonnet 5.5 sessions may show a little less than before.
+
+### Improved
+- **Model Prices has a Long column** for models priced by prompt length. Haiku 5.5 shows >100k ×5: a request whose prompt is over 100,000 tokens pays every rate five times over. On a narrow window the table scrolls inside its card.
+
 ## v4.15.4 — 2026-10-06
 
 ### Fixed

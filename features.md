@@ -313,7 +313,9 @@ timeline. This is the feature list; step-by-step usage lives in
   instantly and silently, and existing hooks in settings.json are preserved.
 - Session titles follow the last prompt you typed (slash commands never
   become a title); rename one in Sessions or from the phone and the name
-  sticks. Crashed sessions are detected and marked on next launch.
+  sticks. Crashed sessions are detected and marked on next launch, and
+  sessions still open at a quit, crash or update restart are offered for
+  resume on the next launch.
 
 ## Live Visualization
 
@@ -642,7 +644,9 @@ panel below (defaults: global).
   day against the npm registry, the App Store, and Homebrew, or on **Check
   now**. Nothing installs by itself.
 - **Model prices**: the editable $/MTok table (input, output, cache read,
-  cache write 5m/1h) behind all cost math; add or remove models freely.
+  cache write 5m/1h, and a long-prompt tier for models priced by prompt
+  length, such as Haiku 5.5's 5x over 100k tokens) behind all cost math;
+  add or remove models freely.
 - **Appearance**: the app-wide font-size slider (previews on the card;
   Apply resizes the whole app), the autosave toggle, **Show notifications**
   and **Play notification sound** (turn every desktop notification off, or

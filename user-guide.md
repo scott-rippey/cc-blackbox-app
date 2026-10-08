@@ -845,8 +845,10 @@ reconnects on its own.
   saved first (the toggle refuses if a save fails), and terminals reattach
   automatically.
 - **Model Prices**: the $/MTok table behind all cost math: input, output,
-  cache read, and cache-write at 5-minute and 1-hour TTLs. Click a row to
-  edit; **+ Add model** for new models.
+  cache read, and cache-write at 5-minute and 1-hour TTLs, plus **Long**
+  for a model priced by prompt length (Haiku 5.5 shows >100k ×5: a request
+  whose prompt is over 100,000 tokens pays every rate five times over).
+  Click a row to edit; **+ Add model** for new models.
 - **Database**: what the flight recorder's SQLite file is up to:
   - **Storage**: size on disk, WAL size, and reclaimable space, with a
     **Compact** button (VACUUM) that lights up when there's real space to
@@ -950,8 +952,8 @@ reconnects on its own.
   relaunch loop. Evidence of any crash is kept locally and shown on the
   Settings Health card the next time you launch, with a Reveal button to
   the report file. And if Claude sessions were running when the app
-  closed (a crash, a force quit, a Mac restart, or a normal quit with
-  sessions still running), the next launch offers to resume them: Claude keeps every conversation on disk, so each session
+  closed (a crash, a force quit, a Mac restart, Restart to Update, or a
+  normal quit with sessions still running), the next launch offers to resume them: Claude keeps every conversation on disk, so each session
   reopens in a terminal and picks up exactly where it left off. A session
   you ran by typing `claude` in a folder's shell resumes inside that
   folder's shell (or in one new shell for the folder if yours is busy);
