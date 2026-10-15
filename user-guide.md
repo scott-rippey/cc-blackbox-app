@@ -464,7 +464,11 @@ only a definitive rejection from Vercel does.
 The Cockpit **Visualizer** follows your active Claude tab:
 
 - **Live Feed**: every event in plain English (prompts, tool calls with
-  timing, failures, subagents, compaction). Click a file path to open it.
+  timing, failures, subagents, compaction), newest at the bottom. A line
+  too long for the pane ends in "…"; hover it for a preview, or click it to
+  open the full prompt or command, which you can scroll and copy. Click a
+  file path to open it. Replay and the Sessions detail feed work the same
+  way.
 - **Files Touched**: per-file read/edit counts.
 - **Heatmap**: the directory tree tinted by activity.
 

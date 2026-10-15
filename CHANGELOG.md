@@ -17,6 +17,14 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.15.6 — 2026-10-14
+
+### Improved
+- **The Live Feed reads like a terminal.** New events land on the bottom line and older ones stack upward, so a short session no longer leaves a gap under the last event.
+- **Feed lines use the whole pane.** Prompts, commands, paths and patterns are no longer cut at a fixed length. A line ends in "…" only where it actually runs past the edge of the pane, so a wider pane shows more, and the sideways scrollbar that revealed nothing is gone.
+- **Click any prompt or command to read all of it.** In the Live Feed, Replay and the Sessions detail feed, clicking a prompt or command row opens the full text in a card you can scroll and copy, however long it is. Hovering still shows a quick preview, and clicking a file path still opens the file.
+- **Electron 44.7.2.** The newest patch of the current engine line.
+
 ## v4.15.5 — 2026-10-07
 
 ### Fixed
