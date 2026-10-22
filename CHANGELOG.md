@@ -17,6 +17,12 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.17.1 — 2026-10-22
+
+### Fixed
+- **A machine sync that was cut off mid-transfer no longer crashes the app.** When the other Mac dropped a session's transfer part way through, the app died with an uncaught error and, after a few tries, stayed down. It now skips that session and moves on, and a manifest cut off the same way counts as one failed pull with the reason shown on the Machine Sync card.
+- **The database cleanup says what it is waiting for.** After the rewrite the title bar reads "Cleaning up the database waiting to compact", and Settings, Database names what is holding the compact step up right now (a session recording in a named project, a launch, a sync, agent runs). Before this it read "Cleaning up the database" with nothing moving for as long as a Claude tab stayed open.
+
 ## v4.17.0 — 2026-10-22
 
 ### Fixed

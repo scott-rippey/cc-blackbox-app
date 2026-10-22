@@ -943,10 +943,14 @@ reconnects on its own.
     its size only, since nothing in the app shows it. If your database was
     recorded before this rule, the first launch after the update cleans it
     up on its own: the title bar reads "Cleaning up the database" with a
-    percentage, this card shows a progress bar that names the stage
-    ("Removing tool output that was never shown", then "Waiting for a quiet
-    moment to compact the file"), and the result stays on the card. Nothing
-    to click, nothing to confirm; a quit mid-way resumes next launch.
+    percentage, then "waiting to compact"; this card shows a progress bar
+    that names the stage ("Removing tool output that was never shown", then
+    "Waiting to compact the file until nothing is recording and no agent
+    runs", followed by what is holding it up right now, such as a session
+    recording in a named project), and the result stays on the card.
+    Nothing to click, nothing to confirm; a quit mid-way resumes next
+    launch. The compact step needs the app quiet: close the Claude tabs
+    when you can and it finishes within a minute or so.
   - **Data folder**: a second line shows what else lives beside the
     database: migration backups (two are kept), update staging, and
     transcript copies pulled by Machine Sync.
