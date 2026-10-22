@@ -17,6 +17,14 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.17.0 — 2026-10-22
+
+### Fixed
+- **The database no longer grows with tool output nobody sees.** Every event row kept the full output of every tool: the whole file a Read returned, a command's complete stdout, even browser screenshots as encoded images. Nothing in the app ever showed it, and it was most of a 1.9 GB database, indexed a second time for search. From this version a tool's output is recorded as its size only; prompts, tool inputs, file paths and timings are kept as before, and search still matches prompts, commands and paths.
+- **Existing history is cleaned up once, automatically.** The first launch after the update rewrites the rows already recorded, then compacts the file the first time nothing is recording. The title bar reads "Cleaning up the database" with a percentage, and Settings, Database shows a progress bar that names each stage and then the result. Nothing to click; a quit mid-way resumes next launch. A 1.9 GB file came out at about 450 MB.
+- **Blank sessions stop piling up.** A Claude tab that opens and closes with nothing typed no longer leaves a "(no prompt typed)" row behind; it is dropped the moment it ends. Delete blank sessions stays for the endings the app keeps on purpose, such as a crash or a quit.
+- **The data folder stops piling up.** Two migration backups are kept instead of five (each is a full copy of the database), a staged update is swept once it is installed, and the WAL file is folded back into the database even while a session records once it passes a hard cap. The Database card now shows the rest of the folder too: backups, update staging and synced transcript copies.
+
 ## v4.16.0 — 2026-10-22
 
 ### New

@@ -353,7 +353,11 @@ timeline. This is the feature list; step-by-step usage lives in
   a confirm; agent run records stay, with their session link cleared. A
   **Delete N blank sessions** button appears whenever ended sessions exist
   where Claude was opened and closed with no prompt typed, and clears them
-  in one go. A recording session cannot be deleted. Deleting is per Mac: a
+  in one go. Those are rare since 4.17.0: a session that ends cleanly with
+  nothing typed (a Claude tab opened with the layout and closed again) is
+  discarded at its end and never appears in the list; the button covers the
+  endings the app keeps on purpose (a crash, a tab killed mid-session, a
+  quit). A recording session cannot be deleted. Deleting is per Mac: a
   session synced from another Mac returns on the next sync unless deleted
   there too.
 - **Flight Playback**: replay any session as an animated timeline at 1×–100×
@@ -713,7 +717,18 @@ panel below (defaults: global).
   fights readability. Toggling it recreates the window in place: dirty
   editor tabs are saved first (the toggle refuses if a save fails or a file
   has an unresolved disk conflict), and terminals reattach.
-- **Database**: observability for the flight recorder, with file + WAL size,
+- **Database**: the recorder keeps what it shows. Each event row holds the
+  prompt, the tool's input, the file path, timings and identities; a tool's
+  output (a file a Read returned, a command's stdout, a browser screenshot)
+  is recorded as its size only, so the file holds text the app can show,
+  never the output it cannot. A database recorded before this rule is
+  cleaned up once, automatically, on the first launch after the update: the
+  title bar names the stage and the Settings card shows a labeled progress
+  bar, then the result (on a 1.9 GB file: about 450 MB afterwards). The
+  card also shows the rest of the data folder (migration backups, update
+  staging, synced transcript copies), and the app keeps two migration
+  backups instead of five and sweeps a staged update once it is installed.
+  Observability for the flight recorder, with file + WAL size,
   reclaimable space, per-table row counts, schema version, and the migration
   backups beside the DB; an on-demand integrity check (verbatim
   `PRAGMA quick_check`); **Compact** (VACUUM, offered when there's real
@@ -806,4 +821,5 @@ panel below (defaults: global).
   system browser; the window itself never navigates.
 - All data lives locally in `~/Library/Application Support/CC-Blackbox/ccb.db`.
   Nothing leaves the machine, and the database snapshots itself to a
-  timestamped backup before any schema upgrade (newest 5 kept).
+  timestamped backup before any schema upgrade (newest 2 kept; each is a
+  full copy of the file).

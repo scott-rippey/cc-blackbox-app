@@ -499,7 +499,10 @@ its detail page) and confirm; its events, token usage and cost history are
 removed. Agent run records stay, with their session link cleared. Rows
 marked "(no prompt typed)" are sessions where Claude was opened and closed
 before you typed anything; when any exist, a **Delete N blank sessions**
-button next to the count clears them all at once. A session that is still
+button next to the count clears them all at once. You will rarely see them
+now: a Claude tab that opens and closes with nothing typed is dropped on its
+own the moment it ends, so it never reaches the list. The ones that remain
+are endings the app keeps deliberately, such as a crash or a quit. A session that is still
 recording cannot be deleted. Deleting is per Mac: a session synced from
 another Mac comes back on the next sync unless you delete it there too.
 
@@ -935,6 +938,18 @@ reconnects on its own.
   whose prompt is over 100,000 tokens pays every rate five times over).
   Click a row to edit; **+ Add model** for new models.
 - **Database**: what the flight recorder's SQLite file is up to:
+  - **What is kept**: the prompt, each tool's input, file paths, timings.
+    A tool's output (file contents, command output, screenshots) is kept as
+    its size only, since nothing in the app shows it. If your database was
+    recorded before this rule, the first launch after the update cleans it
+    up on its own: the title bar reads "Cleaning up the database" with a
+    percentage, this card shows a progress bar that names the stage
+    ("Removing tool output that was never shown", then "Waiting for a quiet
+    moment to compact the file"), and the result stays on the card. Nothing
+    to click, nothing to confirm; a quit mid-way resumes next launch.
+  - **Data folder**: a second line shows what else lives beside the
+    database: migration backups (two are kept), update staging, and
+    transcript copies pulled by Machine Sync.
   - **Storage**: size on disk, WAL size, and reclaimable space, with a
     **Compact** button (VACUUM) that lights up when there's real space to
     reclaim. Compact is refused while a session or run is active, and also
@@ -1050,7 +1065,8 @@ reconnects on its own.
   dialog; the app refuses paths that weren't explicitly picked.
 - All data is local: `~/Library/Application Support/CC-Blackbox/ccb.db`.
   Before a new app version upgrades the database, a timestamped backup copy
-  is written next to it automatically (the newest 5 are kept), so you can
+  is written next to it automatically (the newest 2 are kept, since each
+  one is a full copy of the file), so you can
   always roll back to an older build by restoring the copy. This is a hard
   guarantee: if the backup cannot be written (disk full, permissions), the
   app refuses to upgrade the database and tells you why instead of
