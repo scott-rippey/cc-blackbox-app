@@ -401,13 +401,57 @@ timeline. This is the feature list; step-by-step usage lives in
   the client-side cost estimate reaches it (an estimate, not billing; it works
   on a Claude plan), and max turns (default 50) caps agentic loops.
 - **Worktree isolation**: an agent can run in a throwaway git worktree so your
-  working files are never touched; you review and merge its changes yourself.
+  working files are never touched. The worktree sits on its own branch
+  (`ccb/<agent>/<run>`) cut from the commit you were on, so the run's changes
+  are one branch you can review, merge, or discard.
+- **Project setup script**: a per-project script (`npm ci`, say) that the app
+  runs in every new worktree before Claude starts, through your login shell,
+  with no app tokens or client credentials in its environment, with a
+  10-minute cap. Its output, exit code and duration show on the run row; a
+  failing script fails the run before Claude is ever launched. Edit it on
+  the project in Settings or in the agent editor's worktree section; every
+  agent on that project shares it.
+- **Supervised permission preset** (the default for new agents): the agent
+  edits files on its own, and anything beyond its allowed abilities pauses
+  the run and asks you. The ask shows on the run row and as a notification
+  with the exact command, file or URL (a long one is previewed with a
+  "not shown" line under it and a Show full button): Allow, Allow for this run (offered
+  when Claude suggests a pattern, which then stops asking for the rest of
+  the run), or Deny; no answer in 10
+  minutes denies it. The run's 30-minute clock pauses while an ask waits,
+  and every ask and answer is recorded on the run. Supervised agents cannot
+  be scheduled (nobody answers at 2am); pick an unattended preset for
+  schedules. Needs this version's hooks: click Reinstall hooks once after
+  updating.
+- **Change summary**: when a worktree run ends, its row says what it changed
+  ("4 files +132 −18", or "no file changes" for a report-only run) and where
+  that stands (Not reviewed, Merged, PR opened, Discarded).
+- **Review, Merge, Open PR, Discard**: Review opens the run's changes as a
+  diff (split or unified, every changed file, open any of them in the
+  editor), with a commit message prefilled from the report. Merge commits
+  the worktree's work on its branch and merges it into the branch you are
+  on with one merge commit, then removes the worktree. It refuses while
+  your checkout has uncommitted changes (it lists them and never stashes),
+  and a conflict backs out cleanly and offers Resolve with Claude, which
+  resumes the run in its worktree with a rebase-and-resolve instruction
+  ready to send. Open PR commits, pushes the branch and opens GitHub's
+  compare page in the Browser pane (a non-GitHub remote still pushes and
+  names the branch). Discard removes the worktree and branch and nothing
+  else. All of it is all-or-nothing; a run that edited the real checkout
+  says so and stops there.
+- **Launch sheet**: Run opens a sheet that shows what is about to run
+  (model, permissions, worktree, caps, crew, the project's setup script) and
+  lets you pick the project for this launch, including a folder that is not
+  tracked yet. Schedules launch without it.
+- **Git hooks switch**: per project, on by default. When the app commits,
+  merges or pushes a run's changes it runs the repo's own git hooks; turn it
+  off only if a hook needs a terminal.
 - **Decision logging**: one switch makes every process in a run (the
   orchestrator and each crew member) record its significant decisions and
   why, as it goes, through a private logging tool. Nothing about the log
   enters any agent's output or another agent's context, so it never changes
-  how the run behaves; it is there for you afterwards. The agent card's
-  Decisions button opens a scrolling list of its runs (newest first); each
+  how the run behaves; it is there for you afterwards. The Decisions button
+  in the agent's header opens a scrolling list of its runs (newest first); each
   run opens into its decisions in the same window, and a run row's Decisions
   button opens straight into that run. Use it to tune a prompt against what
   the agent actually chose. Each logged decision costs one tool turn.
@@ -428,11 +472,18 @@ timeline. This is the feature list; step-by-step usage lives in
 - **Schedules**: manual, daily, or weekly. They fire only while the app is
   open; missed occurrences are skipped. Guards: max 3 concurrent runs,
   30-minute wall-clock kill.
-- **Run history with full visibility**: live status with a "what it's doing
-  now" line, launch-config pills (model, effort, permission mode, crew size,
-  caps; snapshotted at launch, immune to later agent edits), elapsed time,
-  cost, the final report rendered as markdown, copy-as-markdown, and worktree
-  reveal/remove. **▶ Watch live** jumps from a running row straight into the
+- **Two columns**: agents on the left (project, schedule, a dot while one
+  runs, a badge when it needs you), the selected agent's runs on the right
+  under its header, or All runs with filters for running, to review and
+  failed; parked asks and unreviewed runs surface above the list; the
+  divider drags and the layout is remembered per workspace, and a narrow
+  window turns the agent list into chips.
+- **Runs with full visibility**: one compact line per run (status, when,
+  trigger, elapsed, cost, changes and review state) that opens in place to
+  the live "what it's doing now" line, launch-config pills (model, effort,
+  permission mode, crew size, caps; snapshotted at launch, immune to later
+  agent edits), the final report rendered as markdown, copy-as-markdown,
+  and worktree reveal/remove. **▶ Watch live** jumps from a running row straight into the
   run's live Ops Board and Activity EKG; **View session** does the same after
   it finishes.
 - **Robust failure handling**: timeouts, crashes, launch failures, and
@@ -525,11 +576,15 @@ panel below (defaults: global).
   moving panes, the Browser brought forward with its toolbar explained and
   how Claude can drive it, the iOS Simulator the same way, the Visualizer,
   Terminals, the Claude button), Sessions, then the Agent Harness in depth:
-  the tour opens the New Agent editor pre-filled with an example and walks
-  every section in its real state (Auto vs Orchestrator + crew, the prompt
-  and its slots, model and caps, a crew member expanded, Plan only vs Edit
-  files vs Full auto, extra abilities, the plain-English summary, worktree
-  and retry, Log decisions, schedule, Create), then Run history, Reports
+  the two-column page with an example agent and two example runs, the New
+  Agent editor pre-filled with that example and every section in its real
+  state (Auto vs Orchestrator + crew, the prompt and its slots, model and
+  caps, a crew member expanded, Plan only vs Supervised vs Edit files vs
+  Full auto, extra abilities, the plain-English summary, worktree and
+  retry, the project setup script, Log decisions, schedule, Create), then
+  the launch sheet, a run's row, a Supervised ask, the change summary and
+  review state, the Review modal and its Merge, PR and Discard verbs,
+  Decision patterns, Reports
   panel by panel (the scope row, then the Cost tab switched in front of
   you: totals, grouped spend, churn; then Operations: the how-the-work-went
   totals, the activity calendar, the hour strip, agents, friction), and

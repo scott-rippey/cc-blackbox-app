@@ -525,7 +525,15 @@ In a session's detail page:
 
 **Agent Harness** runs headless Claude Code agents: saved prompts with
 explicit permissions, run on demand or on a schedule, every run recorded like
-any session.
+any session. The page is two columns: agents on the left (each row shows its
+project, schedule, a dot while it runs, and a badge when it needs you: an
+ask waiting, changes to review), the selected agent's runs on the right
+with its header (Run, Edit, Decisions, Delete). **All runs** at the top of
+the left column lists every run of every agent, with filters for running,
+to review, and failed. What needs you sits above the list: parked asks as
+cards, runs with unreviewed changes as lines with a Show button. Drag the
+divider to resize the columns; a narrow window turns the agent list into
+chips above the runs.
 
 ### Creating an agent
 
@@ -571,8 +579,20 @@ Click **+ New Agent**:
      member tools presets still matter here: they pick which tools EXIST for
      a member (All tools keeps shell/web reach for exploring; Read-only is
      pure file reading), while the mode governs what those tools may do.
-   - **✎ Edit files** (recommended): file edits auto-approved run-wide;
-     anything not allowed below is refused.
+   - **Supervised** (recommended, and the default for a new agent): file
+     edits are auto-approved run-wide; anything beyond the abilities you
+     allow below pauses the run and asks you. The ask shows on the run row
+     and as a notification with the exact command, file or URL; answer
+     **Allow**, **Allow for this run** (offered when Claude suggests a
+     pattern, shown on the button's tip; that pattern stops asking for the
+     rest of this run), or **Deny**. No answer in 10 minutes counts as Deny.
+     The run's 30-minute clock stops while an ask waits. A Supervised agent
+     cannot be scheduled, since nobody is there to answer at 2am; the editor
+     says so when you try. After updating to 4.16.0, open Settings, Hooks
+     and click **Reinstall hooks** once; until then a Supervised run refuses
+     to start and tells you why (tabs and the phone keep working).
+   - **✎ Edit files**: file edits auto-approved run-wide; anything not
+     allowed below is refused.
    - **⚡ Full auto**: never stops for anything. Only for agents you fully
      trust unattended.
 
@@ -585,14 +605,27 @@ Click **+ New Agent**:
    agent always asks first; it also deletes the agent's run history and
    removes its worktrees.
 7. **Run in a git worktree**: the whole run (orchestrator and crew) works in
-   a throwaway copy of the repo; your working files are never touched and you
-   merge its changes yourself. **Auto-retry once on failure** relaunches a
+   a throwaway copy of the repo; your working files are never touched. The
+   copy sits on its own branch (`ccb/<agent>/<run>`), cut from the commit
+   you were on, so the run's changes are one branch. With the worktree on,
+   a **Project setup** field appears: a script (for example `npm ci`) that
+   the app runs in every new worktree before Claude starts, through your
+   login shell, with no app tokens or client credentials in its
+   environment, capped at 10 minutes. It belongs to the project, so every
+   agent on that project shares it, and it saves as you type, separately
+   from the agent. The run row shows its output, exit code and duration; a
+   failing script fails the run before Claude ever launches. Next to it,
+   **Run git hooks on commit, merge and push** (on by default) decides
+   whether the app runs the repo's own git hooks when it commits, merges or
+   pushes a run's changes; turn it off only if a hook needs a terminal.
+   Both also live on the project in Settings, Projects.
+   **Auto-retry once on failure** relaunches a
    failed run once with the same prompt (the retry never retries again).
    **Log decisions**: every process in the run (the orchestrator and each
    crew member) records its significant decisions and why as it works,
    through a private logging tool the app provides. Nothing about the log
    enters any output or any other agent, so it never changes what the run
-   does. The agent card's **◇ Decisions** button opens the decisions
+   does. The **◇ Decisions** button in the agent's header opens the decisions
    window: its Runs tab lists the runs that logged decisions (newest
    first; click one to read its decisions, Back returns to the list), and
    its Patterns tab shows what repeats across runs (see Decision Patterns
@@ -627,17 +660,65 @@ Click **+ New Agent**:
    shown to the agent; it only reaches a prompt when you save it.
 8. **Schedule**: Manual only, Daily, or Weekly at a set time. Schedules fire
    only while the app is open; missed times are skipped. At most 3 runs
-   execute concurrently, and each run is killed after 30 minutes.
+   execute concurrently, and each run is killed after 30 minutes. A
+   Supervised agent cannot carry a schedule; pick Edit files or Full auto
+   for anything that runs while you are away.
 
 ### Runs
 
-**▶ Run** on an agent card queues a run. In **Run history** each run shows
-its status, launch-config pills (model, effort, permission mode, crew size,
-caps; snapshotted at launch, so editing the agent later never rewrites what
-a past run actually used), a live "what it's doing now" line while running,
-elapsed time, and cost. When it finishes, the report (the agent's final
-message) renders as markdown; click to expand, **Copy report** for the
-markdown source.
+**▶ Run** in the selected agent's header opens the launch sheet: pick the project this
+launch runs on (the agent's own, another tracked project, or **Folder…**
+for one not tracked yet), check what is about to run (model, permissions,
+worktree, caps, crew, and the project's setup script, with **Add one…** if
+there is none), then **Launch** (or Enter). Scheduled runs skip the sheet.
+Each run is one line in
+the right column: status, when it started, how it was triggered (manual,
+scheduled, retry), elapsed time, cost, what it changed and where that
+stands, and a project chip when it ran somewhere other than the agent's
+own project (in All runs, the agent's name too). Click the line to open the
+run in place: launch-config pills (model, effort, permission mode, crew
+size, caps; snapshotted at launch, so editing the agent later never
+rewrites what a past run actually used), a live "what it's doing now" line
+while running, the report (the agent's final message) rendered as
+markdown, click to expand, **Copy report** for the markdown source, and
+the run's buttons. A run you just launched, or one you jumped to from
+Sessions, opens itself. A worktree run's row also says
+what it changed ("4 files +132 −18", or "no file changes" for a report-only
+run) and where that stands (Not reviewed, Merged, PR opened, Discarded),
+and a run that ran a project setup script shows a **Setup** line with the
+exit code and time; open it for the script's output.
+
+- **Review** (a worktree run with changes): opens every changed file as a
+  diff, split or unified, with the run's branch and the change count in the
+  header. Pick a file on the left; **Open in editor** opens that file from
+  the worktree in the Cockpit. The commit message is prefilled from the
+  report's first line; edit it as you like. Then one of three verbs:
+  **Merge into** (your branch) commits the worktree's work on its branch, merges
+  it into the branch your checkout is on as one merge commit, and removes
+  the worktree. It stays disabled while your checkout has uncommitted
+  changes (the button's tip lists them; commit or stash, and it re-checks
+  when you come back to the window). If the worktree itself changed since
+  the run ended (a file you or a build dropped in), Merge and Open PR stop,
+  name the files and refresh the list, so you review exactly what ships
+  before clicking again. A merge conflict backs out so your
+  checkout is exactly as it was, lists the files, and offers **Resolve with
+  Claude**: the run resumes in its worktree with a rebase-and-resolve
+  instruction typed for you, and you merge again once the branch is clean.
+  **Open PR** commits, pushes the branch to origin and opens GitHub's
+  compare page in the Browser pane (for a remote that is not GitHub, it
+  pushes and tells you the branch name). The worktree stays until you
+  remove it; the branch stays because it is the PR. **Discard** removes the
+  worktree and its branch and nothing else, after a confirm. After Open PR
+  the row's button reads **View review**: the diff again, plus the PR page.
+
+- **Asks** (Supervised runs): while the run waits for you, a highlighted
+  card on its row shows what it wants to do and a countdown, with
+  **Allow** and **Deny**, plus **Allow for this run** when Claude offers a
+  pattern. A long command or input
+  is previewed and says how much is cut off; **Show full** opens the whole
+  thing on the card so you can read it before answering. The same ask arrives as a
+  notification; clicking it lands on the run. Every ask and its answer
+  stays listed on the run afterwards.
 
 - **▶ Watch live** (while running) jumps straight to the run's live session
   detail: the Ops Board with one card per subagent, the Activity EKG, and the

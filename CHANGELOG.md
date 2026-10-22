@@ -17,6 +17,19 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.16.0 — 2026-10-22
+
+### New
+- **Supervised agents.** A new permission preset, the default for new agents: the agent edits files on its own, and anything beyond its abilities pauses the run and asks you, on the run row and as a notification, with the exact command, file or URL. Allow, Deny, or Allow for this run when Claude offers a pattern. No answer in 10 minutes counts as Deny, the run's clock pauses while it waits, and every ask is kept on the run. After updating, click Reinstall hooks once under Settings, Hooks, so the 10-minute window is in place.
+- **Review, Merge, Open PR, Discard.** A run that worked in a worktree ends with a change summary (files and lines) and a review state. Review opens every changed file as a diff, split or unified, with Open in editor. Merge commits the worktree's work on its own branch and merges it into the branch you are on, one merge commit, then removes the worktree; it refuses while your checkout has uncommitted changes and never stashes, and a conflict backs out cleanly and offers Resolve with Claude. Open PR pushes the branch and opens GitHub's compare page in the Browser pane. Discard removes the worktree and branch and nothing else. If the worktree changed after the run, Merge and Open PR stop and show you first.
+- **Project setup script.** A script the app runs in every new worktree before Claude starts (npm ci, a build, env files), through your login shell with no app tokens or client credentials, capped at 10 minutes. Its output and exit code show on the run row; a failing script fails the run before Claude is launched. It belongs to the project, with a switch for whether merges and pushes from the app run the repo's own git hooks.
+- **The launch sheet.** Run opens a sheet that shows what is about to run and lets you pick the project for this launch, including a folder that is not tracked yet.
+- **A new Agent Harness page.** Agents on the left with badges for what needs you, the selected agent's runs on the right as compact lines that open in place, All runs with filters, and a draggable divider that is remembered.
+- **The walkthrough covers all of it:** the new page, Supervised, the setup script, the launch sheet, a run's row, an ask, the change summary and the Review modal.
+
+### Improved
+- **Electron 44.9.3.** The newest patch of the current engine line.
+
 ## v4.15.6 — 2026-10-14
 
 ### Improved
