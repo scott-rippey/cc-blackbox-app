@@ -17,6 +17,16 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.18.0 — 2026-10-25
+
+### New
+- **Photos from the phone.** With CC Blackbox Mobile 1.2, tap the paperclip beside the message box and choose Take Photo or Photo Library, up to four per message. Each photo travels end-to-end encrypted to this Mac, which checks it, attaches it to your prompt exactly as an image pasted here would be (`[Image #n]`), and deletes its own copy once Claude has the photo. The phone says "sent" only after Claude Code confirms every photo is in the prompt; if one did not make it, the phone tells you and keeps the photos for another try.
+- **Send messages while Claude works.** With CC Blackbox Mobile 1.2 the message box stays open while Claude is busy, with Stop beside it. A message sent then waits in line, marked Queued on the phone, and reaches Claude at its next step or right after the turn, exactly as typing here mid-turn does. The phone keeps showing Working through the hand-over instead of pinging you. Stopping Claude does not drop a queued message.
+- **A phone message never answers a question for you.** While a permission ask or one of Claude's multiple-choice questions is open, here or on the phone, messages from the phone are held back, so nothing typed from the phone can land in that dialog.
+
+### Improved
+- **JPEG thumbnails.** Images pasted into a Claude tab now show in the thumbnail row below it whether they are PNG or JPEG, photos from the phone included.
+
 ## v4.17.1 — 2026-10-22
 
 ### Fixed

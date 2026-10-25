@@ -195,11 +195,11 @@ timeline. This is the feature list; step-by-step usage lives in
   list (▶ Claude, + Shell, and the folder-grouped tabs) can sit anywhere in
   the Cockpit, on its own or stacked with another pane, while the viewport
   shows the active terminal wherever you put it.
-- **Pasted images show as thumbnails**: an image pasted into Claude
-  appears in a row at the bottom of its tab, numbered like its
-  `[Image #n]` tag and keeping its shape, and clears when you send. Works
-  for Claude tabs and for `claude` typed in a shell, resumed sessions
-  included.
+- **Pasted images show as thumbnails**: an image pasted into Claude (PNG
+  or JPEG, and photos sent from the phone) appears in a row at the bottom
+  of its tab, numbered like its `[Image #n]` tag and keeping its shape,
+  and clears when you send. Works for Claude tabs and for `claude` typed
+  in a shell, resumed sessions included.
 - **The terminal list is grouped by workspace folder**: a header per
   folder in Explorer order, that folder's shells and sessions underneath,
   and an Other section for anything outside the workspace folders. Since the
@@ -620,6 +620,21 @@ panel below (defaults: global).
 - Prompts and interrupts from the phone are honored only while a Claude
   process owns the tab's foreground; a tab whose claude just exited refuses
   them, so phone text can never land in a shell.
+- Photos from the phone (4.18.0, phone 1.2): up to four per prompt, from
+  the photo library or the camera, attach to the prompt exactly as an
+  image pasted at this Mac does (`[Image #n]`). The bytes travel
+  end-to-end encrypted; the Mac checks each photo, saves it in a folder of
+  its own, pastes that file, and deletes its copy once Claude has taken
+  its own. Photos only: other files are not offered.
+- Messages from the phone while Claude works (4.18.0, phone 1.2): the
+  phone's message box stays open mid-turn, with Stop beside it. A message
+  sent then is typed into the tab and Claude Code queues it, exactly as
+  typing at this Mac mid-turn does; Claude gets it at its next tool result
+  or right after the turn, and the phone marks it Queued until then. The
+  session stays Working on the phone through that hand-over (no "needs
+  you" push), and Stop still interrupts: Claude Code then delivers the
+  queued message straight away. Refused while a permission ask or one of
+  Claude's multiple-choice questions is open, where typing would answer it.
 - A push notification reaches the phone when a session waits for input,
   waits for a permission, or ends; pushes are encrypted with a key set at
   pairing and the relay cannot read them.

@@ -325,7 +325,8 @@ source files (or drop the file on the Dock icon). It opens as an editor
 tab; a file outside your workspace folders opens as a standalone tab that
 lasts until you quit.
 
-When you paste an image into Claude (ctrl+v), a thumbnail appears in a row
+When you paste an image into Claude (ctrl+v), or a photo arrives from your
+phone, a thumbnail appears in a row
 at the bottom of that tab, numbered like the `[Image #1]` tag in your
 prompt, so you can see what you are about to send. Wide screenshots stay
 wide and tall ones stay tall. The row clears when you send. Two things it
@@ -843,9 +844,19 @@ ask, interrupt, or stop a session from wherever you are.
    deciding. If nobody answers within 50 seconds, the normal terminal
    prompt appears and you answer at the keyboard.
 4. When a turn ends, type the next prompt on the phone. It is typed into
-   the tab and submitted as one line. While Claude works, the send arrow
-   becomes a red stop button; tap it to interrupt, exactly like pressing
-   Esc. Stop (in the session menu) closes the tab.
+   the tab and submitted as one line. To include photos, tap the
+   **paperclip** beside the message box and choose **Take Photo** or
+   **Photo Library** (up to four). Each one shows as a thumbnail while it
+   sends; in the tab they appear as `[Image #n]` like a pasted image, and
+   on the phone as Photo chips in your message. Needs this app at 4.18.0
+   or newer. While Claude works, the send arrow becomes a red stop
+   button; tap it to interrupt, exactly like pressing Esc. You can still
+   type while Claude works: a send arrow appears beside the stop button,
+   and the message waits, marked **Queued**, until Claude picks it up at
+   its next step (this app at 4.18.0 or newer). Stopping Claude does not
+   drop a queued message; Claude Code sends it right away. While a
+   permission ask is waiting, answer it first. Stop (in the session menu)
+   closes the tab.
 5. Session names on the list follow the last thing you typed, so you can
    tell sessions apart at a glance; slash commands never become a name.
    Hold a session card and tap **Rename** to set a permanent name of your
