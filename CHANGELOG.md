@@ -17,6 +17,16 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.18.1 — 2026-10-29
+
+### Fixed
+- **The app no longer jumps in front of what you are doing when Claude uses the browser.** Every page Claude loaded in the Browser pane brought CC Blackbox to the front, so switching to another app while Claude worked kept pulling you back. Pages now load behind whatever you are in; the Browser pane still comes into view inside the app.
+- **Waiting for the iOS Simulator after boot works with newer baguette versions.** With baguette 0.2, waiting for text on a device that had just booted failed at once instead of waiting for the home screen.
+
+### Improved
+- **Settings, Appearance is now Appearance and behavior**, since the card also holds autosave, delete confirmation and notification switches.
+- **Electron 44.10.0** (Chromium 152.0.7977.169), with the latest upstream security fixes.
+
 ## v4.18.0 — 2026-10-25
 
 ### New

@@ -21,7 +21,7 @@ timeline. This is the feature list; step-by-step usage lives in
   drag along a pane's own strip reorders its tabs), or on the outer edge of the
   Cockpit for a new column or row.
   The ✕ on a title hides a pane; the **View** menu shows it again, and **View
-  → Reset Cockpit Layout** (also in Settings → Appearance) restores the
+  → Reset Cockpit Layout** (also in Settings → Appearance and behavior) restores the
   default. Editor file tabs drag too: drop one on another pane's edge for a
   side-by-side editor, and the extra editor closes itself when its last file
   does. Panes are never rebuilt by a move: terminal scrollback, unsaved
@@ -31,7 +31,7 @@ timeline. This is the feature list; step-by-step usage lives in
 - **Quick open (⌘P)** fuzzy-finds any file in the workspace; **workspace search
   (⌘⇧F)** runs full-text search on the bundled ripgrep (honors `.gitignore`).
 - **App-wide zoom**: one font-size slider in Settings scales the entire UI.
-  The slider previews on the Appearance card only; Apply commits the zoom
+  The slider previews on the Appearance and behavior card only; Apply commits the zoom
   app-wide in one jump.
 
 ## Explorer & Editor
@@ -44,7 +44,7 @@ timeline. This is the feature list; step-by-step usage lives in
   it, so history stays one project under the new name. Delete asks first (Move to Trash /
   Cancel, Esc or Cancel only) and moves the item to the Trash, so it can be
   put back from Finder; the dialog's "Don't ask again" turns the prompt off
-  (Settings -> Appearance turns it back on). Folder rows carry a VS Code
+  (Settings -> Appearance and behavior turns it back on). Folder rows carry a VS Code
   style disclosure caret: one glyph that rotates as the folder opens. Drag a
   root folder's header up or down to reorder roots; the order persists with
   the workspace.
@@ -598,7 +598,7 @@ panel below (defaults: global).
   The card sits in one fixed spot with a step counter, each stop gets a
   glow ring, and the app stays fully clickable. Fires once, when a fresh
   install opens its first workspace; existing installs never see it
-  uninvited; **Help → Show Walkthrough** or **Settings → Appearance → Show
+  uninvited; **Help → Show Walkthrough** or **Settings → Appearance and behavior → Show
   walkthrough** replays it any time. Leaving the tour at any point puts
   everything back (the example agent closes unsaved, the pane arrangement
   returns to what it was).
@@ -721,7 +721,7 @@ panel below (defaults: global).
   cache write 5m/1h, and a long-prompt tier for models priced by prompt
   length, such as Haiku 5.5's 5x over 100k tokens) behind all cost math;
   add or remove models freely.
-- **Appearance**: the app-wide font-size slider (previews on the card;
+- **Appearance and behavior**: the app-wide font-size slider (previews on the card;
   Apply resizes the whole app), the autosave toggle, **Show notifications**
   and **Play notification sound** (turn every desktop notification off, or
   keep them but silent), a **Reset Cockpit

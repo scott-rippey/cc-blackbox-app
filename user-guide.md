@@ -52,7 +52,7 @@ remembered per workspace.
   appears for new workspace roots; Skip is remembered, and **Settings →
   Projects** can track anything later.
 - **Settings → App font size** zooms the entire UI below the title bar. The
-  slider previews on the Appearance card; **Apply** resizes the app in one
+  slider previews on the Appearance and behavior card; **Apply** resizes the app in one
   jump. The title bar (window buttons, recording dot, view tabs) keeps its
   normal size at every setting, like a native toolbar.
 - **Folder moved.** If you rename or move a tracked folder outside the app
@@ -88,7 +88,7 @@ its agents, and every workspace that lists it. Nothing to re-add, no second
 project. Delete asks first,
 then moves the file or folder to the Trash, so you can put it back from
 Finder if you change your mind. If you would rather it stopped asking, switch
-on "Don't ask again" in that dialog; **Settings -> Appearance -> Ask before
+on "Don't ask again" in that dialog; **Settings -> Appearance and behavior -> Ask before
 deleting a file** turns the prompt back on.
 With several roots, drag a root folder's header up or down to reorder them;
 the order sticks with the workspace.
@@ -821,7 +821,7 @@ agent filled in and walks every section (structure, crew, permissions,
 abilities, decisions, schedule), switches the Reports tabs in front of you,
 and visits every Settings card, with the app staying fully usable throughout.
 Replay it whenever you like from **Help → Show Walkthrough** or
-**Settings → Appearance → Show walkthrough**.
+**Settings → Appearance and behavior → Show walkthrough**.
 
 ## Your phone
 
@@ -928,7 +928,7 @@ reconnects on its own.
     App Store (Xcode), and Homebrew (the driver); **Check now** asks
     again. Offline, the last answers stay on screen with their age.
     Nothing installs by itself.
-- **Appearance**: app-wide font size (10–18 px; the slider previews on the
+- **Appearance and behavior**: app-wide font size (10–18 px; the slider previews on the
   card, Apply resizes the whole app; the title bar stays its normal size),
   the autosave switch, a **Show walkthrough** switch that runs the guided
   tour while it is on, a **Reset Cockpit layout** button (every pane back to
