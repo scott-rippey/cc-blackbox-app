@@ -688,12 +688,15 @@ panel below (defaults: global).
   location and the project, its history, client tag, agents and workspace
   entries follow in one step. The app usually finds the folder itself: a
   renamed or moved folder keeps its identity, so at launch (or the next time
-  Claude runs inside it) the app offers "Folder moved" with the new location
-  already named, and the Projects row shows "folder moved · point at …" for
-  one click. If the new location is already tracked as its own project (a
+  Claude runs inside it) the app re-points the project silently; the
+  Projects row's "folder moved · point at …" is the one-click fallback. A moved folder opened again from anywhere (even one removed
+  from the workspace and moved to a different parent) reconnects to its
+  project silently on a certain identity match, with no Track ask. If the new location is already tracked as its own project (a
   duplicate that was created before the move was known), the app offers to
   merge the two: the duplicate's sessions and agents join the original and
-  its entry goes away, so the history is one project again. **Remove…** takes a project
+  its entry goes away, so the history is one project again. A project that
+  only came from the other Mac, pointed at a folder this Mac tracks, joins
+  that project with no merge question. **Remove…** takes a project
   out of the app for good: its recorded sessions (events, token usage, cost
   history), any transcript copies synced from another Mac, and its agents
   and runs (surviving worktrees removed from disk). The confirm shows the
@@ -711,7 +714,9 @@ panel below (defaults: global).
   Blackbox version with a **Check for Updates** button (the same check as
   the app menu) and when it last ran; the Chromium engine the browser uses
   and the Electron it ships with (engine updates arrive with app updates,
-  so a newer engine upstream is information, not a chore; a warning appears
+  so a newer engine upstream is information, not a chore; the hint names a
+  newer Electron patch as an Electron patch, never as a newer Chromium, and
+  names a newer Electron line when one exists; a warning appears
   only if the engine line has left its support window, which means the app
   itself is out of date); and a one-line roll-up of the Xcode, iOS runtime,
   and simulator driver updates the iOS Simulator card lists. Checked once a

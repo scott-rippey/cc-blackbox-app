@@ -17,6 +17,17 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.18.2 — 2026-10-31
+
+### Fixed
+- **A moved project folder keeps its history.** Removing a folder from the workspace, moving it somewhere else in Finder and opening it again used to ask to track it as if it were new, starting a second project with none of its sessions. CC Blackbox now recognizes the folder and reconnects it to its project, sessions, client tag and agents included, without asking. It only does this when it can be certain it is the same folder.
+- **Moved folders are picked up without a question.** When a tracked folder was renamed or moved while the app was closed, the app now points the project at the new location by itself instead of asking. It still asks when the new location already holds another tracked project, since merging is your call, and a move you declined before stays declined.
+- **A project from your other Mac no longer outranks the real one.** Pointing a project that only came from your other Mac at a folder this Mac already tracks now folds it into that project. Before, the only option was a merge that kept the other Mac's entry as the survivor.
+
+### Improved
+- **Clearer browser engine line in Settings, Platform.** A newer Electron release is now named as an Electron update, with a note that the Chromium version changes only if that update ships a newer one, and a newer Electron line is mentioned when one exists.
+- **Electron 44.10.1** (Chromium 152.0.7977.169), with the latest upstream fixes.
+
 ## v4.18.1 — 2026-10-29
 
 ### Fixed

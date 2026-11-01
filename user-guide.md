@@ -57,17 +57,24 @@ remembered per workspace.
   normal size at every setting, like a native toolbar.
 - **Folder moved.** If you rename or move a tracked folder outside the app
   (Finder, or a sync tool on another Mac), the app finds it again on its
-  own: at launch, or the next time Claude runs inside it, it offers to point
-  the project at the new location, and Settings → Projects shows "folder
-  moved · point at …" on that row for one click. Accept, and the project,
-  its history, client tag, agents and workspace entries move over; nothing
-  splits into a second project. **Not now** keeps things as they are and
+  own: at launch, or the next time Claude runs inside it, it points the
+  project at the new location without asking, because it can be certain it
+  is the same folder. The project, its history, client tag, agents and
+  workspace entries move over; nothing splits into a second project. It
+  only asks when the new location already holds another tracked project
+  (see merging below), and **Not now** there keeps things as they are and
   does not ask again for that destination. If the app could not find the
   folder (it was moved before this version ever saw it), the row shows
   "folder not found · folder moved…": click it and pick the folder yourself.
+  Opening a moved folder again (as a workspace root, from File → Add Folder
+  or by launching Claude in it) reconnects it to its project silently when
+  the app can be certain it is the same folder, even after it was removed
+  from the workspace and moved somewhere else entirely.
   If the new location is already tracked as its own project, the app offers
   to merge the two; the duplicate's sessions and agents join the original
-  and the extra entry goes away. Prefer renaming from the Explorer when you
+  and the extra entry goes away. A project that only came from your other
+  Mac (its folder was never tracked here) pointed at a folder this Mac
+  already tracks simply joins that project, no merge question. Prefer renaming from the Explorer when you
   can; these are the catch-ups for renames the app did not see.
 - **Settings → Projects → Remove…** takes a folder out of the app for good:
   its recorded sessions and cost history, any transcript copies synced from
@@ -919,7 +926,9 @@ reconnects on its own.
     it stages an update in the background and offers a restart).
   - **Browser engine**: the Chromium the embedded browser runs on and the
     Electron it ships with. Engine updates arrive with app updates, so a
-    note that a newer engine build exists upstream is just information.
+    note that a newer Electron patch is out is just information; the
+    Chromium version changes only if that patch ships a newer one. A newer
+    Electron line is named too; the app moves to it in a release of its own.
     The only warning is when the engine line has left its support window,
     which means the app itself is out of date: update CC Blackbox.
   - **iOS Simulator**: a one-line roll-up of the Xcode, iOS runtime, and
