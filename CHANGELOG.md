@@ -17,6 +17,14 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.19.0 — 2026-11-09
+
+### Fixed
+- **Removing a folder from the workspace closes its terminal tabs.** Right-clicking a folder in Explorer and choosing Remove from Workspace used to leave that folder's shell running under an "Other" heading in the Terminals list. Its tabs now close with it. If a Claude session is running in the folder, the app asks before ending it, and Cancel leaves everything as it was. Nothing on disk changes, and a folder that another workspace also holds keeps its tabs for that workspace.
+
+### Improved
+- **Electron 45.2.3** (Chromium 156.0.8078.80), the newest stable Electron line, with its browser engine and security fixes. macOS 13 or later is still the requirement.
+
 ## v4.18.2 — 2026-10-31
 
 ### Fixed

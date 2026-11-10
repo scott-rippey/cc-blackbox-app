@@ -88,7 +88,9 @@ remembered per workspace.
 
 Click a file in the Explorer to open it. Right-click for the full menu:
 open, reveal in Finder, copy (relative) path, new file/folder, rename,
-delete, and, on a root, remove it from the workspace. Renaming a root
+delete, and, on a root, remove it from the workspace. Removing a root
+closes that folder's terminal tabs too; if a Claude session is running
+there, the app asks before ending it. Nothing on disk changes. Renaming a root
 folder renames it on disk and moves everything that knows the folder with
 it: the project, its recorded sessions and cost history, the client tag,
 its agents, and every workspace that lists it. Nothing to re-add, no second

@@ -38,7 +38,10 @@ timeline. This is the feature list; step-by-step usage lives in
 
 - File tree per root with live refresh, gitignored files dimmed, and full
   context menu: open, reveal in Finder, copy path, new file/folder, rename,
-  delete, remove root from workspace. Rename works on a root folder too:
+  delete, remove root from workspace. Removing a root closes its terminal
+  tabs with it (a running Claude session there is confirmed first; a
+  folder another workspace also holds keeps its tabs for that workspace).
+  Rename works on a root folder too:
   the folder is renamed on disk and its project, recorded sessions, cost
   history, client tag, agents and every workspace that lists it move with
   it, so history stays one project under the new name. Delete asks first (Move to Trash /
