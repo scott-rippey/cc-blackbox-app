@@ -17,6 +17,11 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.20.2 — 2026-11-15
+
+### Fixed
+- **Claude's messages reach the phone in order, and sooner.** A line Claude wrote before a tool call could show up on the phone one step late, after messages you had sent in the meantime. It now arrives as soon as Claude Code has saved it, in its right place in the conversation. While Claude is still preparing its next step the line is not saved yet, so that pause stays quiet on the phone.
+
 ## v4.20.1 — 2026-11-14
 
 ### Fixed
