@@ -638,6 +638,24 @@ panel below (defaults: global).
   you" push), and Stop still interrupts: Claude Code then delivers the
   queued message straight away. Refused while a permission ask or one of
   Claude's multiple-choice questions is open, where typing would answer it.
+- Permission mode on the phone (4.20.0, phone 1.3): each session shows the
+  mode Claude Code is in (Manual, Accept edits, Plan, Auto) as a row of
+  buttons above the message box, and tapping one switches to it. The Mac
+  presses Shift+Tab for you, one press at a time, reading Claude Code's own
+  mode line after each, so the phone always shows where it landed; a change
+  made at the Mac's keyboard shows on the phone too. A session started with
+  bypass permissions enabled is changed at the Mac only.
+- Claude's questions and plans on the phone (4.20.0, phone 1.3): a
+  multiple-choice question shows with its options (pick one, pick several,
+  or type your own answer) and a plan shows in full with Approve (into
+  auto mode, accept edits, or asking before edits) and Keep planning with
+  your feedback. A plan too long to send in full is approved at the Mac
+  only. They wait up to ten minutes for a phone app at 1.3 or newer (an
+  older one cannot answer them and gets the usual 50 seconds); the same
+  dialog is on the Mac the whole time, and whoever answers first wins.
+  Answer on the Mac hands it over. Anything the phone is not holding
+  (nobody was connected, the wait ran out) shows on the phone as waiting
+  on the Mac, so a session never just reads Working while Claude waits.
 - A push notification reaches the phone when a session waits for input,
   waits for a permission, or ends; pushes are encrypted with a key set at
   pairing and the relay cannot read them.

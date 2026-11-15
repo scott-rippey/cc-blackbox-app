@@ -17,6 +17,24 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.20.0 — 2026-11-14
+
+These phone features need version 1.3 of the CC Blackbox iPhone app, which is on its way to the App Store. Until you have it, the phone app works exactly as before.
+
+### New
+- **See and change Claude's permission mode from your phone.** Each session on the phone shows the mode Claude Code is in (Manual, Accept edits, Plan, Auto) as a row of buttons above the message box. Tap one to switch. Your Mac presses Shift+Tab for you and reads back where it landed, so the phone always shows the real mode, and a change you make at the Mac's keyboard shows on the phone too. A session started with bypass permissions shows its mode on the phone but is changed at the Mac only.
+- **Answer Claude's questions from your phone.** When Claude asks you to choose, the phone shows each question with its options. Pick one, pick several where the question allows it, or type your own answer.
+- **Review and approve plans from your phone.** When Claude has a plan, the phone shows it in full. Approve it into auto mode, accept edits, or asking before each edit, or tap Keep planning and say what should change. Claude revises the plan and shows it again. A plan too long to send to the phone in full is approved at the Mac.
+
+### Improved
+- **Your Mac and your phone can both answer.** The prompt stays in the terminal the whole time the phone can answer it, and whoever answers first wins. Questions and plans wait up to ten minutes for the phone. Answering at the keyboard, or clicking in that terminal, hands it to the Mac at once.
+- **The phone shows what is waiting on your Mac.** If Claude asked while your phone was not connected, the session shows the question, plan or permission as waiting on the Mac instead of just saying Working.
+- **Electron 45.3.2** (Chromium 156.0.8078.100), the newest stable Electron, with its browser engine and security fixes. macOS 13 or later is still the requirement.
+
+### Fixed
+- **Allow on a question or a plan did nothing.** Tapping Allow on the phone for one of Claude's questions or a plan approval left the prompt sitting in the terminal. They are now answered properly, and an older phone app is told to answer those at the Mac.
+- **A phone message could be refused after a question.** After one of Claude's questions was answered, the phone could keep refusing new messages until the turn ended. It now accepts them as soon as the question is answered.
+
 ## v4.19.0 — 2026-11-09
 
 ### Fixed

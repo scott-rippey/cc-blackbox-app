@@ -849,9 +849,29 @@ ask, interrupt, or stop a session from wherever you are.
 3. On the phone, open a session to watch it. Its name on the phone follows
    the name here, and the whole conversation loads when you open it. When Claude asks for
    permission, the ask appears on the phone with **Allow** and **Deny**; the
-   terminal shows a small **phone** pill on that tab while the phone is
-   deciding. If nobody answers within 50 seconds, the normal terminal
-   prompt appears and you answer at the keyboard.
+   tab here shows a small **phone** pill while the phone can answer. The
+   same prompt is in the terminal the whole time: answer at the keyboard
+   or on the phone, whichever is closer. The phone's turn lasts 50 seconds
+   for a permission; a question or a plan gets ten minutes when the phone
+   app is 1.3 or newer.
+   - Questions and plans need the phone app at 1.3 or newer. An older
+     phone app shows only Allow and Deny for them and cannot answer:
+     answer those at the keyboard.
+   - **Questions.** When Claude asks you to choose, the phone shows each
+     question with its options. Tap one (or several, where the question
+     allows it), or type your own answer, then **Send answers**.
+   - **Plans.** When Claude has a plan, the phone shows it in full. Approve
+     it into **auto mode**, **accept edits** or **ask before edits**, or
+     tap **Keep planning** and say what should change; Claude revises the
+     plan and shows it again.
+   - **Answer on the Mac** hands any of these back to the keyboard. If the
+     phone was not connected when Claude asked, it shows what is waiting
+     on the Mac instead. A plan too long to send to the phone in full can
+     only be approved at the keyboard; the phone can still send it back
+     with Keep planning.
+   - **Permission mode.** The row of buttons above the message box shows
+     the session's mode (Manual, Accept edits, Plan, Auto); tap one to
+     switch. Needs this app at 4.20.0 and the phone app at 1.3.
 4. When a turn ends, type the next prompt on the phone. It is typed into
    the tab and submitted as one line. To include photos, tap the
    **paperclip** beside the message box and choose **Take Photo** or
