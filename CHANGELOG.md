@@ -17,6 +17,11 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.20.1 — 2026-11-14
+
+### Fixed
+- **The phone shows a session's permission mode right away.** A session that was sitting idle, freshly started or just resumed, showed its mode buttons on the phone with none lit until Claude did something. The Mac now reads the mode when the session starts, so the right button is lit within a couple of seconds, including for a `claude` you typed in a plain shell tab.
+
 ## v4.20.0 — 2026-11-14
 
 These phone features need version 1.3 of the CC Blackbox iPhone app, which is on its way to the App Store. Until you have it, the phone app works exactly as before.
