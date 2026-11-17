@@ -17,6 +17,11 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.20.3 — 2026-11-16
+
+### Fixed
+- **The iOS Simulator works with Xcode 27.** Xcode 27 keeps each device's screen size in a different file than earlier versions did. CC Blackbox could not find it, so a device booted but the Simulator pane fell back to "shut down" and Claude's simulator tools reported the stream was not ready. The app now reads the Xcode 27 location first and the older one second, so the pane attaches on either.
+
 ## v4.20.2 — 2026-11-15
 
 ### Fixed
