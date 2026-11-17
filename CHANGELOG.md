@@ -17,6 +17,18 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.21.0 — 2026-11-17
+
+The phone part of this release needs version 1.4 of the CC Blackbox iPhone app, which is on its way to the App Store. Until you have it, the phone app works exactly as before.
+
+### New
+- **Allow Claude to use the browser or the simulator from your phone.** The first time a Claude session wants to drive the browser or the iOS Simulator inside CC Blackbox, the app asks you to allow it. That question used to appear only on the Mac, so if you were away the session waited a minute and gave up. It now also shows on your phone as a card on that session, with Allow and Deny, and a notification if the phone is locked. The Mac keeps showing the same question the whole time. Answer on either one and the other clears. Allow from the phone is the same permission as Allow on the Mac: it covers that Claude session until its terminal tab closes. With a phone connected the question waits ten minutes instead of one.
+
+### Fixed
+- **The question closes by itself when nobody answers.** After it timed out, the Mac's window stayed on screen with buttons that no longer did anything. It now goes away when the question ends, however it ends, including when you interrupt Claude.
+- **Long waits no longer fail at one minute.** Claude Code gives up on a tool call to CC Blackbox after 60 seconds unless told otherwise, which cut off slow simulator starts as well as the question above. The app now sets a longer limit. Sessions pick it up the next time they start.
+- **Simulator refusals say "simulator".** After you denied simulator access, Claude was told that browser access had been denied.
+
 ## v4.20.3 — 2026-11-16
 
 ### Fixed

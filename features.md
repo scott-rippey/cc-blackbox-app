@@ -656,6 +656,16 @@ panel below (defaults: global).
   Answer on the Mac hands it over. Anything the phone is not holding
   (nobody was connected, the wait ran out) shows on the phone as waiting
   on the Mac, so a session never just reads Working while Claude waits.
+- Browser and simulator asks on the phone (4.21.0, phone 1.4): the first
+  time a session wants to drive the browser or the iOS Simulator, the
+  same Allow or Deny ask appears on the phone as a card on that session,
+  with a push when the phone is locked. The ask stays in the Mac's window
+  the whole time; the first answer wins and the other side clears. Allow
+  from the phone is the same permission as Allow here (that Claude
+  process, until the tab closes) and Deny sticks the same way. The ask
+  waits ten minutes when a phone app at 1.4 or newer is connected, one
+  minute otherwise, and it ends by itself if you interrupt Claude in that
+  tab.
 - A push notification reaches the phone when a session waits for input,
   waits for a permission, or ends; pushes are encrypted with a key set at
   pairing and the relay cannot read them.

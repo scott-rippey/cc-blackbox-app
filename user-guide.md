@@ -864,6 +864,11 @@ ask, interrupt, or stop a session from wherever you are.
      it into **auto mode**, **accept edits** or **ask before edits**, or
      tap **Keep planning** and say what should change; Claude revises the
      plan and shows it again.
+   - **Browser and simulator.** The first time a session wants to drive
+     the browser or the iOS Simulator, the phone (app 1.4 or newer) shows
+     the same **Allow** / **Deny** ask the Mac's window shows. Answer on
+     either; the other clears. It waits ten minutes while such a phone is
+     connected, one minute otherwise. Allow lasts until that tab closes.
    - **Answer on the Mac** hands any of these back to the keyboard. If the
      phone was not connected when Claude asked, it shows what is waiting
      on the Mac instead. A plan too long to send to the phone in full can
