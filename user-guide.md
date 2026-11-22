@@ -874,9 +874,10 @@ ask, interrupt, or stop a session from wherever you are.
      has **Browser** and **Simulator** tabs next to **Conversation**. They
      show still pictures of this Mac's Browser pane and Simulator pane,
      refreshed about once a second while the picture changes; a dot on the
-     tab means Claude is driving it. It is view only. A tab is there only
-     when there is something to show: a page open in the Browser pane, or
-     a booted simulator. To turn it off, open Settings,
+     tab means Claude is driving it. It is view only. The Browser tab is
+     there while a page is open in the Browser pane. The Simulator tab is
+     always there once the simulator is set up on this Mac; when no device
+     is running it says so, and the picture appears as soon as one is. To turn it off, open Settings,
      Mobile and switch off **Show the Browser and Simulator on paired
      devices**.
    - **Answer on the Mac** hands any of these back to the keyboard. If the

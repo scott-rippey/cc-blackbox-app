@@ -17,6 +17,14 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.22.1 — 2026-11-22
+
+This goes with version 1.5 of the CC Blackbox app for iPhone and iPad, which is on its way to the App Store.
+
+### Improved
+- **The Simulator tab is there from the start.** On an iPad, the Simulator tab used to appear only once a simulator was running, while the Browser tab was there right away. It is now always there when this Mac has the iOS Simulator set up. When no device is running it says so, and the picture appears by itself a few seconds after one starts.
+- **Simulators started anywhere are picked up.** A simulator you start outside CC Blackbox, or before opening the Simulator pane, now shows on the iPad without the pane having to be open.
+
 ## v4.22.0 — 2026-11-22
 
 The iPad part of this release needs version 1.5 of the CC Blackbox app for iPhone and iPad, which is on its way to the App Store. Until you have it, the phone app works exactly as before.

@@ -672,8 +672,9 @@ panel below (defaults: global).
   pane and its Simulator pane, about one a second while the picture
   changes, with a dot while Claude is driving. View only: nothing can be
   tapped or typed from there. The asks, the mode buttons and the message
-  box stay on every tab. A tab appears while there is something to show:
-  a page open in the Browser pane, a booted simulator.
+  box stay on every tab. The Browser tab appears while a page is open in
+  the Browser pane. The Simulator tab is always there once the simulator
+  is set up on this Mac, and says so when no device is running.
   Pictures travel end-to-end encrypted and are not stored anywhere.
   Settings, Mobile has the switch, on by default.
 - A push notification reaches the phone when a session waits for input,
