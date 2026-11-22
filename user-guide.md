@@ -869,6 +869,16 @@ ask, interrupt, or stop a session from wherever you are.
      the same **Allow** / **Deny** ask the Mac's window shows. Answer on
      either; the other clears. It waits ten minutes while such a phone is
      connected, one minute otherwise. Allow lasts until that tab closes.
+   - **Watch the browser and the simulator (iPad).** On an iPad, or an
+     unfolded iPhone Duo, with the app at 1.5 or newer, a session's screen
+     has **Browser** and **Simulator** tabs next to **Conversation**. They
+     show still pictures of this Mac's Browser pane and Simulator pane,
+     refreshed about once a second while the picture changes; a dot on the
+     tab means Claude is driving it. It is view only. A tab is there only
+     when there is something to show: a page open in the Browser pane, or
+     a booted simulator. To turn it off, open Settings,
+     Mobile and switch off **Show the Browser and Simulator on paired
+     devices**.
    - **Answer on the Mac** hands any of these back to the keyboard. If the
      phone was not connected when Claude asked, it shows what is waiting
      on the Mac instead. A plan too long to send to the phone in full can
@@ -1046,7 +1056,7 @@ reconnects on its own.
     Security → Local Network.
   - Everything is encrypted in transit. Two Macs syncing both ways just
     means doing the one-time add on each of them.
-- **Mobile**: the iPhone companion. Switch it on, pair a phone with the
+- **Mobile**: the iPhone and iPad companion. Switch it on, pair a phone with the
   QR code or link, see paired phones with a live dot and last-seen time,
   unpair. A reset button appears only if the Mac's mobile identity can no
   longer be decrypted (a changed keychain); resetting means pairing again.

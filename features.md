@@ -666,6 +666,16 @@ panel below (defaults: global).
   waits ten minutes when a phone app at 1.4 or newer is connected, one
   minute otherwise, and it ends by itself if you interrupt Claude in that
   tab.
+- Live view on a paired iPad (4.22.0, phone 1.5): on an iPad, or an
+  unfolded iPhone Duo, a session's screen has Browser and Simulator tabs
+  beside Conversation. They show still pictures of this Mac's Browser
+  pane and its Simulator pane, about one a second while the picture
+  changes, with a dot while Claude is driving. View only: nothing can be
+  tapped or typed from there. The asks, the mode buttons and the message
+  box stay on every tab. A tab appears while there is something to show:
+  a page open in the Browser pane, a booted simulator.
+  Pictures travel end-to-end encrypted and are not stored anywhere.
+  Settings, Mobile has the switch, on by default.
 - A push notification reaches the phone when a session waits for input,
   waits for a permission, or ends; pushes are encrypted with a key set at
   pairing and the relay cannot read them.

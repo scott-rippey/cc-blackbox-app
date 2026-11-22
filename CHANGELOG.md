@@ -17,6 +17,17 @@ All CC-Blackbox releases, newest first. Each entry mirrors that version's
 - ...
 -->
 
+## v4.22.0 — 2026-11-22
+
+The iPad part of this release needs version 1.5 of the CC Blackbox app for iPhone and iPad, which is on its way to the App Store. Until you have it, the phone app works exactly as before.
+
+### New
+- **Watch the browser and the simulator from an iPad.** With version 1.5 of the app on an iPad, a session's screen has Browser and Simulator tabs next to Conversation. They show still pictures of this Mac's Browser pane and its iOS Simulator, refreshed about once a second while the picture changes, with a mark on the tab while Claude is driving. It is view only: nothing can be tapped or typed from the iPad. Permission questions, the mode buttons and the message box stay on screen under every tab, so you can answer Claude while you watch. A tab is there whenever there is something to show: a page open in the Browser pane, or a booted simulator. Pictures travel end-to-end encrypted like everything else and are not stored anywhere.
+- **A switch for it.** Settings, Mobile has "Show the Browser and Simulator on paired devices". It is on by default. Turn it off and paired devices are shown neither.
+
+### Improved
+- **Electron 45.4.1** (Chromium 156.0.8078.100), the newest stable Electron, with its browser engine and security fixes. macOS 13 or later is still the requirement.
+
 ## v4.21.0 — 2026-11-17
 
 The phone part of this release needs version 1.4 of the CC Blackbox iPhone app, which is on its way to the App Store. Until you have it, the phone app works exactly as before.
